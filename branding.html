@@ -84,6 +84,18 @@
     .footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.78rem; }
 
     @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 8px; }
+    .lightbox .lb-close { position: absolute; top: 1.5rem; right: 1.5rem; color: white; font-size: 2rem; cursor: pointer; background: none; border: none; line-height: 1; opacity: 0.7; }
+    .lightbox .lb-close:hover { opacity: 1; }
+    .lightbox .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 2.5rem; cursor: pointer; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; opacity: 0.6; transition: opacity 0.15s; }
+    .lightbox .lb-nav:hover { opacity: 1; background: rgba(255,255,255,0.2); }
+    .lightbox .lb-prev { left: 1rem; }
+    .lightbox .lb-next { right: 1rem; }
+    .lightbox .lb-title { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: white; font-size: 0.85rem; background: rgba(0,0,0,0.5); padding: 0.4rem 1rem; border-radius: 6px; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -237,7 +249,7 @@
           card.className = `card ${status} ${isStyleDir ? 'selected' : ''} ${!visible ? 'hidden' : ''}`;
           card.dataset.assetId = asset.id;
           card.innerHTML = `
-            <img class="card-img ${asset.logo ? 'logo-fit' : ''}" src="${IMG_BASE}/${asset.id}.${asset.ext}" alt="${asset.title}" loading="lazy" onclick="window.open(this.src)">
+            <img class="card-img ${asset.logo ? 'logo-fit' : ''}" src="${IMG_BASE}/${asset.id}.${asset.ext}" alt="${asset.title}" loading="lazy" onclick="openLightbox('${asset.id}')" style="cursor:zoom-in">
             <div class="card-body">
               <h3>${asset.title}</h3>
               <div class="desc">${asset.desc}</div>
@@ -411,11 +423,57 @@
       setTimeout(() => t.classList.remove('show'), 1500);
     }
 
+    // ── Lightbox ──
+    let lbIndex = -1;
+    const allIds = () => ASSETS.map(a => a.id);
+
+    function openLightbox(assetId) {
+      const ids = allIds();
+      lbIndex = ids.indexOf(assetId);
+      if (lbIndex < 0) return;
+      updateLightbox();
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function updateLightbox() {
+      const ids = allIds();
+      const asset = ASSETS.find(a => a.id === ids[lbIndex]);
+      if (!asset) return;
+      document.getElementById('lb-img').src = `${IMG_BASE}/${asset.id}.${asset.ext}`;
+      document.getElementById('lb-title').textContent = `${asset.title} (${lbIndex + 1}/${ids.length})`;
+    }
+
+    function lbNav(dir) {
+      const ids = allIds();
+      lbIndex = (lbIndex + dir + ids.length) % ids.length;
+      updateLightbox();
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft') lbNav(-1);
+    });
+
     // ── Init ──
     (async () => {
       await loadReviews();
       render();
     })();
   </script>
+
+  <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">&times;</button>
+    <button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8249;</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-nav lb-next" onclick="lbNav(1)">&#8250;</button>
+    <div class="lb-title" id="lb-title"></div>
+  </div>
 </body>
 </html>
