@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponic Garden — Brand Assets</title>
+  <meta name="description" content="Sponic Garden branding elements — logos, wordmarks, and concept illustrations for an AI-native wellness and gardening social club.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f7f1;
+      --surface: #ffffff;
+      --border: #c4d4ba;
+      --text: #1a2412;
+      --text-soft: #2d3b22;
+      --text-dim: #4a6040;
+      --text-muted: #7a9168;
+      --green: #2d6a1e;
+      --gold: #c9a961;
+      --gold-soft: rgba(201, 169, 97, 0.08);
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--green);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .page-header p {
+      color: var(--text-dim);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .demographic-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.35rem 1rem;
+      background: var(--gold-soft);
+      border: 1px solid rgba(201, 169, 97, 0.25);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      letter-spacing: 0.03em;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(26, 36, 18, 0.08);
+    }
+
+    .card-img {
+      width: 100%;
+      display: block;
+      background: #fff;
+    }
+
+    .card-img.logo-bg {
+      padding: 2rem;
+      object-fit: contain;
+      max-height: 320px;
+    }
+
+    .card-body {
+      padding: 1.25rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-body h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .card-body p {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    .card-body .model-tag {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.15rem 0.5rem;
+      background: rgba(45, 106, 30, 0.06);
+      border: 1px solid rgba(45, 106, 30, 0.15);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--green);
+      font-family: 'DM Sans', monospace;
+    }
+
+    .card-full {
+      grid-column: 1 / -1;
+    }
+
+    .card-full .card-img {
+      max-height: 500px;
+      object-fit: cover;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover { color: var(--green); }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .page-header { padding: 2.5rem 1.5rem 1.5rem; }
+      .card-img.logo-bg { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>Sponic Garden</h1>
+    <p>Brand assets and concept illustrations for an AI-native wellness and gardening social club — Warsaw, 2026</p>
+    <div class="demographic-tag">Target: Polish 25–47 · Fitness · Tech · Organic Fashion</div>
+  </header>
+
+  <div class="container">
+    <a href="/" class="back-link">← Back to Sponic Garden</a>
+
+    <!-- LOGOS & WORDMARKS -->
+    <div class="section">
+      <div class="section-label">Logos & Wordmarks</div>
+      <div class="grid-2">
+
+        <div class="card">
+          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/01-wordmark-v2.png" alt="Sponic Garden wordmark v2 — AI tech style">
+          <div class="card-body">
+            <h3>Wordmark — AI Tech</h3>
+            <p>Geometric serif with gold circuit/root network traces flowing through letterforms. Data conduits and plant veins as one system.</p>
+            <span class="model-tag">gemini-2.5-flash-image</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/02-logo-mark-v2.png" alt="Sponic Garden logo mark — roots and circuits">
+          <div class="card-body">
+            <h3>Logo Mark — Roots × Circuits</h3>
+            <p>Minimal circular mark. Circuit-trace branches grow upward, roots grow downward from a central gold AI conductor node.</p>
+            <span class="model-tag">gemini-2.5-flash-image</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/01-wordmark-logo.png" alt="Sponic Garden wordmark v1 — botanical">
+          <div class="card-body">
+            <h3>Wordmark — Botanical (v1)</h3>
+            <p>Elegant serif with vine tendrils, fern fronds, and leaf details intertwined. More traditional botanical feel.</p>
+            <span class="model-tag">gemini-2.5-flash-image</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/02-botanical-emblem.png" alt="Sponic Garden botanical emblem">
+          <div class="card-body">
+            <h3>Botanical Emblem (v1)</h3>
+            <p>Circular leaf cross-section with vein-to-circuit-trace transition. Sprout at center, vine border detail.</p>
+            <span class="model-tag">gemini-2.5-flash-image</span>
+          </div>
+        </div>
+
+        <div class="card card-full">
+          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/04-hottub-logo-pro.jpg" alt="Sponic Garden hot tub logo" style="max-height: 400px; object-fit: contain; background: #fff; padding: 1rem;">
+          <div class="card-body">
+            <h3>Hot Tub Logo — Wellness Identity</h3>
+            <p>Wooden barrel-style soaking tubs enveloped by lush tropical plants, ferns, and trailing vines. Steam rising. The thermal wellness pillar made visual.</p>
+            <span class="model-tag">nano-banana-pro (gemini-3-pro-image)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONCEPT ILLUSTRATIONS -->
+    <div class="section">
+      <div class="section-label">Concept Illustrations</div>
+      <div class="grid-2">
+
+        <div class="card card-full">
+          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/03-garden-atrium-hero.png" alt="Garden atrium interior illustration">
+          <div class="card-body">
+            <h3>The Garden Atrium</h3>
+            <p>Glass-roofed atrium with raised planting beds, hanging plants, and members tending herbs together. The core gardening and community experience.</p>
+            <span class="model-tag">gemini-2.5-flash-image</span>
+          </div>
+        </div>
+
+        <div class="card card-full">
+          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/05-sound-experience-pro.jpg" alt="AI-powered sonic wellness experience">
+          <div class="card-body">
+            <h3>AI-Powered Sonic Wellness</h3>
+            <p>Sound waves as golden flowing lines weaving through botanical space. Speakers hidden in greenery, data traces integrated with plant life. Sound as a living botanical element.</p>
+            <span class="model-tag">nano-banana-pro (gemini-3-pro-image)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- UPCOMING -->
+    <div class="section">
+      <div class="section-label">Planned — Remaining Concepts</div>
+      <div class="grid-2" style="opacity: 0.5;">
+        <div class="card"><div class="card-body"><h3>AI Sensor Network</h3><p>Hex grid visualization of the observe-reason-actuate cycle</p></div></div>
+        <div class="card"><div class="card-body"><h3>Hot Yoga Studio</h3><p>Dynamic lighting, dance fitness in botanical space</p></div></div>
+        <div class="card"><div class="card-body"><h3>Thermal Spa</h3><p>Sauna, cold plunge, AI-guided contrast therapy</p></div></div>
+        <div class="card"><div class="card-body"><h3>Farm-to-Table Dining</h3><p>Garden harvest feeding community vendor meals</p></div></div>
+        <div class="card"><div class="card-body"><h3>Community Gathering</h3><p>Members socializing, the club as living room</p></div></div>
+        <div class="card"><div class="card-body"><h3>Botanical Cultivation</h3><p>Close-up plant care, therapeutic gardening</p></div></div>
+        <div class="card"><div class="card-body"><h3>Privacy by Design</h3><p>Abstract data flows harmonized with nature</p></div></div>
+        <div class="card"><div class="card-body"><h3>Warsaw Venue</h3><p>Greenhouse architecture exterior rendering</p></div></div>
+        <div class="card"><div class="card-body"><h3>Organic Fashion</h3><p>Members in sustainable athleisure, botanical textures</p></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    Sponic Garden · Warsaw, 2026 · Generated with Gemini 2.5 Flash Image & Nano Banana Pro
+  </footer>
+
+</body>
+</html>
