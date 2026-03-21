@@ -47,7 +47,18 @@
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; }
 
     /* Cards */
-    .card { background: var(--surface); border: 2px solid var(--border-light); border-radius: 10px; overflow: hidden; transition: all 0.2s; }
+    .card { background: var(--surface); border: 2px solid var(--border-light); border-radius: 10px; overflow: hidden; transition: all 0.2s; position: relative; }
+
+    /* Rank badge */
+    .rank-badge { position: absolute; top: 0.5rem; left: 0.5rem; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; z-index: 10; }
+    .rank-badge.champion { background: var(--gold); color: #fff; box-shadow: 0 2px 8px rgba(201,169,97,0.5); }
+    .rank-badge.challenger { background: #7a9168; color: #fff; }
+    .rank-badge.ranked { background: var(--surface); color: var(--text-dim); border: 1px solid var(--border); }
+
+    /* Rank controls */
+    .rank-controls { position: absolute; top: 0.5rem; right: 0.5rem; display: flex; flex-direction: column; gap: 2px; z-index: 10; }
+    .rank-btn { width: 24px; height: 24px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.6); background: rgba(0,0,0,0.35); color: #fff; font-size: 0.7rem; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: all 0.15s; }
+    .rank-btn:hover { background: rgba(0,0,0,0.6); }
     .card.liked { border-color: var(--green); box-shadow: 0 0 0 1px var(--green); }
     .card.disliked { border-color: var(--red); opacity: 0.5; }
     .card.regen-requested { border-color: #1d4ed8; box-shadow: 0 0 0 1px #1d4ed8; }
@@ -228,8 +239,26 @@
     };
     const CAT_ORDER = ['chosen', 'sonics-wordmark', 'swapped-logo', 'style-audition', 'wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
 
-    let reviews = {}; // asset_id -> review data
+    let reviews = {}; // asset_id -> review data (includes rank_order)
     let currentFilter = 'all';
+
+    // ── Rank helpers ──
+    function getRankedAssets(cat) {
+      const items = ASSETS.filter(a => a.cat === cat);
+      return items.sort((a, b) => {
+        const ra = reviews[a.id]?.rank_order ?? 999;
+        const rb = reviews[b.id]?.rank_order ?? 999;
+        if (ra !== rb) return ra - rb;
+        return ASSETS.indexOf(a) - ASSETS.indexOf(b);
+      });
+    }
+
+    function getRankLabel(rank) {
+      if (rank === 0) return { label: '1', cls: 'champion', text: 'Champion' };
+      if (rank === 1) return { label: '2', cls: 'challenger', text: 'Challenger #1' };
+      if (rank === 2) return { label: '3', cls: 'challenger', text: 'Challenger #2' };
+      return { label: String(rank + 1), cls: 'ranked', text: `#${rank + 1}` };
+    }
 
     // ── Render ──
     function render() {
@@ -237,18 +266,19 @@
       gallery.innerHTML = '';
 
       for (const cat of CAT_ORDER) {
-        const items = ASSETS.filter(a => a.cat === cat);
+        const items = getRankedAssets(cat);
         const section = document.createElement('div');
         section.className = 'section';
         section.innerHTML = `<div class="section-label">${CAT_LABELS[cat] || cat}</div><div class="grid" id="grid-${cat}"></div>`;
         gallery.appendChild(section);
         const grid = section.querySelector('.grid');
 
-        for (const asset of items) {
+        items.forEach((asset, idx) => {
           const r = reviews[asset.id] || {};
           const status = r.status || 'pending';
           const isStyleDir = r.is_style_direction || false;
           const comment = r.comment || '';
+          const rankInfo = getRankLabel(idx);
 
           // Filter logic
           let visible = currentFilter === 'all' ||
@@ -261,11 +291,17 @@
           card.className = `card ${status} ${isStyleDir ? 'selected' : ''} ${!visible ? 'hidden' : ''}`;
           card.dataset.assetId = asset.id;
           card.innerHTML = `
+            <div class="rank-badge ${rankInfo.cls}">${rankInfo.label}</div>
+            ${items.length > 1 ? `
+            <div class="rank-controls">
+              ${idx > 0 ? `<button class="rank-btn" onclick="moveRank('${cat}','${asset.id}',-1)" title="Move up">&#9650;</button>` : ''}
+              ${idx < items.length - 1 ? `<button class="rank-btn" onclick="moveRank('${cat}','${asset.id}',1)" title="Move down">&#9660;</button>` : ''}
+            </div>` : ''}
             <img class="card-img ${asset.logo ? 'logo-fit' : ''}" src="${IMG_BASE}/${asset.id}.${asset.ext}" alt="${asset.title}" loading="lazy" onclick="openLightbox('${asset.id}')" style="cursor:zoom-in">
             <div class="card-body">
               <h3>${asset.title}</h3>
               <div class="desc">${asset.desc}</div>
-              <div class="model">${asset.model}</div>
+              <div class="model">${asset.model} · ${rankInfo.text}</div>
             </div>
             <div class="card-actions">
               <button class="action-btn ${status === 'liked' ? 'like-active' : ''}" onclick="setStatus('${asset.id}', 'liked')">
@@ -285,7 +321,7 @@
             </div>
           `;
           grid.appendChild(card);
-        }
+        });
       }
       updateCounts();
       updateStyleBanner();
@@ -344,6 +380,21 @@
       render();
       const asset = ASSETS.find(a => a.id === assetId);
       showToast(!current ? `Style direction: ${asset.title}` : 'Style direction cleared');
+    }
+
+    // ── Rank reorder ──
+    async function moveRank(cat, assetId, direction) {
+      const items = getRankedAssets(cat);
+      const currentIdx = items.findIndex(a => a.id === assetId);
+      const newIdx = currentIdx + direction;
+      if (newIdx < 0 || newIdx >= items.length) return;
+      [items[currentIdx], items[newIdx]] = [items[newIdx], items[currentIdx]];
+      for (let i = 0; i < items.length; i++) {
+        reviews[items[i].id] = { ...(reviews[items[i].id] || {}), rank_order: i, reviewed_at: new Date().toISOString() };
+        await upsert(items[i].id);
+      }
+      render();
+      showToast(`Moved to #${newIdx + 1}`);
     }
 
     async function clearStyleDirection() {
@@ -405,6 +456,7 @@
         is_style_direction: r.is_style_direction || false,
         comment: r.comment || null,
         model_used: asset?.model || null,
+        rank_order: r.rank_order ?? null,
         reviewed_at: r.reviewed_at || new Date().toISOString(),
       };
       const { error } = await sb.from('spgd_brand_reviews').upsert(row, { onConflict: 'asset_id' });
@@ -431,21 +483,27 @@
 
     // ── Export ──
     function exportJSON() {
-      const data = ASSETS.map(a => {
-        const r = reviews[a.id] || {};
-        return {
-          asset_id: a.id,
-          category: a.cat,
-          title: a.title,
-          description: a.desc,
-          model: a.model,
-          url: `${IMG_BASE}/${a.id}.${a.ext}`,
-          status: r.status || 'pending',
-          is_style_direction: r.is_style_direction || false,
-          comment: r.comment || null,
-          reviewed_at: r.reviewed_at || null,
-        };
-      });
+      const data = {};
+      for (const cat of CAT_ORDER) {
+        const ranked = getRankedAssets(cat);
+        data[cat] = ranked.map((a, idx) => {
+          const r = reviews[a.id] || {};
+          return {
+            rank: idx + 1,
+            is_champion: idx === 0,
+            is_challenger: idx === 1 || idx === 2,
+            asset_id: a.id,
+            title: a.title,
+            description: a.desc,
+            model: a.model,
+            url: `${IMG_BASE}/${a.id}.${a.ext}`,
+            status: r.status || 'pending',
+            is_style_direction: r.is_style_direction || false,
+            comment: r.comment || null,
+            reviewed_at: r.reviewed_at || null,
+          };
+        });
+      }
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -479,7 +537,10 @@
       const asset = ASSETS.find(a => a.id === ids[lbIndex]);
       if (!asset) return;
       document.getElementById('lb-img').src = `${IMG_BASE}/${asset.id}.${asset.ext}`;
-      document.getElementById('lb-title').textContent = `${asset.title} (${lbIndex + 1}/${ids.length})`;
+      const catItems = getRankedAssets(asset.cat);
+      const rankIdx = catItems.findIndex(a => a.id === asset.id);
+      const rankInfo = getRankLabel(rankIdx >= 0 ? rankIdx : 0);
+      document.getElementById('lb-title').textContent = `${asset.title} · ${rankInfo.text} in ${CAT_LABELS[asset.cat] || asset.cat} (${lbIndex + 1}/${ids.length})`;
     }
 
     function lbNav(dir) {
