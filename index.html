@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sponic Garden — In Promotion of Flourishing</title>
-  <meta property="og:title" content="Sponic Garden — In Promotion of Flourishing">
+  <title>Sponic Garden — The Art and Science of Cultivation</title>
+  <meta property="og:title" content="Sponic Garden — The Art and Science of Cultivation">
   <meta property="og:description" content="A place-based social club designed to promote mental, physical and spiritual health through gardening, wellness, and AI-native infrastructure.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://sponicgarden.com">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Sponic Garden — In Promotion of Flourishing">
+  <meta name="twitter:title" content="Sponic Garden — The Art and Science of Cultivation">
   <meta name="twitter:description" content="AI-native social club fusing gardening, fitness, thermal wellness, and community — launching Warsaw, July 2026.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" type="image/svg+xml">
   <style>
@@ -609,7 +609,7 @@
 </head>
 <body>
 
-  
+  <div id="siteHeader"></div>
 
   <!-- ══════════════════════════════════════════════════════
        HERO
@@ -642,7 +642,7 @@
         <path d="M98 3c-3-4-8-3-6 1" fill="none" stroke="#1a4d2e" stroke-width="0.8" opacity="0.3"/>
         <path d="M102 3c3-4 8-3 6 1" fill="none" stroke="#1a4d2e" stroke-width="0.8" opacity="0.3"/>
       </svg>
-      <div class="tagline">in promotion of flourishing</div>
+      <div class="tagline">the art and science of cultivation</div>
       <p class="subtitle">A place-based social club fusing gardening, fitness, thermal wellness, and community — all orchestrated by a native AI platform built from day one.</p>
       <div class="launch-badge">Warsaw, Poland · Prototype Launch July 2026</div>
     </div>
@@ -684,6 +684,22 @@
             <summary>Why gardening is the anchor</summary>
             <div class="expand-body">
               <p>Gardening is inherently therapeutic, communal, productive, and measurable. It gives people a reason to return, a rhythm to follow, and something tangible to show for their time. The harvested produce flows directly into the on-site food service — closing the loop from soil to plate.</p>
+            </div>
+          </details>
+          <details class="expandable">
+            <summary>🏆 The Garden Show — gamified cultivation</summary>
+            <div class="expand-body">
+              <p>Gardening at Sponic Garden isn't just therapeutic — it's <strong>competitive and celebratory</strong>. Members photograph their creations throughout the growing cycle, building a visual portfolio of their work. On a regular cadence, the community hosts <strong>The Garden Show</strong>:</p>
+              <p><strong>How it works:</strong> Members submit photos of their best plants, arrangements, harvests, or creative garden projects via the app. All submissions are displayed on the facility's video screens and in a digital gallery. The community votes — each member gets a limited number of votes to cast across categories. Top entries win prizes: free visit passes, premium workshop access, featured vendor collaborations, or "Golden Trowel" recognition displayed at the facility.</p>
+              <p><strong>Categories</strong> rotate seasonally — tallest plant, most creative arrangement, best herb garden, biggest harvest yield, most improved plot, best team project. The AI tracks participation, suggests categories based on what's growing, and surfaces trending entries to keep engagement high.</p>
+              <p>The result: a built-in social loop that makes members want to cultivate, document, share, and return — turning gardening into a community sport with real stakes and real pride.</p>
+            </div>
+          </details>
+          <details class="expandable">
+            <summary>📸 AI-powered social media</summary>
+            <div class="expand-body">
+              <p>The AI identifies <strong>photo opportunities</strong> throughout the facility — a plant hitting a growth milestone, a stunning arrangement, golden-hour light in the greenhouse, a member's first harvest. If the member opts in, the AI captures or prompts the moment, applies on-brand framing, and offers one-tap sharing to their social channels.</p>
+              <p>Posts are <strong>automatically distributed and measured</strong> — the AI tracks engagement (likes, shares, reach), learns what content resonates, and refines its photo-op suggestions and timing. Members build a visual journal of their cultivation journey; Sponic Garden gets authentic, member-generated marketing at scale. The entire social media strategy — content identification, capture prompts, distribution, and performance analytics — is AI-managed.</p>
             </div>
           </details>
         </div>
@@ -1141,6 +1157,23 @@
               Inventory levels, usage rates, spoilage tracking, cost analytics, seasonal demand patterns
             </div>
           </details>
+
+          <details class="system-card">
+            <summary>
+              <span class="sys-icon">📸</span>
+              <span class="sys-info">
+                <span class="sys-name">Social Media</span>
+                <span class="sys-goal">Authentic reach + retention</span>
+              </span>
+              <svg class="sys-chevron" viewBox="0 0 16 16"><path d="M5 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </summary>
+            <div class="sys-detail">
+              <div class="sys-detail-label">AI Controls</div>
+              Photo opportunity identification, capture prompts, on-brand framing, multi-platform distribution, posting schedule, content strategy
+              <div class="sys-detail-label">Feedback <span class="sys-feedback-status fb-full">Full</span></div>
+              Social engagement metrics (likes, shares, reach, saves), member opt-in rates, content performance by type/time/platform, referral tracking, new member attribution
+            </div>
+          </details>
         </div>
       </div>
     </div>
@@ -1361,8 +1394,13 @@
   </div>
 
   <footer>
-    Sponic Garden · sponicgarden.com
+    <span data-site-version>v260321.11 5:55a</span>
   </footer>
 
+  <script src="/vendor/supabase-js-2.39.3.min.js"></script>
+  <script type="module">
+    import { initPersonalPage } from '/shared/personal-page-shell.js';
+    initPersonalPage();
+  </script>
 </body>
 </html>
