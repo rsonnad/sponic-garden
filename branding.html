@@ -70,11 +70,12 @@
     .action-btn.style-active { background: var(--gold-soft); border-color: rgba(201,169,97,0.4); color: #92400e; }
 
     /* Comment */
-    .card-comment { padding: 0.5rem 1rem 0.8rem; border-top: 1px solid var(--border-light); }
-    .card-comment textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.78rem; font-family: inherit; resize: vertical; min-height: 2.2rem; background: var(--bg); color: var(--text); }
+    .card-comment { padding: 0.5rem 1rem 0.8rem; border-top: 1px solid var(--border-light); display: flex; gap: 0.4rem; align-items: flex-start; }
+    .card-comment textarea { flex: 1; border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.78rem; font-family: inherit; resize: vertical; min-height: 2.2rem; background: var(--bg); color: var(--text); }
     .card-comment textarea:focus { outline: none; border-color: var(--green); }
-    .card-comment .save-indicator { font-size: 0.65rem; color: var(--text-muted); margin-top: 0.2rem; opacity: 0; transition: opacity 0.3s; }
-    .card-comment .save-indicator.show { opacity: 1; }
+    .comment-save-btn { padding: 0.4rem 0.7rem; border-radius: 6px; border: 1px solid var(--green-border); background: var(--green); color: white; font-size: 0.72rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.15s; }
+    .comment-save-btn:hover { background: #245a17; }
+    .comment-save-btn.saved { background: var(--green-soft); color: var(--green); border-color: var(--green-border); }
 
     /* Toast */
     .toast { position: fixed; bottom: 2rem; right: 2rem; padding: 0.6rem 1.2rem; background: var(--green); color: white; border-radius: 8px; font-size: 0.82rem; font-weight: 500; z-index: 1000; opacity: 0; transform: translateY(10px); transition: all 0.3s; }
@@ -237,8 +238,8 @@
               </button>
             </div>
             <div class="card-comment">
-              <textarea placeholder="Add a comment..." onblur="saveComment('${asset.id}', this.value)" oninput="this.nextElementSibling.classList.remove('show')">${comment}</textarea>
-              <div class="save-indicator">Saved</div>
+              <textarea placeholder="Add a comment..." id="comment-${asset.id}">${comment}</textarea>
+              <button class="comment-save-btn" onclick="saveComment('${asset.id}')">Save</button>
             </div>
           `;
           grid.appendChild(card);
@@ -314,15 +315,14 @@
       showToast('Style direction cleared');
     }
 
-    async function saveComment(assetId, comment) {
+    async function saveComment(assetId) {
+      const textarea = document.getElementById(`comment-${assetId}`);
+      const btn = textarea?.nextElementSibling;
+      const comment = textarea?.value || '';
       reviews[assetId] = { ...(reviews[assetId] || {}), comment: comment.trim(), reviewed_at: new Date().toISOString() };
       await upsert(assetId);
-      // Show saved indicator
-      const card = document.querySelector(`[data-asset-id="${assetId}"]`);
-      if (card) {
-        const ind = card.querySelector('.save-indicator');
-        if (ind) { ind.classList.add('show'); setTimeout(() => ind.classList.remove('show'), 2000); }
-      }
+      if (btn) { btn.textContent = 'Saved'; btn.classList.add('saved'); setTimeout(() => { btn.textContent = 'Save'; btn.classList.remove('saved'); }, 2000); }
+      showToast('Comment saved');
     }
 
     // ── Supabase ──
