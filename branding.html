@@ -3,477 +3,402 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sponic Garden — Brand Assets</title>
-  <meta name="description" content="Sponic Garden branding elements — logos, wordmarks, and concept illustrations for an AI-native wellness and gardening social club.">
+  <title>Sponic Garden — Brand Review</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #f4f7f1;
-      --surface: #ffffff;
-      --border: #c4d4ba;
-      --text: #1a2412;
-      --text-soft: #2d3b22;
-      --text-dim: #4a6040;
-      --text-muted: #7a9168;
-      --green: #2d6a1e;
-      --gold: #c9a961;
-      --gold-soft: rgba(201, 169, 97, 0.08);
+      --bg: #f4f7f1; --surface: #fff; --border: #c4d4ba; --border-light: #d8e3cf;
+      --text: #1a2412; --text-dim: #4a6040; --text-muted: #7a9168;
+      --green: #2d6a1e; --green-soft: rgba(45,106,30,0.07); --green-border: rgba(45,106,30,0.2);
+      --gold: #c9a961; --gold-soft: rgba(201,169,97,0.08);
+      --red: #b91c1c; --red-soft: rgba(185,28,28,0.06); --red-border: rgba(185,28,28,0.2);
+      --blue: #1d4ed8; --blue-soft: rgba(29,78,216,0.06);
     }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-    body {
-      font-family: 'DM Sans', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    /* Header */
+    .page-header { text-align: center; padding: 3rem 2rem 1.5rem; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .page-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,4vw,2.8rem); color: var(--green); letter-spacing: -0.02em; }
+    .page-header p { color: var(--text-dim); font-size: 0.92rem; max-width: 550px; margin: 0.3rem auto 0; }
 
-    .page-header {
-      text-align: center;
-      padding: 4rem 2rem 2rem;
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }
+    /* Filter bar */
+    .filter-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; flex-wrap: wrap; }
+    .filter-btn { padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid var(--border); background: var(--bg); font-size: 0.78rem; font-weight: 500; color: var(--text-dim); cursor: pointer; transition: all 0.15s; }
+    .filter-btn.active { background: var(--green); color: white; border-color: var(--green); }
+    .filter-btn .badge { display: inline-block; background: rgba(0,0,0,0.15); padding: 0 0.4rem; border-radius: 10px; margin-left: 0.3rem; font-size: 0.7rem; }
+    .filter-btn.active .badge { background: rgba(255,255,255,0.3); }
+    .filter-spacer { flex: 1; }
+    .export-btn { padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid var(--green-border); background: var(--green-soft); font-size: 0.78rem; font-weight: 600; color: var(--green); cursor: pointer; }
 
-    .page-header h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      color: var(--green);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
+    /* Style direction banner */
+    .style-banner { display: none; padding: 0.8rem 1.5rem; background: var(--gold-soft); border-bottom: 1px solid rgba(201,169,97,0.3); font-size: 0.85rem; color: #92400e; }
+    .style-banner.visible { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .style-banner strong { color: #78350f; }
+    .style-banner .clear-style { cursor: pointer; text-decoration: underline; margin-left: auto; font-size: 0.78rem; }
 
-    .page-header p {
-      color: var(--text-dim);
-      font-size: 1.05rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    /* Container */
+    .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.5rem 4rem; }
 
-    .demographic-tag {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.35rem 1rem;
-      background: var(--gold-soft);
-      border: 1px solid rgba(201, 169, 97, 0.25);
-      border-radius: 100px;
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      letter-spacing: 0.03em;
-    }
+    /* Sections */
+    .section { margin-bottom: 2.5rem; }
+    .section-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-    }
+    /* Cards */
+    .card { background: var(--surface); border: 2px solid var(--border-light); border-radius: 10px; overflow: hidden; transition: all 0.2s; }
+    .card.liked { border-color: var(--green); box-shadow: 0 0 0 1px var(--green); }
+    .card.disliked { border-color: var(--red); opacity: 0.5; }
+    .card.disliked:hover { opacity: 0.8; }
+    .card.selected { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold), 0 4px 20px rgba(201,169,97,0.2); }
+    .card.hidden { display: none; }
+    .card-img { width: 100%; display: block; cursor: pointer; }
+    .card-img.logo-fit { padding: 1.5rem; object-fit: contain; max-height: 280px; background: #fff; }
 
-    .section {
-      margin-bottom: 3rem;
-    }
+    .card-body { padding: 0.8rem 1rem; border-top: 1px solid var(--border-light); }
+    .card-body h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.15rem; }
+    .card-body .desc { font-size: 0.78rem; color: var(--text-dim); line-height: 1.45; }
+    .card-body .model { font-size: 0.65rem; color: var(--text-muted); margin-top: 0.3rem; }
 
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
+    /* Action buttons */
+    .card-actions { display: flex; gap: 0.4rem; padding: 0.5rem 1rem; border-top: 1px solid var(--border-light); background: #fafdf7; }
+    .action-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.3rem; padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); font-size: 0.75rem; font-weight: 500; color: var(--text-dim); cursor: pointer; transition: all 0.15s; }
+    .action-btn:hover { background: var(--bg); }
+    .action-btn.like-active { background: var(--green-soft); border-color: var(--green-border); color: var(--green); }
+    .action-btn.dislike-active { background: var(--red-soft); border-color: var(--red-border); color: var(--red); }
+    .action-btn.style-active { background: var(--gold-soft); border-color: rgba(201,169,97,0.4); color: #92400e; }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 1.5rem;
-    }
+    /* Comment */
+    .card-comment { padding: 0.5rem 1rem 0.8rem; border-top: 1px solid var(--border-light); }
+    .card-comment textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.78rem; font-family: inherit; resize: vertical; min-height: 2.2rem; background: var(--bg); color: var(--text); }
+    .card-comment textarea:focus { outline: none; border-color: var(--green); }
+    .card-comment .save-indicator { font-size: 0.65rem; color: var(--text-muted); margin-top: 0.2rem; opacity: 0; transition: opacity 0.3s; }
+    .card-comment .save-indicator.show { opacity: 1; }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: box-shadow 0.2s;
-    }
+    /* Toast */
+    .toast { position: fixed; bottom: 2rem; right: 2rem; padding: 0.6rem 1.2rem; background: var(--green); color: white; border-radius: 8px; font-size: 0.82rem; font-weight: 500; z-index: 1000; opacity: 0; transform: translateY(10px); transition: all 0.3s; }
+    .toast.show { opacity: 1; transform: translateY(0); }
 
-    .card:hover {
-      box-shadow: 0 8px 32px rgba(26, 36, 18, 0.08);
-    }
+    .footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.78rem; }
 
-    .card-img {
-      width: 100%;
-      display: block;
-      background: #fff;
-    }
-
-    .card-img.logo-bg {
-      padding: 2rem;
-      object-fit: contain;
-      max-height: 320px;
-    }
-
-    .card-body {
-      padding: 1.25rem 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .card-body h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.15rem;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-    }
-
-    .card-body p {
-      font-size: 0.88rem;
-      color: var(--text-dim);
-      line-height: 1.5;
-    }
-
-    .card-body .model-tag {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.15rem 0.5rem;
-      background: rgba(45, 106, 30, 0.06);
-      border: 1px solid rgba(45, 106, 30, 0.15);
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--green);
-      font-family: 'DM Sans', monospace;
-    }
-
-    .card-full {
-      grid-column: 1 / -1;
-    }
-
-    .card-full .card-img {
-      max-height: 500px;
-      object-fit: cover;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      margin-bottom: 2rem;
-      transition: color 0.15s;
-    }
-
-    .back-link:hover { color: var(--green); }
-
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 600px) {
-      .grid-2 { grid-template-columns: 1fr; }
-      .page-header { padding: 2.5rem 1.5rem 1.5rem; }
-      .card-img.logo-bg { padding: 1.5rem; }
-    }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
   <header class="page-header">
-    <h1>Sponic Garden</h1>
-    <p>Brand assets and concept illustrations for an AI-native wellness and gardening social club — Warsaw, 2026</p>
-    <div class="demographic-tag">Target: Polish 25–47 · Fitness · Tech · Organic Fashion</div>
+    <h1>Sponic Garden — Brand Review</h1>
+    <p>Like, dislike, and comment on each asset. Select a style direction to cascade across all categories.</p>
   </header>
 
-  <div class="container">
-    <a href="/" class="back-link">← Back to Sponic Garden</a>
-
-    <!-- LOGOS & WORDMARKS -->
-    <div class="section">
-      <div class="section-label">Logos & Wordmarks</div>
-      <div class="grid-2">
-
-        <div class="card">
-          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/01-wordmark-v2.png" alt="Sponic Garden wordmark v2 — AI tech style">
-          <div class="card-body">
-            <h3>Wordmark — AI Tech</h3>
-            <p>Geometric serif with gold circuit/root network traces flowing through letterforms. Data conduits and plant veins as one system.</p>
-            <span class="model-tag">gemini-2.5-flash-image</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/02-logo-mark-v2.png" alt="Sponic Garden logo mark — roots and circuits">
-          <div class="card-body">
-            <h3>Logo Mark — Roots × Circuits</h3>
-            <p>Minimal circular mark. Circuit-trace branches grow upward, roots grow downward from a central gold AI conductor node.</p>
-            <span class="model-tag">gemini-2.5-flash-image</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/01-wordmark-logo.png" alt="Sponic Garden wordmark v1 — botanical">
-          <div class="card-body">
-            <h3>Wordmark — Botanical (v1)</h3>
-            <p>Elegant serif with vine tendrils, fern fronds, and leaf details intertwined. More traditional botanical feel.</p>
-            <span class="model-tag">gemini-2.5-flash-image</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/02-botanical-emblem.png" alt="Sponic Garden botanical emblem">
-          <div class="card-body">
-            <h3>Botanical Emblem (v1)</h3>
-            <p>Circular leaf cross-section with vein-to-circuit-trace transition. Sprout at center, vine border detail.</p>
-            <span class="model-tag">gemini-2.5-flash-image</span>
-          </div>
-        </div>
-
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/04-hottub-logo-pro.jpg" alt="Sponic Garden hot tub logo" style="max-height: 400px; object-fit: contain; background: #fff; padding: 1rem;">
-          <div class="card-body">
-            <h3>Hot Tub Logo — Wellness Identity</h3>
-            <p>Wooden barrel-style soaking tubs enveloped by lush tropical plants, ferns, and trailing vines. Steam rising. The thermal wellness pillar made visual.</p>
-            <span class="model-tag">nano-banana-pro (gemini-3-pro-image)</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CONCEPT ILLUSTRATIONS -->
-    <div class="section">
-      <div class="section-label">Concept Illustrations</div>
-      <div class="grid-2">
-
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/03-garden-atrium-hero.png" alt="Garden atrium interior illustration">
-          <div class="card-body">
-            <h3>The Garden Atrium</h3>
-            <p>Glass-roofed atrium with raised planting beds, hanging plants, and members tending herbs together. The core gardening and community experience.</p>
-            <span class="model-tag">gemini-2.5-flash-image</span>
-          </div>
-        </div>
-
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/05-sound-experience-pro.jpg" alt="AI-powered sonic wellness experience">
-          <div class="card-body">
-            <h3>AI-Powered Sonic Wellness</h3>
-            <p>Sound waves as golden flowing lines weaving through botanical space. Speakers hidden in greenery, data traces integrated with plant life. Sound as a living botanical element.</p>
-            <span class="model-tag">nano-banana-pro (gemini-3-pro-image)</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CONSCIOUSNESS CONVERGENCE — WORDMARKS -->
-    <div class="section">
-      <div class="section-label">Consciousness Convergence — Wordmarks</div>
-      <div class="grid-2">
-
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/06-wordmark-consciousness.jpg" alt="Sponic Garden consciousness wordmark — dark">
-          <div class="card-body">
-            <h3>Wordmark — Convergence of Consciousness</h3>
-            <p>Three interwoven layers visible simultaneously: neural network pathways (gold/AI), plant vascular systems (green/botanical), and human dendrites (amber). Dark background. Luminous nodes at convergence points.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/07-wordmark-holographic.jpg" alt="Sponic Garden holographic wordmark">
-          <div class="card-body">
-            <h3>Wordmark — Holographic Bioluminescent</h3>
-            <p>Geometric sans-serif with translucent layers: emerald (plants), electric teal (AI), rose-gold (human). Where all three overlap — luminous white. Apple meets botanical garden meets neuroscience lab.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CONSCIOUSNESS CONVERGENCE — LOGOS -->
-    <div class="section">
-      <div class="section-label">Consciousness Convergence — Logo Marks</div>
-      <div class="grid-2">
-
-        <div class="card">
-          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/08-logo-convergence.jpg" alt="Three consciousness convergence logo" style="background: #fff;">
-          <div class="card-body">
-            <h3>Convergence Sphere</h3>
-            <p>Three elements in a yin-yang arrangement: circuit traces (AI), tree of life (plant), meditation figure (human). Central glow at the point where all three meet.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/09-logo-mandala.jpg" alt="Sacred geometry tree mandala logo" style="background: #fff;">
-          <div class="card-body">
-            <h3>Tree of Consciousness — Sacred Geometry</h3>
-            <p>Circuit-trace branches, DNA helix trunk, hexagonal root network. Ancient and futuristic. Sacred geometry for the age of AI. Works at favicon size.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- JURASSIC PARK FOR PLANTS -->
-    <div class="section">
-      <div class="section-label">Jurassic Park for Plants — Concept Illustrations</div>
-      <div class="grid-2">
-
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/10-jurassic-atrium.jpg" alt="Genetically engineered plant atrium">
-          <div class="card-body">
-            <h3>The Jurassic Atrium</h3>
-            <p>Glass-and-steel greenhouse with genetically engineered plants: bioluminescent monstera veins, fractal ferns, geometric fibonacci flowers in violet and gold. Stylish Polish members in athleisure touch responsive leaves. Warsaw skyline through the glass.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/11-engineered-leaf-macro.jpg" alt="Engineered leaf macro — biology meets circuitry">
-          <div class="card-body">
-            <h3>Engineered Leaf — Macro</h3>
-            <p>Hyper-realistic close-up of a leaf where natural cellular structures transition into circuit-board patterns. Bioluminescent veins carry both chlorophyll and data signals. Water droplets refract the glow. The plant is alive, conscious, and connected.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/12-consciousness-triangle.jpg" alt="Three consciousness convergence — meditation scene">
-          <div class="card-body">
-            <h3>The Consciousness Triangle</h3>
-            <p>Human in meditation surrounded by genetically engineered plants with mathematically perfect helical stems reaching toward them. AI constellation of golden nodes hovers above. Three forms of consciousness — human (amber), plant (green bioluminescence), AI (gold) — converge at the heart center.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All <span class="badge" id="count-all">0</span></button>
+    <button class="filter-btn" data-filter="liked">Liked <span class="badge" id="count-liked">0</span></button>
+    <button class="filter-btn" data-filter="disliked">Disliked <span class="badge" id="count-disliked">0</span></button>
+    <button class="filter-btn" data-filter="selected">Style Direction <span class="badge" id="count-selected">0</span></button>
+    <button class="filter-btn" data-filter="pending">Pending <span class="badge" id="count-pending">0</span></button>
+    <div class="filter-spacer"></div>
+    <button class="export-btn" onclick="exportJSON()">Export JSON</button>
   </div>
 
-    <!-- CLEAN REALISTIC — INVISIBLE AI -->
-    <div class="section">
-      <div class="section-label">Clean Realistic — The AI You Can't See</div>
-      <div class="grid-2">
+  <div class="style-banner" id="styleBanner">
+    <strong>Style Direction:</strong> <span id="styleDirectionName">—</span>
+    <span class="clear-style" onclick="clearStyleDirection()">clear</span>
+  </div>
 
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/15-clean-atrium.jpg" alt="Clean garden club atrium">
-          <div class="card-body">
-            <h3>The Garden Club — Bright & Clean</h3>
-            <p>Airy glass greenhouse, stylish Polish members in organic fashion, lush plants. No visible technology — perfect temperature, light, and sound just happen. The magic is invisible.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/16-clean-sound.jpg" alt="Clean sound experience">
-          <div class="card-body">
-            <h3>Sound Experience — Pure Bliss</h3>
-            <p>Two people in lounge chairs among greenery, eyes closed, immersed in music from invisible sources. Plants lean in subtly. No speakers, no screens, no glowing nodes.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/17-clean-hottub.jpg" alt="Clean hot tub spa">
-          <div class="card-body">
-            <h3>Hot Tub Spa — Invisible Luxury</h3>
-            <p>Wooden barrel tubs among lush greenhouse plants. Peaceful soaking, steam rising, natural light. Everything orchestrated perfectly by something you can't see.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- SONIC VARIATIONS — MUSIC-INFUSED -->
-    <div class="section">
-      <div class="section-label">Sonic Variations — Music as the Lifeblood</div>
-      <div class="grid-2">
-
-        <div class="card card-full">
-          <img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/13-wordmark-sonic.jpg" alt="Sponic Garden sonic wordmark">
-          <div class="card-body">
-            <h3>Wordmark — Sonic Garden</h3>
-            <p>Gold sound waves flow through every letter. Equalizer spectrum patterns grow from the base like roots made of music. Plant tendrils and circuit traces emerge from waveform peaks. You can almost hear the music by looking at it.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/14-logo-sonic.jpg" alt="Sonic consciousness logo mark" style="background: #fff;">
-          <div class="card-body">
-            <h3>Logo — Sonic Consciousness</h3>
-            <p>Central seed-speaker-nucleus radiates sound waves that transform into plant tendrils (left), circuit traces (right), and neural synapses (below). Music as the connecting force between all three consciousnesses.</p>
-            <span class="model-tag">nano-banana-pro</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- SG APP ICONS -->
-    <div class="section">
-      <div class="section-label">App Icons — SG Monogram</div>
-      <div class="grid-2">
-        <div class="card"><img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/18-sg-monogram-leaves.jpg" alt="SG monogram" style="background:#fff;"><div class="card-body"><h3>SG — Serif + Leaves</h3><p>Intertwined S and G with flower bud. Elegant serif.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card"><img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/19-sg-circle-botanical.jpg" alt="SG circle"><div class="card-body"><h3>SG — Circle + Gold Wreath</h3><p>White SG on deep green circle with botanical border.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card"><img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/20-sg-leaf-accent.jpg" alt="SG leaf" style="background:#fff;"><div class="card-body"><h3>SG — Leaf Accent (Minimal)</h3><p>The S curves into a single leaf. Apple-level simplicity.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card"><img class="card-img logo-bg" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/21-sg-ligature-flower.jpg" alt="SG flower" style="background:#fff;"><div class="card-body"><h3>SG — Ligature + Gold Flower</h3><p>Elegant serif ligature with gold flower at junction.</p><span class="model-tag">nano-banana-pro</span></div></div>
-      </div>
-    </div>
-
-    <!-- CLEAN SCENES -->
-    <div class="section">
-      <div class="section-label">Clean Realistic Scenes — More Variations</div>
-      <div class="grid-2">
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/22-clean-yoga.jpg" alt="Greenhouse yoga"><div class="card-body"><h3>Greenhouse Yoga</h3><p>Yoga among plants. Natural light, organic linen athletic wear.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/23-clean-dining.jpg" alt="Garden dining"><div class="card-body"><h3>Garden Dining</h3><p>Harvest table among greenhouse plants. Warm, social.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/24-clean-garden-work.jpg" alt="Gardening"><div class="card-body"><h3>Therapeutic Gardening</h3><p>Hands planting seedlings. Earthy, meditative.</p><span class="model-tag">nano-banana-pro</span></div></div>
-      </div>
-    </div>
-
-    <!-- 5 ARTISTIC STYLES -->
-    <div class="section">
-      <div class="section-label">Wordmark — 5 Artistic Styles</div>
-      <div class="grid-2">
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/25-sonic-watercolor.jpg" alt="Watercolor"><div class="card-body"><h3>Watercolor</h3><p>Flowing wet-on-wet washes. Fern brushwork, textured paper.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/26-sonic-blueprint.jpg" alt="Blueprint"><div class="card-body"><h3>Technical Blueprint</h3><p>Letters as technical drawings with engineering annotations.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/27-sonic-woodcut.jpg" alt="Woodcut"><div class="card-body"><h3>Woodcut / Linocut</h3><p>Bold high-contrast print. Sound waves, Morris-style botanicals.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/28-sonic-neon.jpg" alt="Neon"><div class="card-body"><h3>Neon Signage</h3><p>Photorealistic neon on concrete with trailing plants.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/29-sonic-botanical-plate.jpg" alt="Botanical plate"><div class="card-body"><h3>18th-Century Botanical Plate</h3><p>Letters from pressed specimens. Musical staves. Aged paper.</p><span class="model-tag">nano-banana-pro</span></div></div>
-      </div>
-    </div>
-
-    <!-- BLENDED WORDMARKS -->
-    <div class="section">
-      <div class="section-label">Blended — Botanical + Music + Spa + AI Tech</div>
-      <div class="grid-2">
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/30-blend-luxe-minimal.jpg" alt="Luxe minimal"><div class="card-body"><h3>Luxe Minimal</h3><p>Each letter contains a different brand element: leaf, waveform, water ripple, circuit node, steam.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/33-blend-flowing-lines.jpg" alt="Flowing line"><div class="card-body"><h3>Single Flowing Line</h3><p>One continuous stroke morphing between vine, sine wave, steam wisp, and circuit angle.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/34-blend-polish-modern.jpg" alt="Polish modern"><div class="card-body"><h3>Polish Modern — Textured</h3><p>Each letter has a different material: leaf veins, water droplets, waveforms, pixel grids.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/37-blend-window-v2.jpg" alt="Photo windows"><div class="card-body"><h3>Photo Windows</h3><p>Each letter a cutout revealing: leaves, hot tub, sound waves, AI network, bamboo, ferns.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/39-blend-warsaw-v2.jpg" alt="Warsaw materials"><div class="card-body"><h3>Warsaw Materials</h3><p>Photorealistic textures: leaf, wood, hammered brass, linen, terrazzo, moss, circuit board.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/35-blend-luxe-v2.jpg" alt="Luxe v2"><div class="card-body"><h3>Luxe Minimal v2</h3><p>Per-letter brand elements: leaf curls, waveform bowls, circuit crossbars, steam wisps.</p><span class="model-tag">nano-banana-pro</span></div></div>
-        <div class="card card-full"><img class="card-img" src="https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding/36-blend-organic-v2.jpg" alt="Organic digital v2"><div class="card-body"><h3>Organic → Digital v2</h3><p>Left: organic stems and steam. Right: geometric circuits. Musical waves thread throughout.</p><span class="model-tag">nano-banana-pro</span></div></div>
-      </div>
-    </div>
+  <div class="container" id="gallery"></div>
 
   <footer class="footer">
-    Sponic Garden · Warsaw, 2026 · 39 assets · Generated with Nano Banana Pro (Gemini 3 Pro Image)
+    Sponic Garden · Warsaw, 2026 · Brand Review Tool · Data saved to Supabase (SPGD)
   </footer>
 
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script>
+    const SUPABASE_URL = 'https://aphrrfprbixmhissnjfn.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwaHJyZnByYml4bWhpc3NuamZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5MzA0MjUsImV4cCI6MjA4NTUwNjQyNX0.yYkdQIq97GQgxK7yT2OQEPi5Tt-a7gM45aF8xjSD6wk';
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const IMG_BASE = 'https://alpacaplayhouse.com/rahulio/pages/sponic-garden/branding';
+
+    // All assets with metadata
+    const ASSETS = [
+      // Original logos & wordmarks
+      { id: '01-wordmark-logo', cat: 'wordmark', title: 'Wordmark — Botanical (v1)', desc: 'Elegant serif with vine tendrils and leaf details.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
+      { id: '01-wordmark-v2', cat: 'wordmark', title: 'Wordmark — AI Tech', desc: 'Gold circuit/root network traces through geometric serif.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
+      { id: '02-botanical-emblem', cat: 'logo', title: 'Botanical Emblem (v1)', desc: 'Leaf cross-section with vein-to-circuit transition.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
+      { id: '02-logo-mark-v2', cat: 'logo', title: 'Logo — Roots x Circuits', desc: 'Circuit branches up, roots down, central gold AI node.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
+      { id: '04-hottub-logo-pro', cat: 'logo', title: 'Hot Tub Logo', desc: 'Wooden barrel tubs enveloped by tropical plants.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      // Concept scenes
+      { id: '03-garden-atrium-hero', cat: 'scene', title: 'Garden Atrium (v1)', desc: 'Glass-roofed atrium with members tending herbs.', model: 'gemini-2.5-flash-image', ext: 'png' },
+      { id: '05-sound-experience-pro', cat: 'scene', title: 'Sound Experience', desc: 'Golden sound waves weaving through botanical space.', model: 'nano-banana-pro', ext: 'jpg' },
+      // Consciousness
+      { id: '06-wordmark-consciousness', cat: 'wordmark', title: 'Convergence of Consciousness', desc: 'Neural/plant/human layers on dark background.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '07-wordmark-holographic', cat: 'wordmark', title: 'Holographic Bioluminescent', desc: 'Emerald + teal + rose-gold translucent layers.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '08-logo-convergence', cat: 'logo', title: 'Convergence Sphere', desc: 'Yin-yang: circuit + tree + meditation figure.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      { id: '09-logo-mandala', cat: 'logo', title: 'Sacred Geometry Tree', desc: 'Circuit branches, DNA helix trunk, hex roots.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      // Jurassic
+      { id: '10-jurassic-atrium', cat: 'scene', title: 'Jurassic Atrium', desc: 'Bioluminescent monstera, fractal ferns, fibonacci flowers.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '11-engineered-leaf-macro', cat: 'scene', title: 'Engineered Leaf Macro', desc: 'Biology-to-circuitry transition. Water droplets refract glow.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '12-consciousness-triangle', cat: 'scene', title: 'Consciousness Triangle', desc: 'Meditation among engineered plants, AI constellation above.', model: 'nano-banana-pro', ext: 'jpg' },
+      // Sonic
+      { id: '13-wordmark-sonic', cat: 'wordmark', title: 'Sonic Garden', desc: 'Gold sound waves, equalizer roots, plant/circuit peaks.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '14-logo-sonic', cat: 'logo', title: 'Sonic Consciousness', desc: 'Central seed-speaker radiates sound becoming plants/circuits.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      // Clean realistic
+      { id: '15-clean-atrium', cat: 'scene', title: 'Garden Club — Clean', desc: 'Bright greenhouse, Polish members, invisible technology.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '16-clean-sound', cat: 'scene', title: 'Sound — Pure Bliss', desc: 'Lounge chairs, eyes closed, music from nowhere.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '17-clean-hottub', cat: 'scene', title: 'Hot Tub — Invisible Luxury', desc: 'Barrel tubs, steam, plants, natural light.', model: 'nano-banana-pro', ext: 'jpg' },
+      // SG app icons
+      { id: '18-sg-monogram-leaves', cat: 'app-icon', title: 'SG — Serif + Leaves', desc: 'Intertwined S and G with flower bud.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      { id: '19-sg-circle-botanical', cat: 'app-icon', title: 'SG — Circle + Wreath', desc: 'White SG on green circle, gold botanical border.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      { id: '20-sg-leaf-accent', cat: 'app-icon', title: 'SG — Leaf Accent', desc: 'S curves into single leaf. Apple simplicity.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      { id: '21-sg-ligature-flower', cat: 'app-icon', title: 'SG — Ligature + Flower', desc: 'Serif ligature with gold flower at junction.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      // Clean scenes
+      { id: '22-clean-yoga', cat: 'scene', title: 'Greenhouse Yoga', desc: 'Yoga among plants. Natural light, organic athletic wear.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '23-clean-dining', cat: 'scene', title: 'Garden Dining', desc: 'Harvest table, warm social atmosphere.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '24-clean-garden-work', cat: 'scene', title: 'Therapeutic Gardening', desc: 'Hands planting seedlings. Earthy, meditative.', model: 'nano-banana-pro', ext: 'jpg' },
+      // 5 artistic styles
+      { id: '25-sonic-watercolor', cat: 'artistic-style', title: 'Watercolor', desc: 'Flowing wet-on-wet washes, fern brushwork.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '26-sonic-blueprint', cat: 'artistic-style', title: 'Technical Blueprint', desc: 'Engineering annotations, schematics, navy blue.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '27-sonic-woodcut', cat: 'artistic-style', title: 'Woodcut / Linocut', desc: 'Bold print, Morris-style botanicals, sound waves.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '28-sonic-neon', cat: 'artistic-style', title: 'Neon Signage', desc: 'Photorealistic neon on concrete with trailing plants.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '29-sonic-botanical-plate', cat: 'artistic-style', title: '18th-C Botanical Plate', desc: 'Pressed specimens, musical staves, aged paper.', model: 'nano-banana-pro', ext: 'jpg' },
+      // Blended wordmarks
+      { id: '30-blend-luxe-minimal', cat: 'blended', title: 'Luxe Minimal', desc: 'Per-letter elements: leaf, waveform, water, circuit, steam.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '31-blend-organic-digital', cat: 'blended', title: 'Organic to Digital', desc: 'Left organic, right geometric, musical waves throughout.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '32-blend-greenhouse-tech', cat: 'blended', title: 'Greenhouse Window', desc: 'Letters as windows into the garden world.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '33-blend-flowing-lines', cat: 'blended', title: 'Single Flowing Line', desc: 'One stroke morphing: vine, sine, steam, circuit.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '34-blend-polish-modern', cat: 'blended', title: 'Polish Modern — Textured', desc: 'Each letter different material: leaf, water, waveform, pixel.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '35-blend-luxe-v2', cat: 'blended', title: 'Luxe Minimal v2', desc: 'Leaf curls, waveform bowls, circuit crossbars.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '36-blend-organic-v2', cat: 'blended', title: 'Organic to Digital v2', desc: 'Organic stems and steam to geometric circuits.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '37-blend-window-v2', cat: 'blended', title: 'Photo Windows', desc: 'Each letter a cutout revealing a scene.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '38-blend-line-v2', cat: 'blended', title: 'Flowing Line v2', desc: 'Continuous line: vines, waves, steam, circuits.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '39-blend-warsaw-v2', cat: 'blended', title: 'Warsaw Materials', desc: 'Photorealistic textures: leaf, wood, brass, linen, terrazzo, moss, circuit board.', model: 'nano-banana-pro', ext: 'jpg' },
+    ];
+
+    const CAT_LABELS = {
+      'wordmark': 'Wordmarks',
+      'logo': 'Logo Marks',
+      'scene': 'Concept Scenes',
+      'app-icon': 'App Icons — SG Monogram',
+      'artistic-style': '5 Artistic Styles',
+      'blended': 'Blended — Botanical + Music + Spa + AI',
+    };
+    const CAT_ORDER = ['wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
+
+    let reviews = {}; // asset_id -> review data
+    let currentFilter = 'all';
+
+    // ── Render ──
+    function render() {
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+
+      for (const cat of CAT_ORDER) {
+        const items = ASSETS.filter(a => a.cat === cat);
+        const section = document.createElement('div');
+        section.className = 'section';
+        section.innerHTML = `<div class="section-label">${CAT_LABELS[cat] || cat}</div><div class="grid" id="grid-${cat}"></div>`;
+        gallery.appendChild(section);
+        const grid = section.querySelector('.grid');
+
+        for (const asset of items) {
+          const r = reviews[asset.id] || {};
+          const status = r.status || 'pending';
+          const isStyleDir = r.is_style_direction || false;
+          const comment = r.comment || '';
+
+          // Filter logic
+          let visible = currentFilter === 'all' ||
+            (currentFilter === 'liked' && status === 'liked') ||
+            (currentFilter === 'disliked' && status === 'disliked') ||
+            (currentFilter === 'selected' && isStyleDir) ||
+            (currentFilter === 'pending' && status === 'pending');
+
+          const card = document.createElement('div');
+          card.className = `card ${status} ${isStyleDir ? 'selected' : ''} ${!visible ? 'hidden' : ''}`;
+          card.dataset.assetId = asset.id;
+          card.innerHTML = `
+            <img class="card-img ${asset.logo ? 'logo-fit' : ''}" src="${IMG_BASE}/${asset.id}.${asset.ext}" alt="${asset.title}" loading="lazy" onclick="window.open(this.src)">
+            <div class="card-body">
+              <h3>${asset.title}</h3>
+              <div class="desc">${asset.desc}</div>
+              <div class="model">${asset.model}</div>
+            </div>
+            <div class="card-actions">
+              <button class="action-btn ${status === 'liked' ? 'like-active' : ''}" onclick="setStatus('${asset.id}', 'liked')">
+                ${status === 'liked' ? '&#9989;' : '&#128077;'} Like
+              </button>
+              <button class="action-btn ${status === 'disliked' ? 'dislike-active' : ''}" onclick="setStatus('${asset.id}', 'disliked')">
+                ${status === 'disliked' ? '&#10060;' : '&#128078;'} Pass
+              </button>
+              <button class="action-btn ${isStyleDir ? 'style-active' : ''}" onclick="setStyleDirection('${asset.id}')">
+                ${isStyleDir ? '&#11088;' : '&#127775;'} Use Style
+              </button>
+            </div>
+            <div class="card-comment">
+              <textarea placeholder="Add a comment..." onblur="saveComment('${asset.id}', this.value)" oninput="this.nextElementSibling.classList.remove('show')">${comment}</textarea>
+              <div class="save-indicator">Saved</div>
+            </div>
+          `;
+          grid.appendChild(card);
+        }
+      }
+      updateCounts();
+      updateStyleBanner();
+    }
+
+    function updateCounts() {
+      let all = 0, liked = 0, disliked = 0, selected = 0, pending = 0;
+      for (const a of ASSETS) {
+        all++;
+        const r = reviews[a.id] || {};
+        const s = r.status || 'pending';
+        if (s === 'liked') liked++;
+        else if (s === 'disliked') disliked++;
+        else pending++;
+        if (r.is_style_direction) selected++;
+      }
+      document.getElementById('count-all').textContent = all;
+      document.getElementById('count-liked').textContent = liked;
+      document.getElementById('count-disliked').textContent = disliked;
+      document.getElementById('count-selected').textContent = selected;
+      document.getElementById('count-pending').textContent = pending;
+    }
+
+    function updateStyleBanner() {
+      const banner = document.getElementById('styleBanner');
+      const dirs = ASSETS.filter(a => (reviews[a.id] || {}).is_style_direction);
+      if (dirs.length > 0) {
+        document.getElementById('styleDirectionName').textContent = dirs.map(d => d.title).join(', ');
+        banner.classList.add('visible');
+      } else {
+        banner.classList.remove('visible');
+      }
+    }
+
+    // ── Actions ──
+    async function setStatus(assetId, status) {
+      const current = (reviews[assetId] || {}).status;
+      const newStatus = current === status ? 'pending' : status; // toggle
+      reviews[assetId] = { ...(reviews[assetId] || {}), status: newStatus, reviewed_at: new Date().toISOString() };
+      await upsert(assetId);
+      render();
+      showToast(`${newStatus === 'liked' ? 'Liked' : newStatus === 'disliked' ? 'Passed' : 'Reset'}`);
+    }
+
+    async function setStyleDirection(assetId) {
+      const current = (reviews[assetId] || {}).is_style_direction;
+      // Clear all other style directions first
+      for (const id of Object.keys(reviews)) {
+        if (reviews[id].is_style_direction && id !== assetId) {
+          reviews[id].is_style_direction = false;
+          await upsert(id);
+        }
+      }
+      reviews[assetId] = { ...(reviews[assetId] || {}), is_style_direction: !current, status: !current ? 'liked' : (reviews[assetId]?.status || 'pending'), reviewed_at: new Date().toISOString() };
+      await upsert(assetId);
+      render();
+      const asset = ASSETS.find(a => a.id === assetId);
+      showToast(!current ? `Style direction: ${asset.title}` : 'Style direction cleared');
+    }
+
+    async function clearStyleDirection() {
+      for (const id of Object.keys(reviews)) {
+        if (reviews[id].is_style_direction) {
+          reviews[id].is_style_direction = false;
+          await upsert(id);
+        }
+      }
+      render();
+      showToast('Style direction cleared');
+    }
+
+    async function saveComment(assetId, comment) {
+      reviews[assetId] = { ...(reviews[assetId] || {}), comment: comment.trim(), reviewed_at: new Date().toISOString() };
+      await upsert(assetId);
+      // Show saved indicator
+      const card = document.querySelector(`[data-asset-id="${assetId}"]`);
+      if (card) {
+        const ind = card.querySelector('.save-indicator');
+        if (ind) { ind.classList.add('show'); setTimeout(() => ind.classList.remove('show'), 2000); }
+      }
+    }
+
+    // ── Supabase ──
+    async function upsert(assetId) {
+      const asset = ASSETS.find(a => a.id === assetId);
+      const r = reviews[assetId] || {};
+      const row = {
+        asset_id: assetId,
+        asset_category: asset?.cat || null,
+        asset_url: `${IMG_BASE}/${assetId}.${asset?.ext || 'jpg'}`,
+        status: r.status || 'pending',
+        is_style_direction: r.is_style_direction || false,
+        comment: r.comment || null,
+        model_used: asset?.model || null,
+        reviewed_at: r.reviewed_at || new Date().toISOString(),
+      };
+      const { error } = await sb.from('spgd_brand_reviews').upsert(row, { onConflict: 'asset_id' });
+      if (error) console.error('Upsert error:', error);
+    }
+
+    async function loadReviews() {
+      const { data, error } = await sb.from('spgd_brand_reviews').select('*');
+      if (error) { console.error('Load error:', error); return; }
+      for (const row of (data || [])) {
+        reviews[row.asset_id] = row;
+      }
+    }
+
+    // ── Filter ──
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        render();
+      });
+    });
+
+    // ── Export ──
+    function exportJSON() {
+      const data = ASSETS.map(a => {
+        const r = reviews[a.id] || {};
+        return {
+          asset_id: a.id,
+          category: a.cat,
+          title: a.title,
+          description: a.desc,
+          model: a.model,
+          url: `${IMG_BASE}/${a.id}.${a.ext}`,
+          status: r.status || 'pending',
+          is_style_direction: r.is_style_direction || false,
+          comment: r.comment || null,
+          reviewed_at: r.reviewed_at || null,
+        };
+      });
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = `sponic-garden-brand-review-${new Date().toISOString().slice(0,10)}.json`; a.click();
+      URL.revokeObjectURL(url);
+      showToast('Exported JSON');
+    }
+
+    // ── Toast ──
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 1500);
+    }
+
+    // ── Init ──
+    (async () => {
+      await loadReviews();
+      render();
+    })();
+  </script>
 </body>
 </html>
