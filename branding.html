@@ -231,6 +231,13 @@
       { id: '52-sonics-clean-minimal', cat: 'sonics-wordmark', title: 'Sonics — Clean Minimal', desc: 'Oscilloscope waveform underline. Frequency spectrum bars from baseline.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
       { id: '53-sonics-flowing-vines', cat: 'sonics-wordmark', title: 'Sonics — Flowing Vines', desc: 'Sonic waves that look like both sound and growing vines simultaneously.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
       { id: '54-sonics-bold-contrast', cat: 'sonics-wordmark', title: 'Sonics — Bold Contrast', desc: 'Dramatic golden sonic pulse arc. Heartbeat/seismic energy. Signage-ready.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+
+      // Drawing style variations — realistic, fun, colorful, people having fun
+      { id: 'drawing-v1-atrium-community', cat: 'drawing-style', title: 'Atrium Community', desc: 'Lush atrium, diverse community gardening with music woven into vines. Sonic-botanical fusion.', model: 'gemini-2.5-flash-image', ext: 'png' },
+      { id: 'drawing-v2-wellness-mosaic', cat: 'drawing-style', title: 'Wellness Mosaic', desc: 'Multi-activity scene — yoga, gardening, sauna — with sonic waves morphing into botanical forms.', model: 'gemini-2.5-flash-image', ext: 'png' },
+      { id: 'drawing-v3-bloom-and-sound', cat: 'drawing-style', title: 'Bloom & Sound', desc: 'Photography moment amid dance and thermal pools. Treble clefs as tendrils, speakers as flowers.', model: 'gemini-2.5-flash-image', ext: 'png' },
+      { id: 'drawing-v4-harvest-gathering', cat: 'drawing-style', title: 'Harvest Gathering', desc: 'Community planting, harvest-to-table food hall, instruments growing from stems. Joyful and alive.', model: 'gemini-2.5-flash-image', ext: 'png' },
+      { id: 'drawing-v5-garden-paradise', cat: 'drawing-style', title: 'Garden Paradise', desc: 'Panoramic greenhouse — DJ in living wall, speakers as tropical flowers, circuit glass dissolving into leaf veins.', model: 'gemini-2.5-flash-image', ext: 'png' },
     ];
 
     const CAT_LABELS = {
@@ -244,8 +251,9 @@
       'artistic-style': '5 Artistic Styles',
       'blended': 'Blended — Botanical + Music + Spa + AI',
       'sonics-wordmark': 'Sonics Wordmarks — Sound as Bridge',
+      'drawing-style': 'Drawing Styles — Realistic, Fun, Colorful, People Having Fun',
     };
-    const CAT_ORDER = ['chosen', 'sonics-wordmark', 'swapped-logo', 'style-audition', 'wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
+    const CAT_ORDER = ['chosen', 'drawing-style', 'sonics-wordmark', 'swapped-logo', 'style-audition', 'wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
 
     let reviews = {}; // asset_id -> review data (includes rank_order)
     let currentFilter = 'all';
