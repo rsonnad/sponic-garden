@@ -238,6 +238,27 @@
       { id: 'drawing-v3-bloom-and-sound', cat: 'drawing-style', title: 'Bloom & Sound', desc: 'Photography moment amid dance and thermal pools. Treble clefs as tendrils, speakers as flowers.', model: 'gemini-2.5-flash-image', ext: 'png' },
       { id: 'drawing-v4-harvest-gathering', cat: 'drawing-style', title: 'Harvest Gathering', desc: 'Community planting, harvest-to-table food hall, instruments growing from stems. Joyful and alive.', model: 'gemini-2.5-flash-image', ext: 'png' },
       { id: 'drawing-v5-garden-paradise', cat: 'drawing-style', title: 'Garden Paradise', desc: 'Panoramic greenhouse — DJ in living wall, speakers as tropical flowers, circuit glass dissolving into leaf veins.', model: 'gemini-2.5-flash-image', ext: 'png' },
+
+      // Wordmark fusion variations — botanical-to-digital transition
+      { id: '55-wm-subtle-transition', cat: 'wordmark-fusion', title: 'Subtle Transition', desc: 'Serif with leaf vein texture → circuit accents. Golden vine-to-wire underline.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '56-wm-gradient-morph', cat: 'wordmark-fusion', title: 'Gradient Morph', desc: 'Letters morph L→R: leaf curves → circuit nodes. Olive → teal color shift. Golden waveform baseline.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '57-wm-root-to-wire', cat: 'wordmark-fusion', title: 'Root to Wire', desc: 'Clean text with elaborate underline: roots → mycorrhizal → neural → PCB traces → gold node.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '58-wm-ligature-fusion', cat: 'wordmark-fusion', title: 'Ligature Fusion', desc: 'Custom ligatures: C→G vine-wire bridge, leaf in O, circuit node in D. Olive → gold → teal.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '59-wm-transparent-layer', cat: 'wordmark-fusion', title: 'Transparent Layer', desc: 'Bold type with golden double-exposure overlay: leaf skeleton → circuit board traces.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+
+      // Scene style variations — same greenhouse lounge, 5 visual styles
+      { id: '60-scene-warm-editorial', cat: 'scene-style', title: 'Warm Editorial', desc: 'Hasselblad golden hour. Warsaw 25-40, 60% women. Overgrown plants, grow lights, sensors. Kinfolk quality.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '61-scene-cool-cinematic', cat: 'scene-style', title: 'Cool Cinematic', desc: 'Kodak Portra tones, film grain. Cool blue-green with warm skin. Intimate, contemplative. Sofia Coppola.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '62-scene-bright-scandi', cat: 'scene-style', title: 'Bright Scandinavian', desc: 'High-key natural light, whites and soft greens. Pale oak, white linen. Clean minimal IoT. Cereal Magazine.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '63-scene-moody-evening', cat: 'scene-style', title: 'Moody Evening', desc: 'Tungsten + candlelight + grow light glow. Velvet seating, brass planters, amber sensor LEDs. Soho House.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '64-scene-documentary', cat: 'scene-style', title: 'Sun-Drenched Documentary', desc: 'Midday greenhouse, authentic spontaneous feel. Overexposed highlights, genuine laughter. NatGeo × Wallpaper.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+
+      // Warsaw demo — 5 activities, target demographic
+      { id: '65-warsaw-lounge', cat: 'warsaw-demo', title: 'Greenhouse Lounge', desc: 'Warsaw 25-40, 60% women. Craft cocktails, overgrown monstera, smart planters with LED grow strips.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '66-warsaw-yoga', cat: 'warsaw-demo', title: 'Morning Yoga', desc: 'Warsaw 28-45, 3W 2M. Overgrown ferns, propagation trays under LED grow bars, humidity sensors.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '67-warsaw-dinner', cat: 'warsaw-demo', title: 'Harvest Dinner', desc: 'Warsaw 25-47, 5W 3M. Live-edge walnut table, herb wall, vertical microgreen racks with IoT sensors.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '68-warsaw-hottub', cat: 'warsaw-demo', title: 'Hot Tub Retreat', desc: 'Warsaw 27-38, 3W 1M. Barrel tubs, overgrown philodendron, rockwool starts, temp/humidity probes.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '69-warsaw-gardening', cat: 'warsaw-demo', title: 'Gardening Workshop', desc: 'Warsaw 25-42, 4W 2M. Smart pots, propagation domes, LED panels, plant health dashboard on tablet.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
     ];
 
     const CAT_LABELS = {
@@ -252,8 +273,11 @@
       'blended': 'Blended — Botanical + Music + Spa + AI',
       'sonics-wordmark': 'Sonics Wordmarks — Sound as Bridge',
       'drawing-style': 'Drawing Styles — Realistic, Fun, Colorful, People Having Fun',
+      'wordmark-fusion': 'Wordmark Fusion — Botanical→Digital Transition',
+      'scene-style': 'Scene Style Auditions — Same Scene, 5 Visual Styles',
+      'warsaw-demo': 'Warsaw Demo — Target Demographic (25-47, 60% Women)',
     };
-    const CAT_ORDER = ['chosen', 'drawing-style', 'sonics-wordmark', 'swapped-logo', 'style-audition', 'wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
+    const CAT_ORDER = ['chosen', 'warsaw-demo', 'scene-style', 'wordmark-fusion', 'drawing-style', 'sonics-wordmark', 'swapped-logo', 'style-audition', 'wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
 
     let reviews = {}; // asset_id -> review data (includes rank_order)
     let currentFilter = 'all';
