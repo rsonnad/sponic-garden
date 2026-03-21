@@ -175,17 +175,34 @@
       { id: '37-blend-window-v2', cat: 'blended', title: 'Photo Windows', desc: 'Each letter a cutout revealing a scene.', model: 'nano-banana-pro', ext: 'jpg' },
       { id: '38-blend-line-v2', cat: 'blended', title: 'Flowing Line v2', desc: 'Continuous line: vines, waves, steam, circuits.', model: 'nano-banana-pro', ext: 'jpg' },
       { id: '39-blend-warsaw-v2', cat: 'blended', title: 'Warsaw Materials', desc: 'Photorealistic textures: leaf, wood, brass, linen, terrazzo, moss, circuit board.', model: 'nano-banana-pro', ext: 'jpg' },
+      // Chosen wordmark
+      { id: '00-chosen-wordmark', cat: 'chosen', title: 'Adopted Wordmark (Original)', desc: 'SPONIC=botanical/organic, GARDEN=digital/circuit. The current champion.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      // Swapped logo variations (SPONIC=digital, GARDEN=botanical)
+      { id: '45-logo-swapped-clean', cat: 'swapped-logo', title: 'Swapped — Clean', desc: 'SPONIC=teal circuit, GARDEN=olive botanical. Golden waveform bridge.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      { id: '46-logo-swapped-flowing', cat: 'swapped-logo', title: 'Swapped — Flowing', desc: 'Circuit traces to vine tendrils. Musical staves weave between.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      { id: '47-logo-swapped-minimal', cat: 'swapped-logo', title: 'Swapped — Minimal', desc: 'Sans-serif circuit SPONIC, serif botanical GARDEN. Musical notes float.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      { id: '48-logo-swapped-gradient', cat: 'swapped-logo', title: 'Swapped — Gradient', desc: 'Cool teal gradually warms to green. Technology grows into life.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      { id: '49-logo-swapped-bold', cat: 'swapped-logo', title: 'Swapped — Bold', desc: 'Heavy tech SPONIC, heavy botanical GARDEN. Dramatic contrast. Signage-ready.', model: 'nano-banana-pro', ext: 'jpg', logo: true },
+      // Style auditions — 5 realistic illustration styles
+      { id: '40-style-editorial-photo', cat: 'style-audition', title: 'Editorial Photography', desc: 'Kinfolk/Cereal magazine style. Medium format, film grain, shallow DoF.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '41-style-architectural-render', cat: 'style-audition', title: 'Architectural Render', desc: 'MIR/Luxigon quality CGI. God rays, volumetric mist, silhouette figures.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '42-style-soft-watercolor-real', cat: 'style-audition', title: 'Realistic Watercolor', desc: 'Hand-painted with pen-and-ink linework. Warm, human, artisanal.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '43-style-ink-botanical', cat: 'style-audition', title: 'Botanical Ink Drawing', desc: '19th-century scientific illustration style. Crosshatching, stippling.', model: 'nano-banana-pro', ext: 'jpg' },
+      { id: '44-style-gouache-modern', cat: 'style-audition', title: 'Modern Gouache', desc: 'Monocle/NYT editorial illustration. Flat brushstrokes, bold shapes.', model: 'nano-banana-pro', ext: 'jpg' },
     ];
 
     const CAT_LABELS = {
-      'wordmark': 'Wordmarks',
+      'chosen': 'Current Champion',
+      'swapped-logo': 'Logo — Swapped (SPONIC=Digital, GARDEN=Botanical)',
+      'wordmark': 'Wordmarks (Original Direction)',
       'logo': 'Logo Marks',
+      'style-audition': 'Style Auditions — Choose the Pitch Deck Style',
       'scene': 'Concept Scenes',
       'app-icon': 'App Icons — SG Monogram',
       'artistic-style': '5 Artistic Styles',
       'blended': 'Blended — Botanical + Music + Spa + AI',
     };
-    const CAT_ORDER = ['wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
+    const CAT_ORDER = ['chosen', 'swapped-logo', 'style-audition', 'wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
 
     let reviews = {}; // asset_id -> review data
     let currentFilter = 'all';
