@@ -260,6 +260,13 @@
       { id: '67-warsaw-dinner', cat: 'warsaw-demo', title: 'Harvest Dinner', desc: 'Warsaw 25-47, 5W 3M. Live-edge walnut table, herb wall, vertical microgreen racks with IoT sensors.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
       { id: '68-warsaw-hottub', cat: 'warsaw-demo', title: 'Hot Tub Retreat', desc: 'Warsaw 27-38, 3W 1M. Barrel tubs, overgrown philodendron, rockwool starts, temp/humidity probes.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
       { id: '69-warsaw-gardening', cat: 'warsaw-demo', title: 'Gardening Workshop', desc: 'Warsaw 25-42, 4W 2M. Smart pots, propagation domes, LED panels, plant health dashboard on tablet.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+
+      // Moody Evening — adopted style applied to all 5 Warsaw scenes
+      { id: '70-moody-lounge', cat: 'moody-evening', title: 'Moody — Lounge', desc: 'Warsaw 25-40, 3W 2M. Dusk greenhouse, velvet seating, craft cocktails. Amber sensor LEDs in foliage like fireflies. Candlelight + grow light glow.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '71-moody-yoga', cat: 'moody-evening', title: 'Moody — Yoga', desc: 'Warsaw 28-45, 3W 2M. Evening warrior pose. Beeswax candles, purple LED grow bars, amber humidity sensors. Mist catching grow light.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '72-moody-dinner', cat: 'moody-evening', title: 'Moody — Dinner', desc: 'Warsaw 25-47, 5W 3M. Night harvest dinner. Herbs lit from below, vertical microgreen racks in purple-pink. Amber IoT LEDs. Candlelight warmth.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '73-moody-hottub', cat: 'moody-evening', title: 'Moody — Hot Tub', desc: 'Warsaw 27-38, 3W 1M. Evening barrel tubs, backlit philodendron. Grow lights on rockwool starts. Amber sensor probes. Steam + candlelight.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: '74-moody-gardening', cat: 'moody-evening', title: 'Moody — Gardening', desc: 'Warsaw 25-42, 4W 2M. Evening workshop under dramatic grow lights. Jasmine canopy, amber sensor LEDs. Tablet glow. Meditative, beautiful.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
     ];
 
     const CAT_LABELS = {
@@ -277,8 +284,9 @@
       'wordmark-fusion': 'Wordmark Fusion — Botanical→Digital Transition',
       'scene-style': 'Scene Style Auditions — Same Scene, 5 Visual Styles',
       'warsaw-demo': 'Warsaw Demo — Target Demographic (25-47, 60% Women)',
+      'moody-evening': 'Moody Evening — Adopted Style, All Scenes (Polish 25-47, Stylish Athleisure)',
     };
-    const CAT_ORDER = ['chosen', 'warsaw-demo', 'scene-style', 'wordmark-fusion', 'drawing-style', 'sonics-wordmark', 'swapped-logo', 'style-audition', 'wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
+    const CAT_ORDER = ['chosen', 'moody-evening', 'warsaw-demo', 'scene-style', 'wordmark-fusion', 'drawing-style', 'sonics-wordmark', 'swapped-logo', 'style-audition', 'wordmark', 'logo', 'app-icon', 'scene', 'artistic-style', 'blended'];
 
     let reviews = {}; // asset_id -> review data (includes rank_order)
     let currentFilter = 'all';
