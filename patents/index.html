@@ -494,12 +494,14 @@
       <p>Current ambient music systems in commercial, hospitality, and public spaces use static playlists, manual DJ control, or simple time-based scheduling. They cannot adapt to who is present, what they're doing, or whether they're enjoying the current selection.</p>
 
       <h3>Solution</h3>
-      <p>An integrated system comprising four modules:</p>
+      <p>An integrated system comprising six modules:</p>
       <ol>
         <li><strong>Vision Module</strong> &mdash; Camera(s) with AI for person detection, demographic estimation, activity recognition, behavioral feedback detection, and gesture recognition</li>
         <li><strong>Audio Intelligence Engine</strong> &mdash; Software that selects audio from a tagged library based on weighted vision inputs, with reinforcement learning from audience reactions</li>
         <li><strong>Audio Output System</strong> &mdash; Zone-aware speakers with smooth transitions and noise-adaptive volume</li>
-        <li><strong>Companion App</strong> &mdash; Push notifications for explicit feedback, song requests, gesture-like controls for accessibility</li>
+        <li><strong>QR-Based Companion Interface</strong> &mdash; No-install web interface accessed via QR code; location-gated so it only works when your phone is physically in the monitored space. Provides feedback buttons, song requests, and virtual gesture controls</li>
+        <li><strong>AI Voice Onboarding</strong> &mdash; Synthesized audio announcements that explain how to interact with the system ("Wave your hand to skip, scan the QR code to control from your phone"). Frequency adapts to crowd turnover; tone matches venue type</li>
+        <li><strong>Flexible Processing Architecture</strong> &mdash; AI inference runs on-device (edge), on remote servers (cloud), or in hybrid mode. Edge maximizes privacy (no video leaves the camera); cloud enables more powerful models; hybrid balances both</li>
       </ol>
 
       <h3>Key Innovation: The Behavioral Feedback Loop</h3>
@@ -562,17 +564,35 @@
         The system of Claim 1, further comprising gesture recognition wherein detected persons can control audio playback attributes including volume and track selection through hand gestures recognized by the computer vision module.
       </div>
 
-      <h3>Dependent Claims</h3>
+      <div class="claim">
+        <div class="claim-label">Claim 4 &mdash; QR-Based Interface</div>
+        The system of Claim 1, further comprising a location-gated web interface accessible via a QR code displayed in the physical space, wherein a user's mobile device accesses the interface only when the device's geolocation matches the monitored space, and the interface provides audio feedback controls and playback information.
+      </div>
+
+      <div class="claim">
+        <div class="claim-label">Claim 5 &mdash; AI Voice Onboarding</div>
+        The system of Claim 1, further comprising an AI-synthesized voice module that generates and plays spoken announcements informing persons of available interaction methods, wherein announcement frequency adapts based on detected crowd turnover.
+      </div>
+
+      <div class="claim">
+        <div class="claim-label">Claim 6 &mdash; Flexible Processing Architecture</div>
+        The system of Claim 1, wherein the computer vision module operates in at least one of: (a) edge processing mode on the image capture device; (b) cloud processing mode via remote server; or (c) hybrid mode combining time-critical on-device inference with deeper remote analysis.
+      </div>
+
+      <h3>Dependent Claims (7&ndash;18)</h3>
       <ul>
-        <li><strong>Claim 4:</strong> Positive feedback includes dancing, rhythmic movement, head-nodding, remaining in area, smiling, clapping</li>
-        <li><strong>Claim 5:</strong> Negative feedback includes covering ears, leaving area, grimacing, gesturing disapproval</li>
-        <li><strong>Claim 6:</strong> Mobile app with push notifications for explicit feedback</li>
-        <li><strong>Claim 7:</strong> Reinforcement learning using behavioral feedback as reward signals</li>
-        <li><strong>Claim 8:</strong> Per-location preference profiles that improve over time</li>
-        <li><strong>Claim 9:</strong> Multiple independent camera-speaker zones within a single venue</li>
-        <li><strong>Claim 10:</strong> Volume adjustment based on ambient noise and crowd density</li>
-        <li><strong>Claim 11:</strong> Demographic estimation (age range, group size) weighting genre/energy preferences</li>
-        <li><strong>Claim 12:</strong> Temporal context (time of day, day of week, calendar events)</li>
+        <li><strong>Claim 7:</strong> Positive feedback includes dancing, rhythmic movement, head-nodding, remaining in area, smiling, clapping</li>
+        <li><strong>Claim 8:</strong> Negative feedback includes covering ears, leaving area, grimacing, gesturing disapproval</li>
+        <li><strong>Claim 9:</strong> QR web interface enables song requests, genre preferences, and virtual gesture controls without native app install</li>
+        <li><strong>Claim 10:</strong> Reinforcement learning using behavioral feedback as reward signals</li>
+        <li><strong>Claim 11:</strong> Per-location preference profiles that improve over time</li>
+        <li><strong>Claim 12:</strong> Multiple independent camera-speaker zones within a single venue</li>
+        <li><strong>Claim 13:</strong> Volume adjustment based on ambient noise and crowd density</li>
+        <li><strong>Claim 14:</strong> Demographic estimation (age range, group size) weighting genre/energy preferences</li>
+        <li><strong>Claim 15:</strong> Temporal context (time of day, day of week, calendar events)</li>
+        <li><strong>Claim 16:</strong> AI voice onboarding adapts tone/vocabulary to match venue type (casual, professional, energetic)</li>
+        <li><strong>Claim 17:</strong> Edge processing mode preserves privacy by ensuring no video data leaves the capture device</li>
+        <li><strong>Claim 18:</strong> System transitions between processing modes based on bandwidth, latency, and privacy policy</li>
       </ul>
     </div>
 
@@ -581,109 +601,138 @@
       <h2>4. Detailed Description Outline</h2>
       <p>The provisional application should include these sections (each 2&ndash;5 pages):</p>
       <ol>
-        <li><strong>Field of the Invention</strong> &mdash; Ambient audio systems; computer vision; machine learning</li>
+        <li><strong>Field of the Invention</strong> &mdash; Ambient audio systems; computer vision; machine learning; edge computing</li>
         <li><strong>Background</strong> &mdash; Limitations of current systems (static playlists, manual DJ, Muzak-style)</li>
         <li><strong>Summary of Invention</strong></li>
-        <li><strong>System Architecture</strong> &mdash; Block diagrams of hardware + software</li>
-        <li><strong>Vision Module Detail</strong> &mdash; Pose estimation, face analysis, gesture recognition pipelines</li>
+        <li><strong>System Architecture</strong> &mdash; Block diagrams, edge/cloud/hybrid processing topology</li>
+        <li><strong>Vision Module Detail</strong> &mdash; Pose estimation, face analysis, gesture recognition, edge/cloud deployment</li>
         <li><strong>Audio Engine Detail</strong> &mdash; Music tagging schema, selection algorithm, RL approach</li>
         <li><strong>Feedback Loop Detail</strong> &mdash; Signal classification, weighting, feedback integration</li>
         <li><strong>Gesture Control Detail</strong> &mdash; Supported gestures, recognition pipeline, conflict resolution</li>
-        <li><strong>Companion App Detail</strong> &mdash; Push notification flow, explicit feedback integration</li>
+        <li><strong>QR-Based Companion Interface</strong> &mdash; QR generation, location-gating via geolocation API, no-install web UX</li>
+        <li><strong>AI Voice Onboarding System</strong> &mdash; Voice synthesis, announcement templates, crowd-turnover-adaptive frequency</li>
+        <li><strong>Processing Architecture Detail</strong> &mdash; Edge (Jetson/Coral), cloud, hybrid modes; privacy-preserving inference</li>
         <li><strong>Use Cases</strong> &mdash; Restaurant, retail, gym, hotel lobby, co-working, outdoor venue</li>
-        <li><strong>Figures</strong> &mdash; System block diagram, feedback loop flowchart, gesture vocabulary, UI mockups</li>
+        <li><strong>Figures</strong> &mdash; System block diagram, feedback loop flowchart, gesture vocabulary, QR interface mockup, edge/cloud topology, voice onboarding sequence</li>
       </ol>
     </div>
 
-    <!-- ═══ COST ESTIMATE ═══ -->
+    <!-- ═══ FILING PLAN ═══ -->
     <div class="section-card">
-      <h2>5. Cost Estimate</h2>
+      <h2>5. Filing Plan &mdash; Self-File as Micro Entity</h2>
 
-      <h3>Quick View</h3>
+      <h3>Total Cost</h3>
       <div class="cost-row">
         <div class="cost-card">
-          <div class="cost-label">Self-File (DIY)</div>
+          <div class="cost-label">USPTO Filing Fee</div>
           <div class="cost-amount">$65</div>
-          <div class="cost-desc">USPTO fee only (micro entity)</div>
+          <div class="cost-desc">Micro entity provisional</div>
         </div>
         <div class="cost-card">
-          <div class="cost-label">Patent Agent</div>
-          <div class="cost-amount">$2K&ndash;$4.5K</div>
-          <div class="cost-desc">Good for establishing priority</div>
+          <div class="cost-label">Figures / Diagrams</div>
+          <div class="cost-amount">$0</div>
+          <div class="cost-desc">Self-created</div>
         </div>
         <div class="cost-card">
-          <div class="cost-label">Quality Attorney</div>
-          <div class="cost-amount">$5K&ndash;$12K</div>
-          <div class="cost-desc">Best for licensing / investors</div>
-        </div>
-        <div class="cost-card">
-          <div class="cost-label">Full Non-Provisional</div>
-          <div class="cost-amount">$10K&ndash;$25K+</div>
-          <div class="cost-desc">Within 12 months of provisional</div>
+          <div class="cost-label">Total</div>
+          <div class="cost-amount">$65</div>
+          <div class="cost-desc">Establishes priority date</div>
         </div>
       </div>
 
-      <h3>USPTO Filing Fees (2025&ndash;2026)</h3>
+      <h3>Micro Entity Qualification</h3>
+      <ul class="checklist">
+        <li>Named as inventor on fewer than 4 previously filed US patent applications</li>
+        <li>Gross income in prior year did not exceed ~$228,954 (3x median household income)</li>
+        <li>Not assigned rights to an entity exceeding that income threshold</li>
+      </ul>
+
+      <h3>What You Need to Prepare</h3>
+      <ol>
+        <li><strong>Specification document</strong> &mdash; This document expanded to 15&ndash;30 pages of prose</li>
+        <li><strong>Formal figures</strong> (minimum 6):
+          <ul>
+            <li>Fig. 1: System architecture block diagram</li>
+            <li>Fig. 2: Behavioral feedback loop flowchart</li>
+            <li>Fig. 3: Gesture vocabulary reference</li>
+            <li>Fig. 4: QR interface and location-gating sequence</li>
+            <li>Fig. 5: Edge/cloud/hybrid processing topology</li>
+            <li>Fig. 6: AI voice onboarding sequence diagram</li>
+          </ul>
+        </li>
+        <li><strong>Cover sheet</strong> (USPTO Form SB/16)</li>
+        <li><strong>Micro entity certification</strong> (USPTO Form SB/15A)</li>
+        <li><strong>Application Data Sheet</strong> (USPTO Form ADS)</li>
+      </ol>
+
+      <h3>Filing Steps</h3>
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Entity Type</th><th>Provisional Filing Fee</th></tr>
+            <tr><th>Step</th><th>Action</th><th>Where</th></tr>
           </thead>
           <tbody>
-            <tr><td>Micro entity</td><td><strong>$65</strong></td></tr>
-            <tr><td>Small entity</td><td><strong>$130</strong></td></tr>
-            <tr><td>Large entity</td><td><strong>$320</strong></td></tr>
+            <tr><td>1</td><td>Create USPTO account</td><td>patentcenter.uspto.gov</td></tr>
+            <tr><td>2</td><td>Certify micro entity status (Form SB/15A)</td><td>Included in filing</td></tr>
+            <tr><td>3</td><td>Upload specification as PDF</td><td>Patent Center &rarr; New Provisional</td></tr>
+            <tr><td>4</td><td>Upload figures as PDF</td><td>Same submission</td></tr>
+            <tr><td>5</td><td>Fill out Application Data Sheet</td><td>Online form</td></tr>
+            <tr><td>6</td><td>Pay $65 filing fee</td><td>Credit card or deposit account</td></tr>
+            <tr><td>7</td><td>Receive filing receipt + application number</td><td>Email confirmation</td></tr>
+            <tr><td>8</td><td>Mark as <strong>"Patent Pending"</strong></td><td>Immediately</td></tr>
           </tbody>
         </table>
-      </div>
-
-      <h3>Attorney / Agent Fees</h3>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>Service</th><th>DIY</th><th>Budget Attorney</th><th>Quality Attorney</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Provisional drafting</td><td>$0</td><td>$1,500&ndash;$3,000</td><td>$4,000&ndash;$8,000</td></tr>
-            <tr><td>Claims strategy</td><td>$0</td><td>included</td><td>$1,000&ndash;$2,000</td></tr>
-            <tr><td>Figures / drawings</td><td>$0&ndash;$200</td><td>$300&ndash;$800</td><td>$500&ndash;$1,500</td></tr>
-            <tr><td>Filing + admin</td><td>$0</td><td>$200&ndash;$500</td><td>$300&ndash;$500</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Recommended Path</h3>
-      <div class="verdict">
-        <strong>Smart Bootstrap ($2,500&ndash;$4,000):</strong> Use this document as foundation &rarr; hire a patent agent to refine claims &rarr; file as micro entity ($65) &rarr; 12 months to decide on non-provisional.
       </div>
 
       <h3>Timeline</h3>
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Milestone</th><th>Timeframe</th></tr>
+            <tr><th>Milestone</th><th>Target</th></tr>
           </thead>
           <tbody>
-            <tr><td>Finalize provisional application</td><td>1&ndash;3 weeks</td></tr>
-            <tr><td>File provisional with USPTO</td><td>Same day (online)</td></tr>
+            <tr><td>Finalize specification + figures</td><td>April 2026</td></tr>
+            <tr><td>File provisional with USPTO</td><td>Same day as finalization</td></tr>
             <tr><td>Priority date established</td><td>Filing date</td></tr>
-            <tr><td><strong>Deadline to file non-provisional</strong></td><td><strong>12 months from filing</strong></td></tr>
-            <tr><td>Non-provisional examination</td><td>18&ndash;36 months after filing</td></tr>
+            <tr><td>Decision point: convert or abandon</td><td>~10 months from filing</td></tr>
+            <tr><td><strong>Non-provisional deadline</strong></td><td><strong>12 months from filing</strong></td></tr>
           </tbody>
         </table>
       </div>
+
+      <h3>Future Costs (If Converting to Non-Provisional)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Micro Entity Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Non-provisional filing fee</td><td>~$400</td></tr>
+            <tr><td>Search fee</td><td>~$165</td></tr>
+            <tr><td>Examination fee</td><td>~$195</td></tr>
+            <tr><td>Attorney (recommended at this stage)</td><td>$5,000&ndash;$15,000</td></tr>
+            <tr><td>Issue fee (if granted)</td><td>~$300</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>$6,000&ndash;$16,000</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.85rem; color:var(--text-muted);">These costs are only relevant if you decide to convert within the 12-month window.</p>
     </div>
 
     <!-- ═══ NEXT STEPS ═══ -->
     <div class="section-card">
-      <h2>6. Next Steps</h2>
+      <h2>6. Self-File Roadmap</h2>
       <ul class="checklist">
-        <li>Decide: self-file vs. hire patent agent/attorney</li>
-        <li>Expand Detailed Description into full prose (15&ndash;30 pages)</li>
-        <li>Create formal figures and diagrams</li>
-        <li>Conduct deeper patent search on Google Patents / USPTO PAIR</li>
-        <li>Consider international filing (PCT) if global protection desired</li>
-        <li>File provisional application</li>
+        <li>Verify micro entity qualification (checklist above)</li>
+        <li>Create USPTO Patent Center account</li>
+        <li>Expand Detailed Description into full specification prose (15&ndash;30 pages)</li>
+        <li>Create formal figures (minimum 6 &mdash; see list above)</li>
+        <li>Conduct deeper prior art search on Google Patents / USPTO PAIR</li>
+        <li>Convert specification + figures to PDF</li>
+        <li>Complete Form SB/16 (cover), SB/15A (micro entity cert), and ADS</li>
+        <li>File provisional via Patent Center &mdash; pay $65</li>
+        <li>Save filing receipt and application number securely</li>
+        <li>Set calendar reminder: 10 months from filing &rarr; non-provisional decision</li>
         <li>Begin building prototype (strengthens patent, demonstrates reduction to practice)</li>
       </ul>
     </div>

@@ -72,11 +72,25 @@ An integrated system comprising:
    - Smooth transitions between tracks/soundscapes
    - Volume adjustment responsive to ambient noise levels and crowd size
 
-4. **Companion App (Optional)** — Mobile application that:
-   - Sends push notifications asking "How's the vibe?" for explicit feedback
-   - Allows song requests or genre preferences
-   - Displays current track info
-   - Enables remote gesture-like controls for accessibility
+4. **Companion Interface (QR-Based, No App Install Required)** — A web-based control interface accessed via QR code displayed in the monitored space:
+   - Users scan QR code with their phone camera — opens a lightweight web app (no download required)
+   - Location-gated access: the interface only activates if the user's device location matches the monitored space (prevents remote trolling)
+   - Provides real-time feedback buttons ("How's the vibe?"), song requests, genre preferences
+   - Displays current track info and upcoming queue
+   - Enables virtual gesture-like controls (swipe for volume, tap for skip) for accessibility
+   - Optional push notifications for users who opt in
+
+5. **AI Voice Onboarding System** — Synthesized audio announcements that:
+   - Play a brief AI-generated voice introduction before or between music selections explaining how to interact with the system
+   - Announce available controls: "Wave your hand to skip, thumbs up to like this track, or scan the QR code on the wall to control from your phone"
+   - Adapt announcement frequency based on crowd turnover (new arrivals trigger onboarding, regulars hear it less)
+   - Use natural, contextually appropriate voice synthesis (e.g., casual for a bar, professional for a hotel lobby)
+
+6. **Flexible Processing Architecture** — The AI vision processing supports multiple deployment modes:
+   - **Edge processing**: AI inference runs directly on the camera hardware (e.g., NVIDIA Jetson, Google Coral) for lowest latency and maximum privacy — no video leaves the device
+   - **Cloud/server processing**: Video frames are sent to remote servers for processing, enabling more powerful models and centralized fleet management
+   - **Hybrid mode**: Edge handles real-time gesture recognition and person detection, while cloud handles deeper demographic analysis and model updates
+   - The system dynamically selects processing mode based on available bandwidth, latency requirements, and privacy policy configuration
 
 ### 2C. Key Innovation: The Behavioral Feedback Loop
 
@@ -133,17 +147,29 @@ A method for dynamically selecting ambient audio for a physical space, comprisin
 **Claim 3 (Gesture Control):**
 The system of Claim 1, further comprising gesture recognition wherein detected persons can control audio playback attributes including volume and track selection through hand gestures recognized by the computer vision module.
 
+**Claim 4 (QR-Based Interface):**
+The system of Claim 1, further comprising a location-gated web interface accessible via a QR code displayed in the physical space, wherein a user's mobile device accesses the interface only when the device's geolocation matches the monitored space, and the interface provides audio feedback controls and playback information.
+
+**Claim 5 (AI Voice Onboarding):**
+The system of Claim 1, further comprising an AI-synthesized voice module that generates and plays spoken announcements informing persons in the monitored space of available interaction methods, wherein the frequency of announcements is adapted based on detected crowd turnover.
+
+**Claim 6 (Flexible Processing Architecture):**
+The system of Claim 1, wherein the computer vision module is configured to operate in at least one of: (a) edge processing mode where inference executes on the image capture device; (b) cloud processing mode where captured frames are transmitted to a remote server for inference; or (c) hybrid mode where time-critical inference executes on the device and deeper analysis executes on a remote server.
+
 ### Dependent Claims (Framework)
 
-- Claim 4: ...wherein positive feedback includes at least one of: dancing, rhythmic movement, head-nodding, remaining in the monitored area, smiling, and clapping.
-- Claim 5: ...wherein negative feedback includes at least one of: covering ears, leaving the monitored area, grimacing, and gesturing disapproval.
-- Claim 6: ...further comprising a mobile application that delivers push notifications soliciting explicit feedback from persons in the monitored space.
-- Claim 7: ...wherein the audio selection engine employs reinforcement learning, treating behavioral feedback as reward signals.
-- Claim 8: ...wherein the system maintains per-location preference profiles that improve over time.
-- Claim 9: ...wherein multiple camera-speaker zones operate independently within a single venue.
-- Claim 10: ...wherein the system adjusts volume based on detected ambient noise level and crowd density.
-- Claim 11: ...wherein demographic estimation includes approximate age range and group size, used to weight genre and energy level preferences.
-- Claim 12: ...wherein the system considers temporal context including time of day, day of week, and calendar events.
+- Claim 7: ...wherein positive feedback includes at least one of: dancing, rhythmic movement, head-nodding, remaining in the monitored area, smiling, and clapping.
+- Claim 8: ...wherein negative feedback includes at least one of: covering ears, leaving the monitored area, grimacing, and gesturing disapproval.
+- Claim 9: ...wherein the QR-based web interface further enables song requests, genre preferences, and virtual gesture controls without requiring a native application install.
+- Claim 10: ...wherein the audio selection engine employs reinforcement learning, treating behavioral feedback as reward signals.
+- Claim 11: ...wherein the system maintains per-location preference profiles that improve over time.
+- Claim 12: ...wherein multiple camera-speaker zones operate independently within a single venue.
+- Claim 13: ...wherein the system adjusts volume based on detected ambient noise level and crowd density.
+- Claim 14: ...wherein demographic estimation includes approximate age range and group size, used to weight genre and energy level preferences.
+- Claim 15: ...wherein the system considers temporal context including time of day, day of week, and calendar events.
+- Claim 16: ...wherein the AI voice onboarding adapts its tone and vocabulary to match the venue type (casual, professional, energetic).
+- Claim 17: ...wherein edge processing mode preserves privacy by ensuring no video data leaves the image capture device.
+- Claim 18: ...wherein the system transitions between processing modes based on available network bandwidth, latency thresholds, and configured privacy policies.
 
 ---
 
@@ -151,81 +177,103 @@ The system of Claim 1, further comprising gesture recognition wherein detected p
 
 The provisional application should include these sections (each 2-5 pages):
 
-1. **Field of the Invention** — Ambient audio systems; computer vision; machine learning
+1. **Field of the Invention** — Ambient audio systems; computer vision; machine learning; edge computing
 2. **Background** — Limitations of current ambient music systems (static playlists, manual DJ, Muzak-style services)
 3. **Summary of Invention** — Section 2B above, expanded
-4. **System Architecture** — Block diagrams showing hardware + software components
-5. **Vision Module Detail** — Models used (pose estimation, face analysis, gesture recognition), processing pipeline
+4. **System Architecture** — Block diagrams showing hardware + software components, edge vs. cloud vs. hybrid processing topology
+5. **Vision Module Detail** — Models used (pose estimation, face analysis, gesture recognition), processing pipeline, edge/cloud deployment options
 6. **Audio Engine Detail** — Music tagging schema, selection algorithm, reinforcement learning approach
 7. **Feedback Loop Detail** — How positive/negative signals are classified, weighted, and fed back
 8. **Gesture Control Detail** — Supported gestures, recognition pipeline, conflict resolution
-9. **Companion App Detail** — Push notification flow, explicit feedback integration
-10. **Use Cases** — Restaurant, retail store, gym, hotel lobby, co-working space, outdoor venue
-11. **Figures** — System block diagram, feedback loop flowchart, gesture vocabulary, UI mockups
+9. **QR-Based Companion Interface** — QR code generation, location-gating via geolocation API, web interface UX, feedback collection, no-install access model
+10. **AI Voice Onboarding System** — Voice synthesis pipeline, announcement content templates, crowd-turnover-adaptive frequency, venue-type tone matching
+11. **Processing Architecture Detail** — Edge (Jetson/Coral), cloud, and hybrid modes; bandwidth detection; privacy-preserving edge inference; model update distribution
+12. **Use Cases** — Restaurant, retail store, gym, hotel lobby, co-working space, outdoor venue
+13. **Figures** — System block diagram, feedback loop flowchart, gesture vocabulary, QR interface mockup, edge/cloud topology diagram, voice onboarding sequence
 
 ---
 
-## 5. Cost Estimate
+## 5. Filing Plan — Self-File as Micro Entity
 
-### 5A. USPTO Filing Fees (2025-2026)
+### 5A. Micro Entity Qualification
 
-| Fee | Micro Entity | Small Entity | Large Entity |
-|-----|-------------|-------------|-------------|
-| Provisional application filing | $65 | $130 | $320 |
+You qualify as a micro entity if ALL of the following are true:
+- [ ] You have not been named as inventor on more than 4 previously filed US patent applications
+- [ ] Your gross income in the prior year did not exceed ~$228,954 (3x US median household income)
+- [ ] You have not assigned, granted, or conveyed (and are not obligated to do so) any rights in the invention to an entity with gross income exceeding that threshold
 
-**You likely qualify as micro entity** if: fewer than 4 previously filed patent applications, and gross income under ~$228K (3x median household income).
+### 5B. Total Cost
 
-### 5B. Attorney / Patent Agent Fees
+| Item | Cost |
+|------|------|
+| USPTO provisional filing fee (micro entity) | **$65** |
+| Figures/diagrams (self-created) | $0 |
+| Total | **$65** |
 
-| Service | DIY | Budget Attorney | Quality Patent Attorney |
-|---------|-----|-----------------|------------------------|
-| Provisional drafting | $0 | $1,500 - $3,000 | $4,000 - $8,000 |
-| Claims strategy | $0 | included | $1,000 - $2,000 |
-| Figures / drawings | $0 - $200 | $300 - $800 | $500 - $1,500 |
-| Filing + admin | $0 | $200 - $500 | $300 - $500 |
+### 5C. What You Need to Prepare
 
-### 5C. Total Estimated Costs
+1. **Specification document** (this document, expanded to 15-30 pages of prose)
+2. **Formal figures** (minimum 3-5):
+   - Fig. 1: System architecture block diagram
+   - Fig. 2: Behavioral feedback loop flowchart
+   - Fig. 3: Gesture vocabulary reference
+   - Fig. 4: QR interface and location-gating sequence
+   - Fig. 5: Edge/cloud/hybrid processing topology
+   - Fig. 6: AI voice onboarding sequence diagram
+3. **Cover sheet** (USPTO Form SB/16 — Provisional Application for Patent)
+4. **Micro entity certification** (USPTO Form SB/15A)
+5. **Application Data Sheet** (USPTO Form ADS)
 
-| Path | Cost Range | Notes |
-|------|-----------|-------|
-| **Self-file (DIY)** | $65 - $320 | Just USPTO fee. Risk: weak claims, harder to convert to non-provisional |
-| **Budget patent agent** | $2,000 - $4,500 | Good for establishing priority date. Adequate for provisional |
-| **Quality patent attorney** | $5,000 - $12,000 | Best protection. Recommended if you plan to convert to non-provisional or seek licensing/investors |
-| **Full non-provisional (later)** | $10,000 - $25,000+ | Filed within 12 months of provisional. Includes examination |
+### 5D. Filing Steps
 
-### 5D. Recommended Path
-
-**Option A — Smart Bootstrap ($2,500 - $4,000):**
-1. Use this document as the foundation
-2. Hire a patent agent (not full attorney) to refine claims and draft formal provisional
-3. File as micro entity ($65)
-4. You have 12 months to decide whether to convert to non-provisional
-
-**Option B — Self-File First ($65 - $320):**
-1. Expand this document into a full provisional specification (15-30 pages + figures)
-2. File directly with USPTO to establish priority date
-3. Hire attorney later if you decide to pursue non-provisional
+| Step | Action | Where |
+|------|--------|-------|
+| 1 | Create a USPTO account | https://patentcenter.uspto.gov |
+| 2 | Certify micro entity status (Form SB/15A) | Included in filing |
+| 3 | Upload specification as PDF | Patent Center → New Provisional |
+| 4 | Upload figures as PDF | Same submission |
+| 5 | Fill out Application Data Sheet | Online form |
+| 6 | Pay $65 filing fee | Credit card or deposit account |
+| 7 | Receive filing receipt with application number | Email confirmation |
+| 8 | You can now mark as **"Patent Pending"** | Immediately |
 
 ### 5E. Timeline
 
-| Milestone | Timeframe |
-|-----------|-----------|
-| Finalize provisional application | 1-3 weeks |
-| File provisional with USPTO | Same day (online filing) |
+| Milestone | Date |
+|-----------|------|
+| Finalize specification prose + figures | Target: April 2026 |
+| File provisional with USPTO | Same day as finalization |
 | Priority date established | Filing date |
 | **Deadline to file non-provisional** | **12 months from filing** |
-| Non-provisional examination | 18-36 months after filing |
+| Decision point: convert, abandon, or hire attorney | ~10 months from filing |
+
+### 5F. Future Costs (If Converting to Non-Provisional)
+
+| Item | Micro Entity Cost |
+|------|-------------------|
+| Non-provisional filing fee | ~$400 |
+| Search fee | ~$165 |
+| Examination fee | ~$195 |
+| Attorney to draft non-provisional (recommended) | $5,000 - $15,000 |
+| Issue fee (if granted) | ~$300 |
+| **Total non-provisional (if pursued)** | **$6,000 - $16,000** |
+
+These costs are only relevant if you decide to convert within the 12-month window.
 
 ---
 
-## 6. Next Steps
+## 6. Next Steps (Self-File Roadmap)
 
-- [ ] Decide: self-file vs. hire patent agent/attorney
-- [ ] Expand Section 4 (Detailed Description) into full prose
-- [ ] Create formal figures/diagrams
-- [ ] Conduct deeper patent search on Google Patents / USPTO PAIR
-- [ ] Consider international filing (PCT) if global protection desired
-- [ ] File provisional application
+- [ ] Verify micro entity qualification (Section 5A checklist)
+- [ ] Create USPTO Patent Center account at https://patentcenter.uspto.gov
+- [ ] Expand Section 4 (Detailed Description) into full specification prose (15-30 pages)
+- [ ] Create formal figures/diagrams (minimum 6 — see Section 5C)
+- [ ] Conduct deeper prior art search on Google Patents / USPTO PAIR for final confidence
+- [ ] Convert specification + figures to PDF format
+- [ ] Complete Form SB/16 (cover sheet), SB/15A (micro entity cert), and ADS
+- [ ] File provisional application via Patent Center — pay $65
+- [ ] Save filing receipt and application number securely
+- [ ] Set calendar reminder: 10 months from filing → decide on non-provisional conversion
 - [ ] Begin building prototype (strengthens patent and demonstrates reduction to practice)
 
 ---
