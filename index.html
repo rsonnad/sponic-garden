@@ -667,7 +667,7 @@
     </svg>
 
     <div class="hero-content">
-      <img src="branding/00-chosen-wordmark.jpg" alt="Sponic Garden" class="hero-logo">
+      <img src="branding/logo-stacked-transparent.png" alt="Sponic Garden" class="hero-logo">
       <h1 style="position:absolute;left:-9999px;">Sponic Garden</h1>
       <!-- Vine underline -->
       <svg class="vine-underline" viewBox="0 0 200 12" xmlns="http://www.w3.org/2000/svg">
@@ -1470,33 +1470,7 @@
     <span data-site-version>v260321.21 6:27a</span>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <script>
-    // Load champion wordmark from Supabase — uses __global_champion__ pointer
-    (async () => {
-      try {
-        const sb = window.supabase.createClient(
-          'https://aphrrfprbixmhissnjfn.supabase.co',
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwaHJyZnByYml4bWhpc3NuamZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5MzA0MjUsImV4cCI6MjA4NTUwNjQyNX0.yYkdQIq97GQgxK7yT2OQEPi5Tt-a7gM45aF8xjSD6wk'
-        );
-        // Read the global champion pointer
-        const { data } = await sb.from('spgd_brand_reviews')
-          .select('comment')
-          .eq('asset_id', '__global_champion__')
-          .single();
-        if (data?.comment) {
-          const id = data.comment;
-          const heroImg = document.querySelector('.hero-logo');
-          if (heroImg) {
-            const img = new Image();
-            img.onload = () => { heroImg.src = img.src; };
-            img.onerror = () => { heroImg.src = `branding/${id}.jpg`; };
-            img.src = `branding/${id}.png`;
-          }
-        }
-      } catch (e) { /* silently fall back to static logo */ }
-    })();
-  </script>
+  <!-- Logo is now a static transparent PNG — no dynamic swap needed -->
   <script type="module">
     import { initPersonalPage } from '/shared/personal-page-shell.js';
     initPersonalPage();
