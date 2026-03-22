@@ -250,6 +250,12 @@
       { id: '70-indigo-var-purple-gold', cat: 'sonics-wordmark', title: 'Purple Gold — Regal Fusion', desc: 'Single-line. Royal purple SPONIC with violet AI nodes fuses through iridescent shimmer into sunflower gold GARDEN with wheat and seed pods.', model: 'nano-banana-pro', ext: 'png', logo: true },
       { id: '71-indigo-var-forest-copper', cat: 'sonics-wordmark', title: 'Forest Copper — Aged Premium', desc: 'Single-line. Dark forest SPONIC with copper patina circuits, sage GARDEN with aged copper botanical details. Oak leaves, ivy, mature plants.', model: 'nano-banana-pro', ext: 'png', logo: true },
       { id: '72-indigo-var-pink-lime', cat: 'sonics-wordmark', title: 'Pink Lime — Startup Energy', desc: 'Single-line. Electric pink SPONIC with neon-glow AI circuits fuses into bright lime GARDEN with energetic young sprout botanicals.', model: 'nano-banana-pro', ext: 'png', logo: true },
+      // Slate Minimal v2 — futuristic font variations with different color palettes
+      { id: '73-slate-var-arctic-blue', cat: 'sonics-wordmark', title: 'Arctic Blue — Futuristic Corporate', desc: 'Two-line. Ice blue futuristic SPONIC with sharp angular AI circuit patterns, deep navy GARDEN with frost-tipped botanical details. Arctic precision meets deep sea nature.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
+      { id: '74-slate-var-amber-charcoal', cat: 'sonics-wordmark', title: 'Amber Charcoal — Warm Tech', desc: 'Two-line. Charcoal futuristic SPONIC with amber AI accents, warm olive GARDEN with golden botanical engravings. Warm sophistication.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
+      { id: '75-slate-var-violet-sage', cat: 'sonics-wordmark', title: 'Violet Sage — Biotech Elegance', desc: 'Two-line. Deep violet futuristic SPONIC with holographic AI patterns, sage green GARDEN with lavender-tinted botanicals. Biotech elegance.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
+      { id: '76-slate-var-teal-rust', cat: 'sonics-wordmark', title: 'Teal Rust — Industrial Garden', desc: 'Two-line. Bright teal futuristic SPONIC with geometric AI circuits, rust/terracotta GARDEN with dried botanical elements. Industrial meets greenhouse.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
+      { id: '77-slate-var-midnight-lime', cat: 'sonics-wordmark', title: 'Midnight Lime — Night Garden', desc: 'Two-line. Midnight black futuristic SPONIC with electric lime AI accents, deep forest GARDEN with bioluminescent botanical details. Night garden tech.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
 
       // Drawing style variations — realistic, fun, colorful, people having fun
       { id: 'drawing-v1-atrium-community', cat: 'drawing-style', title: 'Atrium Community', desc: 'Lush atrium, diverse community gardening with music woven into vines. Sonic-botanical fusion.', model: 'gemini-2.5-flash-image', ext: 'png' },
@@ -526,12 +532,19 @@
       const [elevated] = items.splice(currentIdx, 1);
       items.unshift(elevated);
       for (let i = 0; i < items.length; i++) {
-        reviews[items[i].id] = { ...(reviews[items[i].id] || {}), rank_order: i, reviewed_at: new Date().toISOString() };
+        const isChampion = i === 0;
+        reviews[items[i].id] = {
+          ...(reviews[items[i].id] || {}),
+          rank_order: i,
+          // Champion gets status 'liked' so homepage picks it up
+          ...(isChampion ? { status: 'liked' } : {}),
+          reviewed_at: new Date().toISOString()
+        };
         await upsert(items[i].id);
       }
       render();
       const asset = ASSETS.find(a => a.id === assetId);
-      showToast(`👑 ${asset.title} is now Champion`);
+      showToast(`👑 ${asset.title} is now Champion — homepage updated`);
     }
 
     async function clearStyleDirection() {
@@ -576,8 +589,23 @@
         reviewed_at: new Date().toISOString(),
       };
       await sb.from('spgd_brand_reviews').upsert(row, { onConflict: 'asset_id' });
+      // Also insert into image_gen_jobs so the worker picks it up
+      const jobRow = {
+        prompt: prompt,
+        source_image_url: asset ? imgUrl(asset) : null,
+        status: 'pending',
+        model: asset?.model || 'gemini-2.5-flash-image',
+        metadata: JSON.stringify({
+          source: 'spgd_brand_review',
+          asset_id: assetId,
+          asset_category: asset?.cat || null,
+          regen_prompt: prompt,
+        }),
+      };
+      const { error: jobErr } = await sb.from('image_gen_jobs').insert(jobRow);
+      if (jobErr) console.error('Job insert error:', jobErr);
       if (genBtn) { genBtn.textContent = '⏳ Queued'; genBtn.classList.add('saved'); setTimeout(() => { genBtn.textContent = 'NewGen'; genBtn.classList.remove('saved'); }, 8000); }
-      showToast('Generation queued — Gemini will generate in ~2 min');
+      showToast(jobErr ? 'Review saved but generation failed — check console' : 'Generation queued — Gemini will generate in ~2 min');
       render();
       startStatusPolling();
     }
