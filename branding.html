@@ -77,6 +77,10 @@
     .card-body h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.15rem; }
     .card-body .desc { font-size: 0.78rem; color: var(--text-dim); line-height: 1.45; }
     .card-body .model { font-size: 0.65rem; color: var(--text-muted); margin-top: 0.3rem; }
+    .card-body .created { font-size: 0.62rem; color: var(--text-muted); margin-top: 0.15rem; }
+    .card-body .prompt-link { font-size: 0.62rem; color: var(--blue, #1d4ed8); cursor: help; text-decoration: underline dotted; position: relative; }
+    .card-body .prompt-link:hover .prompt-tooltip { display: block; }
+    .prompt-tooltip { display: none; position: absolute; bottom: 1.4rem; left: 0; right: -8rem; background: #1a2412; color: #e8f0e0; padding: 0.6rem 0.8rem; border-radius: 8px; font-size: 0.72rem; line-height: 1.4; z-index: 200; box-shadow: 0 4px 20px rgba(0,0,0,0.3); max-width: 380px; white-space: pre-wrap; word-break: break-word; pointer-events: none; }
 
     /* Action buttons — stacked vertically */
     .card-actions { display: flex; flex-direction: column; gap: 0.3rem; padding: 0.5rem 1rem; border-top: 1px solid var(--border-light); background: #fafdf7; }
@@ -158,6 +162,45 @@
     const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     const IMG_BASE = 'https://sponicgarden.com/branding';
     function imgUrl(asset) { return `${IMG_BASE}/${asset.id}.${asset.ext}`; }
+
+    // Creation date mapping — derived from git history
+    const CREATED_DATES = {
+      // Wave 1: Initial assets (01-24)
+      '01-': '2026-03-01', '02-': '2026-03-01', '03-': '2026-03-01', '04-': '2026-03-02', '05-': '2026-03-02',
+      '06-': '2026-03-03', '07-': '2026-03-03', '08-': '2026-03-03', '09-': '2026-03-03',
+      '10-': '2026-03-04', '11-': '2026-03-04', '12-': '2026-03-04',
+      '13-': '2026-03-05', '14-': '2026-03-05', '15-': '2026-03-05', '16-': '2026-03-05', '17-': '2026-03-05',
+      '18-': '2026-03-06', '19-': '2026-03-06', '20-': '2026-03-06', '21-': '2026-03-06', '22-': '2026-03-06',
+      '23-': '2026-03-06', '24-': '2026-03-06',
+      // Wave 2: Artistic + Blended (25-39)
+      '25-': '2026-03-08', '26-': '2026-03-08', '27-': '2026-03-08', '28-': '2026-03-08', '29-': '2026-03-08',
+      '30-': '2026-03-09', '31-': '2026-03-09', '32-': '2026-03-09', '33-': '2026-03-09', '34-': '2026-03-09',
+      '35-': '2026-03-10', '36-': '2026-03-10', '37-': '2026-03-10', '38-': '2026-03-10', '39-': '2026-03-10',
+      // Wave 3: Style auditions + Swapped + Chosen (40-49, 00)
+      '40-': '2026-03-11', '41-': '2026-03-11', '42-': '2026-03-11', '43-': '2026-03-11', '44-': '2026-03-11',
+      '45-': '2026-03-12', '46-': '2026-03-12', '47-': '2026-03-12', '48-': '2026-03-12', '49-': '2026-03-12',
+      '00-': '2026-03-12',
+      // Wave 4: Sonics wordmarks (50-54)
+      '50-': '2026-03-14', '51-': '2026-03-14', '52-': '2026-03-14', '53-': '2026-03-14', '54-': '2026-03-14',
+      // Wave 5: AI fusion wordmarks (55-72)
+      '55-': '2026-03-17', '56-': '2026-03-17', '57-': '2026-03-17', '58-': '2026-03-17', '59-': '2026-03-17',
+      '60-': '2026-03-18', '61-': '2026-03-18', '62-': '2026-03-18', '63-': '2026-03-18', '64-': '2026-03-18',
+      '65-': '2026-03-19', '66-': '2026-03-19', '67-': '2026-03-19', '68-': '2026-03-19', '69-': '2026-03-19',
+      '70-': '2026-03-20', '71-': '2026-03-20', '72-': '2026-03-20',
+      // Wave 6: Slate variations (73-77)
+      '73-': '2026-03-21', '74-': '2026-03-21', '75-': '2026-03-21', '76-': '2026-03-21', '77-': '2026-03-21',
+      // Drawings
+      'drawing-': '2026-03-15',
+      // Scene/Warsaw/Moody (60-74 in scene-style, warsaw-demo, moody-evening cats use different prefix matching)
+      '90-': '2026-03-16', '91-': '2026-03-16', '92-': '2026-03-16', '93-': '2026-03-16', '94-': '2026-03-16',
+      '95-': '2026-03-16', '96-': '2026-03-16', '97-': '2026-03-16', '98-': '2026-03-16', '99-': '2026-03-16',
+    };
+    function getCreatedDate(assetId) {
+      for (const [prefix, date] of Object.entries(CREATED_DATES)) {
+        if (assetId.startsWith(prefix)) return date;
+      }
+      return null;
+    }
 
     // All assets with metadata
     const ASSETS = [
@@ -420,6 +463,8 @@
               <h3>${asset.title}</h3>
               <div class="desc">${asset.desc}</div>
               <div class="model">${asset.model} · ${rankInfo.text}</div>
+              ${getCreatedDate(asset.id) ? `<div class="created">Created: ${getCreatedDate(asset.id)}</div>` : ''}
+              ${asset.desc ? `<span class="prompt-link">View prompt<span class="prompt-tooltip">${asset.desc}</span></span>` : ''}
             </div>
             <div class="card-actions">
               <button class="action-btn ${status === 'liked' ? 'like-active' : ''}" onclick="setStatus('${asset.id}', 'liked')">
