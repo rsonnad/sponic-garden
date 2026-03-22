@@ -327,10 +327,12 @@
     function getRankedAssets(cat) {
       const items = ASSETS.filter(a => a.cat === cat);
       return items.sort((a, b) => {
-        // Newest first by created_at (reverse chronological)
-        const ca = reviews[a.id]?.created_at || '1970-01-01';
-        const cb = reviews[b.id]?.created_at || '1970-01-01';
-        if (ca !== cb) return cb.localeCompare(ca);
+        const ra = reviews[a.id], rb = reviews[b.id];
+        // If both have created_at, sort reverse chronological
+        if (ra?.created_at && rb?.created_at && ra.created_at !== rb.created_at) {
+          return rb.created_at.localeCompare(ra.created_at);
+        }
+        // Unreviewed items: higher array index = newer = shown first
         return ASSETS.indexOf(b) - ASSETS.indexOf(a);
       });
     }
