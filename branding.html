@@ -236,6 +236,12 @@
 
     // All assets with metadata
     const ASSETS = [
+      // SPONIC GARDENS orchid v3 — improved prompts (115-119)
+      { id: '119-wm-gardens-v3-elegant', cat: 'wordmark', batch: 'gardens-orchid-v3', title: 'Gardens v3 — Elegant Refined', desc: 'Polished botanical illustration style orchids, precise blue digital elements, thinner elegant gold waves.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '118-wm-gardens-v3-balanced', cat: 'wordmark', batch: 'gardens-orchid-v3', title: 'Gardens v3 — Balanced', desc: 'Perfectly balanced visual weight between SPONIC and GARDENS. Bold, clean, highly legible.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '117-wm-gardens-v3-wider', cat: 'wordmark', batch: 'gardens-orchid-v3', title: 'Gardens v3 — Wider Spacing', desc: 'Generous letter spacing for maximum legibility. Orchids enhance rather than obscure letterforms.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '116-wm-gardens-v3-vibrant', cat: 'wordmark', batch: 'gardens-orchid-v3', title: 'Gardens v3 — Vibrant Orchid', desc: 'Richer saturated orchid colors — deeper purples, vivid magentas, bright oranges.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '115-wm-gardens-v3-exact', cat: 'wordmark', batch: 'gardens-orchid-v3', title: 'Gardens v3 — Exact Match', desc: 'Closest recreation of original with GARDENS. Same font, colors, layout, gold wave lines.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
       // SPONIC GARDENS orchid-waveform wordmarks (110-114)
       { id: '114-wm-gardens-orchid-gradient', cat: 'wordmark', batch: 'gardens-orchid', title: 'Gardens Orchid — Gradient Blend', desc: 'Digital-to-botanical metamorphosis flowing left to right. Blue waveforms blend into orchids across all letters.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
       { id: '113-wm-gardens-orchid-minimal', cat: 'wordmark', batch: 'gardens-orchid', title: 'Gardens Orchid — Minimal', desc: 'Refined version with lighter blue, fewer statement blooms, single delicate gold wave line.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
@@ -509,7 +515,8 @@
 
     // Section labels — keyed by batch or cat
     const CAT_LABELS = {
-      'gardens-orchid': 'SPONIC GARDENS — Orchid Waveform Variations (Latest)',
+      'gardens-orchid-v3': 'SPONIC GARDENS — Orchid Waveform v3 (Latest)',
+      'gardens-orchid': 'SPONIC GARDENS — Orchid Waveform v2',
       'gardens-botanical': 'SPONIC GARDENS — Botanical Circuit Variations',
       'flowing-vines': 'Flowing Vines — Colorful Botanical Wordmarks',
       'chosen': 'Current Champion',
