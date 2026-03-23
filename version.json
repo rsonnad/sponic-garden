@@ -1,12 +1,12 @@
 {
-  "version": "v260323.01",
+  "version": "v260323.01 11:07a",
   "release": 1,
-  "sha": "15c123d",
-  "fullSha": "15c123ddf9756b1a9749ec7cc171a37d612f0d77",
+  "sha": "86a9085",
+  "fullSha": "86a9085c1ac4a64735b765278679084557f6543c",
   "actor": "rsonnad",
-  "source": "local-bootstrap",
-  "model": "o4.6",
-  "machine": "local",
-  "pushedAt": "2026-03-23T16:00:00Z",
-  "commits": []
+  "source": "github-main-push",
+  "model": "ci",
+  "machine": "runnervm46oaq",
+  "pushedAt": "2026-03-23 16:07:10+00",
+  "commits": [{"sha":"86a9085","message":"feat: port version display system from alpacapps","author":"Rahul"}]
 }
