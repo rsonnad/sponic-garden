@@ -1,12 +1,12 @@
 {
-  "version": "v260323.04 11:28a",
-  "release": 4,
-  "sha": "87c32ad",
-  "fullSha": "87c32adb1ff305f00fd207fd725971393d8ac205",
+  "version": "v260323.05 11:28a",
+  "release": 5,
+  "sha": "2fc8965",
+  "fullSha": "2fc89657eb5200c79bcd43e1cf95ba25cf6875f7",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervm46oaq",
-  "pushedAt": "2026-03-23 16:28:06+00",
-  "commits": [{"sha":"87c32ad","message":"branding: add 7 SPONIC GARDENS wordmark variations","author":"Rahul"}]
+  "pushedAt": "2026-03-23 16:28:50+00",
+  "commits": [{"sha":"2fc8965","message":"fix: add version badge to all sub-pages","author":"Rahul"}]
 }
