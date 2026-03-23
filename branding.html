@@ -195,6 +195,9 @@
       '73-': '2026-03-21', '74-': '2026-03-21', '75-': '2026-03-21', '76-': '2026-03-21', '77-': '2026-03-21',
       // Drawings
       'drawing-': '2026-03-15',
+      // Section Drawing Shootout (Gemini vs MiniMax)
+      'scene-01': '2026-03-22', 'scene-02': '2026-03-22', 'scene-03': '2026-03-22',
+      'scene-04': '2026-03-22', 'scene-05': '2026-03-22', 'scene-06': '2026-03-22',
       // Scene/Warsaw/Moody (60-74 in scene-style, warsaw-demo, moody-evening cats use different prefix matching)
       '90-': '2026-03-16', '91-': '2026-03-16', '92-': '2026-03-16', '93-': '2026-03-16', '94-': '2026-03-16',
       '95-': '2026-03-16', '96-': '2026-03-16', '97-': '2026-03-16', '98-': '2026-03-16', '99-': '2026-03-16',
@@ -376,6 +379,21 @@
       { id: '94-vines-data-succulent', cat: 'flowing-vines', title: 'Flowing Vines — Data Flow × Succulent', desc: 'SPONIC with data streams and binary. GARDEN with Fibonacci succulents, echeveria, lithops. Digital meets geometric nature.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
       { id: '94-vines-quantum-moss', cat: 'flowing-vines', title: 'Flowing Vines — Quantum × Moss Garden', desc: 'SPONIC with quantum orbital patterns. GARDEN with mosses, lichens, mushrooms, air plants. Ancient meets quantum.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
       { id: '94-vines-satellite-vine', cat: 'flowing-vines', title: 'Flowing Vines — Satellite × Wild Vine', desc: 'SPONIC with IoT sensor/satellite icons. GARDEN with climbing vines, wisteria, clematis, jasmine. Network meets nature.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+
+      // Section Illustrations — Gemini vs MiniMax Drawing Style Shootout
+      // Artistic semi-realistic drawing style (NOT photographic). Health-inspired people, correct body proportions.
+      { id: 'scene-01-community-music-gemini', cat: 'section-drawing', title: 'Community & Music — Gemini', desc: 'Evening atrium gathering. Acoustic duo, health-conscious people mingling with wine glasses. Vertical gardens, pendant lamps, data viz screens in greenery. Warm golden hour.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: 'scene-01-community-music-minimax', cat: 'section-drawing', title: 'Community & Music — MiniMax', desc: 'Evening atrium gathering. Acoustic duo, health-conscious people mingling with wine glasses. Vertical gardens, pendant lamps, data viz screens in greenery. Warm golden hour.', model: 'minimax-image-01', ext: 'jpg' },
+      { id: 'scene-02-food-market-gemini', cat: 'section-drawing', title: 'Food Market — Gemini', desc: 'Bright greenhouse marketplace. Artisan vendors with organic produce, fresh juices, plant-based foods. Diverse healthy people browsing. Herb gardens in displays.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: 'scene-02-food-market-minimax', cat: 'section-drawing', title: 'Food Market — MiniMax', desc: 'Bright greenhouse marketplace. Artisan vendors with organic produce, fresh juices, plant-based foods. Diverse healthy people browsing. Herb gardens in displays.', model: 'minimax-image-01', ext: 'jpg' },
+      { id: 'scene-03-gardening-gemini', cat: 'section-drawing', title: 'Community Garden — Gemini', desc: 'People tending indoor-outdoor garden with raised beds. Planting seedlings, harvesting greens. Subtly engineered plants. Modern irrigation. Morning dew.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: 'scene-03-gardening-minimax', cat: 'section-drawing', title: 'Community Garden — MiniMax', desc: 'People tending indoor-outdoor garden with raised beds. Planting seedlings, harvesting greens. Subtly engineered plants. Modern irrigation. Morning dew.', model: 'minimax-image-01', ext: 'jpg' },
+      { id: 'scene-04-fitness-gemini', cat: 'section-drawing', title: 'Wellness & Fitness — Gemini', desc: 'Group yoga in sun-filled atrium. Floor-to-ceiling windows, garden view. Bamboo floors, stone walls. Plants framing the space. Proper anatomical proportions.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: 'scene-04-fitness-minimax', cat: 'section-drawing', title: 'Wellness & Fitness — MiniMax', desc: 'Group yoga in sun-filled atrium. Floor-to-ceiling windows, garden view. Bamboo floors, stone walls. Plants framing the space. Proper anatomical proportions.', model: 'minimax-image-01', ext: 'jpg' },
+      { id: 'scene-05-thermal-spa-gemini', cat: 'section-drawing', title: 'Thermal & Spa — Gemini', desc: 'Outdoor hot tub and cold plunge. Tropical plants, natural stone. People relaxing in water, steam rising. Loungers. Evening landscape lighting, stars through glass roof.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: 'scene-05-thermal-spa-minimax', cat: 'section-drawing', title: 'Thermal & Spa — MiniMax', desc: 'Outdoor hot tub and cold plunge. Tropical plants, natural stone. People relaxing in water, steam rising. Loungers. Evening landscape lighting, stars through glass roof.', model: 'minimax-image-01', ext: 'jpg' },
+      { id: 'scene-06-sound-experience-gemini', cat: 'section-drawing', title: 'Sound & Atmosphere — Gemini', desc: 'Immersive listening room with acoustic panels and speakers. People in ergonomic chairs, eyes closed, experiencing spatial audio. Sound waves as flowing lines. Botanical accents.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
+      { id: 'scene-06-sound-experience-minimax', cat: 'section-drawing', title: 'Sound & Atmosphere — MiniMax', desc: 'Immersive listening room with acoustic panels and speakers. People in ergonomic chairs, eyes closed, experiencing spatial audio. Sound waves as flowing lines. Botanical accents.', model: 'minimax-image-01', ext: 'jpg' },
     ];
 
     const CAT_LABELS = {
@@ -396,8 +414,9 @@
       'warsaw-demo': 'Warsaw Demo — Target Demographic (25-47, 60% Women)',
       'moody-evening': 'Moody Evening — Adopted Style, All Scenes (Polish 25-47, Stylish Athleisure)',
       'logo-fusion': 'Logo Auditions — Botanical × Digital Fusion (Pick a Champion)',
+      'section-drawing': 'Section Illustrations — Gemini vs MiniMax Drawing Style Shootout',
     };
-    const CAT_ORDER = ['flowing-vines', 'chosen', 'sonics-wordmark', 'logo-fusion', 'moody-evening', 'warsaw-demo', 'scene-style', 'wordmark-fusion', 'drawing-style', 'swapped-logo', 'style-audition', 'blended', 'artistic-style', 'scene', 'app-icon', 'logo', 'wordmark'];
+    const CAT_ORDER = ['section-drawing', 'flowing-vines', 'chosen', 'sonics-wordmark', 'logo-fusion', 'moody-evening', 'warsaw-demo', 'scene-style', 'wordmark-fusion', 'drawing-style', 'swapped-logo', 'style-audition', 'blended', 'artistic-style', 'scene', 'app-icon', 'logo', 'wordmark'];
 
     let reviews = {}; // asset_id -> review data (includes rank_order)
     let currentFilter = 'all';
