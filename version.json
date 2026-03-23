@@ -1,12 +1,12 @@
 {
-  "version": "v260323.05 11:28a",
-  "release": 5,
-  "sha": "2fc8965",
-  "fullSha": "2fc89657eb5200c79bcd43e1cf95ba25cf6875f7",
+  "version": "v260323.06 11:32a",
+  "release": 6,
+  "sha": "b89c19b",
+  "fullSha": "b89c19b8986d07b13290847552682ed63d532d91",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervm46oaq",
-  "pushedAt": "2026-03-23 16:28:50+00",
-  "commits": [{"sha":"2fc8965","message":"fix: add version badge to all sub-pages","author":"Rahul"}]
+  "pushedAt": "2026-03-23 16:32:35+00",
+  "commits": [{"sha":"b89c19b","message":"branding: move wordmark section to top of page","author":"Rahul"}]
 }
