@@ -236,20 +236,20 @@
 
     // All assets with metadata
     const ASSETS = [
-      // SPONIC GARDENS orchid-waveform wordmarks (110-114) — reverse chrono
-      { id: '114-wm-gardens-orchid-gradient', cat: 'wordmark', title: 'Gardens Orchid — Gradient Blend', desc: 'Digital-to-botanical metamorphosis flowing left to right. Blue waveforms blend into orchids across all letters.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '113-wm-gardens-orchid-minimal', cat: 'wordmark', title: 'Gardens Orchid — Minimal', desc: 'Refined version with lighter blue, fewer statement blooms, single delicate gold wave line.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '112-wm-gardens-orchid-dark', cat: 'wordmark', title: 'Gardens Orchid — Dark Mode', desc: 'Dark background with electric blue SPONIC, jewel-toned luminous orchids in GARDENS, glowing gold waves.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '111-wm-gardens-orchid-lush', cat: 'wordmark', title: 'Gardens Orchid — Lush', desc: 'Extra-dense orchids, butterflies, musical notes. Every letter of GARDENS bursts with botanical life.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '110-wm-gardens-orchid-faithful', cat: 'wordmark', title: 'Gardens Orchid — Faithful Recreation', desc: 'Direct recreation of orchid-waveform wordmark with GARDENS. Blue digital SPONIC, orchid-filled GARDENS, gold wave lines.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      // SPONIC GARDENS wordmarks (100-106) — reverse chrono
-      { id: '106-wm-gardens-biotech', cat: 'wordmark', title: 'Gardens — Biotech Emphasis', desc: 'DNA helix + vine tendrils on SPONIC, hexagonal molecular structures + circuit traces on GARDENS. EKG/biometric gold waveform.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '105-wm-gardens-stacked', cat: 'wordmark', title: 'Gardens — Stacked Layout', desc: 'Two-line: SPONIC above, GARDENS below. Gold sound wave divider with botanical/circuit intertwining.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '104-wm-gardens-gradient', cat: 'wordmark', title: 'Gardens — Gradient Fusion', desc: 'Continuous botanical-to-digital gradient flowing across both words. Vine → waveform → circuit in one unbroken wave.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '103-wm-gardens-minimal', cat: 'wordmark', title: 'Gardens — Minimalist Refined', desc: 'Clean, thin letterforms with sparse botanical accents. Single sine wave. Luxury brand feel.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '102-wm-gardens-dark', cat: 'wordmark', title: 'Gardens — Dark Mode', desc: 'Charcoal background with bioluminescent botanical elements and neon teal circuit traces. Glowing gold waveform.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '101-wm-gardens-botanical', cat: 'wordmark', title: 'Gardens — Enhanced Botanical', desc: 'Amplified lush ferns, leaves, and vines. Leaf shapes emerge from circuit traces. Prominent layered gold waveform.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
-      { id: '100-wm-gardens-faithful', cat: 'wordmark', title: 'Gardens — Faithful Recreation', desc: 'Direct recreation of original wordmark with GARDENS. Same typography, proportions, botanical/circuit split.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      // SPONIC GARDENS orchid-waveform wordmarks (110-114)
+      { id: '114-wm-gardens-orchid-gradient', cat: 'wordmark', batch: 'gardens-orchid', title: 'Gardens Orchid — Gradient Blend', desc: 'Digital-to-botanical metamorphosis flowing left to right. Blue waveforms blend into orchids across all letters.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '113-wm-gardens-orchid-minimal', cat: 'wordmark', batch: 'gardens-orchid', title: 'Gardens Orchid — Minimal', desc: 'Refined version with lighter blue, fewer statement blooms, single delicate gold wave line.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '112-wm-gardens-orchid-dark', cat: 'wordmark', batch: 'gardens-orchid', title: 'Gardens Orchid — Dark Mode', desc: 'Dark background with electric blue SPONIC, jewel-toned luminous orchids in GARDENS, glowing gold waves.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '111-wm-gardens-orchid-lush', cat: 'wordmark', batch: 'gardens-orchid', title: 'Gardens Orchid — Lush', desc: 'Extra-dense orchids, butterflies, musical notes. Every letter of GARDENS bursts with botanical life.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '110-wm-gardens-orchid-faithful', cat: 'wordmark', batch: 'gardens-orchid', title: 'Gardens Orchid — Faithful Recreation', desc: 'Direct recreation of orchid-waveform wordmark with GARDENS. Blue digital SPONIC, orchid-filled GARDENS, gold wave lines.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      // SPONIC GARDENS botanical-circuit wordmarks (100-106)
+      { id: '106-wm-gardens-biotech', cat: 'wordmark', batch: 'gardens-botanical', title: 'Gardens — Biotech Emphasis', desc: 'DNA helix + vine tendrils on SPONIC, hexagonal molecular structures + circuit traces on GARDENS. EKG/biometric gold waveform.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '105-wm-gardens-stacked', cat: 'wordmark', batch: 'gardens-botanical', title: 'Gardens — Stacked Layout', desc: 'Two-line: SPONIC above, GARDENS below. Gold sound wave divider with botanical/circuit intertwining.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '104-wm-gardens-gradient', cat: 'wordmark', batch: 'gardens-botanical', title: 'Gardens — Gradient Fusion', desc: 'Continuous botanical-to-digital gradient flowing across both words. Vine → waveform → circuit in one unbroken wave.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '103-wm-gardens-minimal', cat: 'wordmark', batch: 'gardens-botanical', title: 'Gardens — Minimalist Refined', desc: 'Clean, thin letterforms with sparse botanical accents. Single sine wave. Luxury brand feel.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '102-wm-gardens-dark', cat: 'wordmark', batch: 'gardens-botanical', title: 'Gardens — Dark Mode', desc: 'Charcoal background with bioluminescent botanical elements and neon teal circuit traces. Glowing gold waveform.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '101-wm-gardens-botanical', cat: 'wordmark', batch: 'gardens-botanical', title: 'Gardens — Enhanced Botanical', desc: 'Amplified lush ferns, leaves, and vines. Leaf shapes emerge from circuit traces. Prominent layered gold waveform.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
+      { id: '100-wm-gardens-faithful', cat: 'wordmark', batch: 'gardens-botanical', title: 'Gardens — Faithful Recreation', desc: 'Direct recreation of original wordmark with GARDENS. Same typography, proportions, botanical/circuit split.', model: 'gemini-3-pro-image-preview', ext: 'jpg', logo: true },
       // Original logos & wordmarks
       { id: '01-wordmark-logo', cat: 'wordmark', title: 'Wordmark — Botanical (v1)', desc: 'Elegant serif with vine tendrils and leaf details.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
       { id: '01-wordmark-v2', cat: 'wordmark', title: 'Wordmark — AI Tech', desc: 'Gold circuit/root network traces through geometric serif.', model: 'gemini-2.5-flash-image', ext: 'png', logo: true },
@@ -507,11 +507,14 @@
       { id: 'hp-15-hp-maker-vine-supports', cat: 'homepage-sections', title: '3D-Printed Vine Canopies', desc: 'Suspended 3D-printed lattice brackets and clips on steel trusses. Climbing vines, hanging tomatoes growing through PLA framework. Green canopy tunnels.', model: 'gemini-3-pro-image-preview', ext: 'jpg' },
     ];
 
+    // Section labels — keyed by batch or cat
     const CAT_LABELS = {
+      'gardens-orchid': 'SPONIC GARDENS — Orchid Waveform Variations (Latest)',
+      'gardens-botanical': 'SPONIC GARDENS — Botanical Circuit Variations',
       'flowing-vines': 'Flowing Vines — Colorful Botanical Wordmarks',
       'chosen': 'Current Champion',
       'swapped-logo': 'Logo — Swapped (SPONIC=Digital, GARDEN=Botanical)',
-      'wordmark': 'Wordmarks — SPONIC GARDENS Rebrand + Original Direction',
+      'wordmark': 'Wordmarks (Original Direction)',
       'logo': 'Logo Marks',
       'style-audition': 'Style Auditions — Choose the Pitch Deck Style',
       'scene': 'Concept Scenes',
@@ -532,14 +535,25 @@
       'warehouse-ai-flash': 'AI Warehouse V2 — Gemini Flash (Same Scenes, Compare Quality)',
       'homepage-sections': 'Homepage Section Illustrations — Full Business Plan Narrative',
     };
-    const CAT_ORDER = ['wordmark', 'homepage-sections', 'warehouse-ai-pro', 'warehouse-ai-flash', 'warehouse-campus', 'homepage-colorful', 'section-drawing', 'flowing-vines', 'chosen', 'sonics-wordmark', 'logo-fusion', 'moody-evening', 'warsaw-demo', 'scene-style', 'wordmark-fusion', 'drawing-style', 'swapped-logo', 'style-audition', 'blended', 'artistic-style', 'scene', 'app-icon', 'logo'];
+
+    // Group key: batch if present, otherwise cat. This lets generation batches
+    // form their own sections while legacy assets use cat as before.
+    function getGroup(asset) { return asset.batch || asset.cat; }
+
+    // Derive display order from ASSETS array — first-seen group appears first.
+    // New assets added at the TOP of the array automatically display first.
+    const CAT_ORDER = [];
+    for (const a of ASSETS) {
+      const g = getGroup(a);
+      if (!CAT_ORDER.includes(g)) CAT_ORDER.push(g);
+    }
 
     let reviews = {}; // asset_id -> review data (includes rank_order)
     let currentFilter = 'all';
 
     // ── Rank helpers ──
     function getRankedAssets(cat) {
-      const items = ASSETS.filter(a => a.cat === cat);
+      const items = ASSETS.filter(a => getGroup(a) === cat);
       return items.sort((a, b) => {
         const ra = reviews[a.id], rb = reviews[b.id];
         // If either has a rank_order set (from champion/reorder), use that first
@@ -580,14 +594,14 @@
       const gallery = document.getElementById('gallery');
       gallery.innerHTML = '';
 
-      // CAT_ORDER is already newest-first, use as-is
+      // CAT_ORDER derived from ASSETS array — newest batches first
       const displayOrder = CAT_ORDER;
 
       // Build TOC
       const toc = document.createElement('div');
       toc.className = 'section-toc';
       toc.innerHTML = '<h3>Sections</h3>' + displayOrder.map(cat => {
-        const count = ASSETS.filter(a => a.cat === cat).length;
+        const count = ASSETS.filter(a => getGroup(a) === cat).length;
         return `<a href="#section-${cat}">${CAT_LABELS[cat] || cat} (${count})</a>`;
       }).join('');
       gallery.appendChild(toc);
@@ -648,7 +662,7 @@
               <button class="action-btn ${isStyleDir ? 'style-active' : ''}" onclick="setStyleDirection('${asset.id}')">
                 ${isStyleDir ? '&#11088;' : '&#127775;'} Use Style
               </button>
-              ${idx > 0 ? `<button class="action-btn crown-btn" onclick="elevateToChampion('${asset.cat}','${asset.id}')">&#128081; Champion</button>` : ''}
+              ${idx > 0 ? `<button class="action-btn crown-btn" onclick="elevateToChampion('${getGroup(asset)}','${asset.id}')">&#128081; Champion</button>` : ''}
             </div>
             <div class="card-comment">
               <textarea placeholder="Describe a variation or leave a note..." id="comment-${asset.id}">${comment}</textarea>
@@ -967,10 +981,10 @@
       const asset = ASSETS.find(a => a.id === ids[lbIndex]);
       if (!asset) return;
       document.getElementById('lb-img').src = `${imgUrl(asset)}`;
-      const catItems = getRankedAssets(asset.cat);
+      const catItems = getRankedAssets(getGroup(asset));
       const rankIdx = catItems.findIndex(a => a.id === asset.id);
       const rankInfo = getRankLabel(rankIdx >= 0 ? rankIdx : 0);
-      document.getElementById('lb-title').textContent = `${asset.title} · ${rankInfo.text} in ${CAT_LABELS[asset.cat] || asset.cat} (${lbIndex + 1}/${ids.length})`;
+      document.getElementById('lb-title').textContent = `${asset.title} · ${rankInfo.text} in ${CAT_LABELS[getGroup(asset)] || getGroup(asset)} (${lbIndex + 1}/${ids.length})`;
     }
 
     function lbNav(dir) {
