@@ -1,12 +1,12 @@
 {
-  "version": "v260323.03 11:18a",
-  "release": 3,
-  "sha": "7dbde06",
-  "fullSha": "7dbde066358048b0acbb4199bd167fdd5f02b222",
+  "version": "v260323.04 11:28a",
+  "release": 4,
+  "sha": "87c32ad",
+  "fullSha": "87c32adb1ff305f00fd207fd725971393d8ac205",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervm46oaq",
-  "pushedAt": "2026-03-23 16:18:46+00",
-  "commits": [{"sha":"7dbde06","message":"content: rename \"Sponic Garden\" to \"Sponic Gardens\" across all pages","author":"Rahul"}]
+  "pushedAt": "2026-03-23 16:28:06+00",
+  "commits": [{"sha":"87c32ad","message":"branding: add 7 SPONIC GARDENS wordmark variations","author":"Rahul"}]
 }
