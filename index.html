@@ -653,6 +653,10 @@
       height: auto;
       cursor: zoom-in;
     }
+    .section-illustration[style*="aspect-ratio"] img {
+      height: 100%;
+      object-fit: cover;
+    }
     @media (min-width: 920px) {
       .section-illustration { margin-left: 0; margin-right: 0; }
     }
@@ -773,7 +777,7 @@
         </div>
 
         <div class="card accent-card accent-sky">
-          <div class="section-illustration" style="margin:-1.1rem -1.2rem 0.8rem;border-radius:var(--radius) var(--radius) 0 0"><img src="branding/hp-06-hp-thermal-circuit.jpg" alt="AI-guided contrast therapy" loading="lazy"></div>
+          <div class="section-illustration" style="margin:-1.1rem -1.2rem 0.8rem;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden;aspect-ratio:16/9"><img src="branding/hp-06-hp-thermal-circuit.jpg" alt="AI-guided contrast therapy" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
           <h3>🧖 Thermal & Spa</h3>
       
           <ul>
