@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponic Garden — Narrative Sandbox</title>
+  <meta property="og:title" content="Sponic Garden — Narrative Sandbox">
+  <meta property="og:description" content="Positioning variations and copywriting explorations for the Sponic Garden concept.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" type="image/svg+xml">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    :root {
+      --bg: #f4f7f1;
+      --surface: #ffffff;
+      --surface2: #eef3ea;
+      --surface3: #e2eadc;
+      --border: #c4d4ba;
+      --border-light: #d8e3cf;
+      --text: #1a2412;
+      --text-soft: #2d3b22;
+      --text-dim: #4a6040;
+      --text-muted: #7a9168;
+      --green: #2d6a1e;
+      --green-soft: rgba(45, 106, 30, 0.07);
+      --green-border: rgba(45, 106, 30, 0.20);
+      --emerald: #047857;
+      --emerald-soft: rgba(4, 120, 87, 0.06);
+      --emerald-border: rgba(4, 120, 87, 0.18);
+      --earth: #92400e;
+      --earth-soft: rgba(146, 64, 14, 0.06);
+      --earth-border: rgba(146, 64, 14, 0.20);
+      --sky: #0369a1;
+      --sky-soft: rgba(3, 105, 161, 0.05);
+      --sky-border: rgba(3, 105, 161, 0.16);
+      --plum: #7e22ce;
+      --plum-soft: rgba(126, 34, 206, 0.05);
+      --plum-border: rgba(126, 34, 206, 0.16);
+      --warm: #b45309;
+      --warm-soft: rgba(180, 83, 9, 0.06);
+      --warm-border: rgba(180, 83, 9, 0.20);
+      --rose: #be123c;
+      --rose-soft: rgba(190, 18, 60, 0.05);
+      --rose-border: rgba(190, 18, 60, 0.16);
+      --slate: #475569;
+      --slate-soft: rgba(71, 85, 105, 0.05);
+      --slate-border: rgba(71, 85, 105, 0.16);
+      --vine: #1a4d2e;
+      --vine-soft: rgba(26, 77, 46, 0.06);
+      --canopy: rgba(26, 77, 46, 0.03);
+      --circuit: rgba(79, 209, 197, 0.10);
+      --circuit-line: rgba(79, 209, 197, 0.25);
+      --glow: rgba(52, 211, 153, 0.20);
+      --node: #34d399;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-lg: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ════════════════════════════════════════════════════
+       PAGE HEADER
+       ════════════════════════════════════════════════════ */
+    .page-header {
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, #d8e8ca 0%, #dde8d2 35%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--vine);
+      margin-bottom: 0.3rem;
+    }
+    .page-header p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ════════════════════════════════════════════════════
+       CONTAINER
+       ════════════════════════════════════════════════════ */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ════════════════════════════════════════════════════
+       SECTIONS
+       ════════════════════════════════════════════════════ */
+    .section { margin-bottom: 2.5rem; }
+    .section-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      padding-left: 0.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1c0 3-2 5-2 8s2 6 2 6 2-3 2-6-2-5-2-8z' fill='%237a9168' opacity='0.6'/%3E%3C/svg%3E") no-repeat center/contain;
+    }
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+    .section p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+    .section p + p { margin-top: 0.6rem; }
+
+    /* ════════════════════════════════════════════════════
+       VARIATION CARD — each positioning attempt
+       ════════════════════════════════════════════════════ */
+    .variation {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .variation-number {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      background: var(--surface2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 10px;
+    }
+    .variation .angle {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+    }
+    .variation .tagline {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      color: var(--vine);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .variation .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      line-height: 1.55;
+      margin-bottom: 0.8rem;
+      max-width: 560px;
+    }
+    .variation .body-copy {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      border-top: 1px solid var(--border-light);
+      padding-top: 0.8rem;
+    }
+    .variation .body-copy p + p { margin-top: 0.5rem; }
+    .variation .note {
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+      border-left: 2px solid var(--border);
+      padding-left: 0.75rem;
+    }
+
+    /* Angle color coding */
+    .angle-green { color: var(--green); }
+    .angle-emerald { color: var(--emerald); }
+    .angle-earth { color: var(--earth); }
+    .angle-sky { color: var(--sky); }
+    .angle-plum { color: var(--plum); }
+    .angle-warm { color: var(--warm); }
+    .angle-rose { color: var(--rose); }
+
+    /* ════════════════════════════════════════════════════
+       CALLOUT
+       ════════════════════════════════════════════════════ */
+    .callout {
+      background: var(--vine-soft);
+      border: 1px solid var(--green-border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+    }
+    .callout p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════════════════════
+       ONE-LINER TABLE
+       ════════════════════════════════════════════════════ */
+    .oneliners {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.8rem 0;
+    }
+    .oneliners td {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: top;
+    }
+    .oneliners td:first-child {
+      font-weight: 600;
+      color: var(--text-dim);
+      white-space: nowrap;
+      width: 110px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .oneliners td:last-child {
+      color: var(--text-soft);
+    }
+    .oneliners tr:last-child td { border-bottom: none; }
+
+    /* ════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════ */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 1.6rem; }
+      .variation .tagline { font-size: 1.3rem; }
+      .variation { padding: 1.2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="siteHeader"></div>
+
+  <div class="page-header">
+    <h1>Narrative Sandbox</h1>
+    <p>Positioning variations for the Sponic Garden concept — different angles, audiences, and tones.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 1: TAGLINES
+         ══════════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">Taglines</div>
+      <h2>One-Line Positioning</h2>
+      <p>Each tagline frames a different entry point into the same concept. The right one depends on who we're talking to and what we want them to feel first.</p>
+
+      <table class="oneliners" style="margin-top:1rem">
+        <tr>
+          <td>Current</td>
+          <td><em>the art and science of cultivation</em></td>
+        </tr>
+        <tr>
+          <td>Botanical</td>
+          <td><em>A greenhouse that learns. A community that grows.</em></td>
+        </tr>
+        <tr>
+          <td>Minimal</td>
+          <td><em>Tend your life.</em></td>
+        </tr>
+        <tr>
+          <td>Category</td>
+          <td><em>The world's first AI-native social club.</em></td>
+        </tr>
+        <tr>
+          <td>Verb</td>
+          <td><em>Cultivate everything.</em></td>
+        </tr>
+        <tr>
+          <td>Community</td>
+          <td><em>Grow together.</em></td>
+        </tr>
+        <tr>
+          <td>Promise</td>
+          <td><em>Where you flourish.</em></td>
+        </tr>
+        <tr>
+          <td>Double meaning</td>
+          <td><em>Where you grow.</em></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 2: FULL POSITIONING VARIATIONS
+         ══════════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">Positioning</div>
+      <h2>Full Narrative Variations</h2>
+      <p>Seven ways to frame the same concept — each emphasizing a different core truth about Sponic Garden.</p>
+    </div>
+
+    <!-- VARIATION 1: THE GREENHOUSE THAT LEARNS -->
+    <div class="variation">
+      <span class="variation-number">01</span>
+      <div class="angle angle-green">The Living Lab</div>
+      <div class="tagline">A greenhouse that learns.<br>A community that grows.</div>
+      <div class="subtitle">Sponic Garden is a social club where AI tunes every element — from soil to sound — so you can focus on flourishing.</div>
+      <div class="body-copy">
+        <p>Imagine a space where the lighting adjusts itself for both your mood and the plants around you. Where the music shifts with the energy of the room. Where the sauna knows your recovery pattern and the garden remembers what you planted last season.</p>
+        <p>Every sensor, every surface, every system feeds a single intelligence that gets better daily. You don't interact with the AI — you feel its effects. The temperature is just right. The class you wanted has a spot. The herbs you grew last month are in today's lunch.</p>
+        <p>This is what happens when AI isn't bolted on — it's the foundation.</p>
+      </div>
+      <div class="note">Angle: Lead with the AI-native differentiation. Best for tech-forward audiences, investors, people who've seen "AI-powered" claims and are skeptical. This version says: we actually mean it.</div>
+    </div>
+
+    <!-- VARIATION 2: TEND YOUR LIFE -->
+    <div class="variation">
+      <span class="variation-number">02</span>
+      <div class="angle angle-emerald">The Invitation</div>
+      <div class="tagline">Tend your life.</div>
+      <div class="subtitle">A place to put your hands in soil, sweat with friends, sit in silence, eat well — and leave feeling like you did something that mattered.</div>
+      <div class="body-copy">
+        <p>We spend our days in front of screens. Our bodies are still. Our hands build nothing we can touch. Sponic Garden is the antidote — a physical place designed around the things that actually make people feel alive.</p>
+        <p>Grow something. Move your body. Sit in a sauna until the noise in your head goes quiet. Eat food that someone you know cooked from ingredients you helped grow. Meet people who are here for the same reason you are.</p>
+        <p>Underneath it all, an AI quietly keeps things running — schedules, temperatures, planting plans, food logistics. You don't have to think about any of it. You just show up and tend.</p>
+      </div>
+      <div class="note">Angle: Lead with the human experience, not the technology. AI is mentioned only as the invisible enabler. Best for wellness seekers, people overwhelmed by tech, anyone who just wants to feel better.</div>
+    </div>
+
+    <!-- VARIATION 3: NEW CATEGORY -->
+    <div class="variation">
+      <span class="variation-number">03</span>
+      <div class="angle angle-sky">The Category Creator</div>
+      <div class="tagline">Not a gym. Not a garden. Not a spa.<br>A new thing entirely.</div>
+      <div class="subtitle">Sponic Garden is an AI-native social club — the first physical space designed from the ground up to be run by an intelligence that optimizes for human and botanical flourishing.</div>
+      <div class="body-copy">
+        <p>Most wellness concepts start with a space and bolt on technology. A booking app here, a playlist there, maybe a sensor in the sauna.</p>
+        <p>We started with the AI. Then we asked: if an intelligence could see everything — soil moisture, crowd energy, recovery data, plant health, food waste, member satisfaction — and continuously tune every variable — what kind of place would it create?</p>
+        <p>The answer: one that's impossible to build any other way. A place where gardening, fitness, thermal wellness, food, music, and community all reinforce each other — because a single system is watching all of them at once.</p>
+      </div>
+      <div class="note">Angle: Define a new category. Position against everything else by saying "this isn't any of those." Best for press, investor decks, anyone who needs to understand why this isn't just another wellness space.</div>
+    </div>
+
+    <!-- VARIATION 4: THE GARDEN AS METAPHOR -->
+    <div class="variation">
+      <span class="variation-number">04</span>
+      <div class="angle angle-earth">The Metaphor</div>
+      <div class="tagline">Cultivate everything.</div>
+      <div class="subtitle">Your body. Your focus. Your friendships. Your food. Sponic Garden is a place where all of it grows together.</div>
+      <div class="body-copy">
+        <p>Gardening is patient work. You prepare the soil. You plant seeds. You show up consistently. And slowly, things grow that didn't exist before.</p>
+        <p>Sponic Garden applies this philosophy to every dimension of well-being. Fitness that builds over weeks, not days. Relationships formed around shared purpose. Knowledge that compounds. Food that connects you to the earth it came from.</p>
+        <p>The AI doesn't replace the patience — it removes the friction around it. It handles the logistics, the optimization, the scheduling, the boring parts — so the human experience stays pure.</p>
+      </div>
+      <div class="note">Angle: The garden as a metaphor for personal growth. Cultivation isn't just plants — it's everything in your life worth tending. Best for brand storytelling, content marketing, social media narrative.</div>
+    </div>
+
+    <!-- VARIATION 5: THE COMMUNITY PLAY -->
+    <div class="variation">
+      <span class="variation-number">05</span>
+      <div class="angle angle-warm">The Third Place</div>
+      <div class="tagline">Your people are here.</div>
+      <div class="subtitle">A members' club built around growing things, moving your body, and being together — in a space that quietly gets better at serving you every day.</div>
+      <div class="body-copy">
+        <p>You need a place that isn't home and isn't work. A place where you see the same people, where you build something together, where showing up is its own reward.</p>
+        <p>Sponic Garden is that place. You plant side by side. You sweat through the same class. You eat lunch made from ingredients you all helped grow. You compete in garden shows and vote on what food vendors come next week.</p>
+        <p>The AI makes all of this frictionless — it knows which class to add when demand spikes, which vendor to schedule when a crop comes in, which members would love the new workshop. But the magic is the community, not the code.</p>
+      </div>
+      <div class="note">Angle: Lead with belonging and the "third place" concept. Technology is purely infrastructure. Best for local marketing, community-building, word-of-mouth positioning.</div>
+    </div>
+
+    <!-- VARIATION 6: THE FOUNDER PITCH -->
+    <div class="variation">
+      <span class="variation-number">06</span>
+      <div class="angle angle-plum">The Thesis</div>
+      <div class="tagline">What if AI ran a social club?</div>
+      <div class="subtitle">Not assisted. Not augmented. Actually ran it — from irrigation schedules to event programming to food logistics. What kind of place would emerge?</div>
+      <div class="body-copy">
+        <p>The thesis is simple: AI has gotten good enough to manage almost every operational dimension of a physical space. Not the human parts — the relationships, the sweat, the joy of watching something grow. The everything-else parts: scheduling, climate control, inventory, vendor management, curriculum design, content strategy, experiment design.</p>
+        <p>If you let AI handle the everything-else, you can create something radically more ambitious than any human-managed operation. More activities. More variety. More responsiveness. Continuous optimization across dimensions no human team could track simultaneously.</p>
+        <p>Sponic Garden is the proof. A single facility where gardening, fitness, thermal wellness, food, music, and education are all orchestrated by one intelligence — and the result is a place that gets measurably better every week.</p>
+      </div>
+      <div class="note">Angle: The intellectual bet. Lead with the thesis and let the product be the proof. Best for founder conversations, deep-dive blog posts, potential partners who want to understand the why.</div>
+    </div>
+
+    <!-- VARIATION 7: THE SENSORY SELL -->
+    <div class="variation">
+      <span class="variation-number">07</span>
+      <div class="angle angle-rose">The Feeling</div>
+      <div class="tagline">Walk in tired. Leave alive.</div>
+      <div class="subtitle">Heat and cold. Soil and sweat. Music that hits different when your body's spent and your mind is clear. This is what a good day feels like.</div>
+      <div class="body-copy">
+        <p>You arrive after work. The greenhouse is warm, humming with life. You spend twenty minutes with your hands in soil — transplanting basil seedlings someone started for you. The music is right.</p>
+        <p>You move to the sauna. Three rounds: heat, cold plunge, rest. Each time your body resets. The AI has set the temperature to your preferred protocol. You don't check anything — it just knows.</p>
+        <p>You eat. A bowl of something good, made with greens from the growing zone, cooked by a local vendor you voted for last month. You sit with people you've come to know through this rhythm — not through apps or events, but through the simple act of showing up to the same place.</p>
+        <p>You leave feeling like a different person than the one who walked in. That's Sponic Garden.</p>
+      </div>
+      <div class="note">Angle: Pure sensory storytelling. No features, no technology, no explanation — just the feeling. Best for landing pages, social ads, email marketing, the moment before someone decides to try it.</div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 3: HERO SUBTITLE OPTIONS
+         ══════════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">Hero Copy</div>
+      <h2>Homepage Subtitle Options</h2>
+      <p>Replacing the current: <em>"A place-based social club fusing gardening, fitness, thermal wellness, and community — all orchestrated by a native AI platform built from day one."</em></p>
+
+      <table class="oneliners" style="margin-top:1rem">
+        <tr>
+          <td>Concise</td>
+          <td>AI-orchestrated gardening, fitness, thermal wellness, and community — in one living space.</td>
+        </tr>
+        <tr>
+          <td>Poetic</td>
+          <td>Plants and people, flourishing together.</td>
+        </tr>
+        <tr>
+          <td>Inviting</td>
+          <td>A social club where AI tunes every element — from soil to sound — so you can focus on flourishing.</td>
+        </tr>
+        <tr>
+          <td>Bold</td>
+          <td>The first physical space designed from the ground up to be run by AI — for human and botanical flourishing.</td>
+        </tr>
+        <tr>
+          <td>Warm</td>
+          <td>Grow things. Move your body. Be with people. Leave feeling better. Everything else is handled.</td>
+        </tr>
+        <tr>
+          <td>Aspirational</td>
+          <td>A place to cultivate the life you actually want — where AI handles the complexity so you can focus on what matters.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 4: VOICE PRINCIPLES
+         ══════════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">Voice</div>
+      <h2>Copywriting Principles</h2>
+
+      <div class="callout">
+        <p><strong>The tension that makes this interesting:</strong> Ancient activity (gardening) meets cutting-edge AI. Physical presence meets digital intelligence. Individual wellness meets community. The copy should hold both sides — never letting one erase the other.</p>
+      </div>
+
+      <table class="oneliners" style="margin-top:1rem">
+        <tr>
+          <td>Lead with</td>
+          <td>The human experience — what you feel, touch, taste, and share. AI is the invisible enabler, not the headline.</td>
+        </tr>
+        <tr>
+          <td>Avoid</td>
+          <td>"Powered by AI", "smart", "tech-enabled" — these are table stakes now. Show what AI <em>makes possible</em>, not that it exists.</td>
+        </tr>
+        <tr>
+          <td>Tone</td>
+          <td>Grounded and warm, never breathless or hype-driven. Confident without being aggressive. Like a good host, not a salesperson.</td>
+        </tr>
+        <tr>
+          <td>Metaphor</td>
+          <td>Cultivation is the through-line. Growth takes time. You tend things. The garden rewards patience and presence.</td>
+        </tr>
+        <tr>
+          <td>Audience shift</td>
+          <td>Investors get the thesis (variation 06). Members get the feeling (variation 07). Press gets the category (variation 03). Default to the invitation (variation 02).</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       EXPLORE LINKS
+       ══════════════════════════════════════════════════════ -->
+  <div style="max-width:720px;margin:0 auto;padding:0 1.25rem 2rem;">
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;">
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.5rem 1rem;background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius);font-size:0.82rem;font-weight:600;color:var(--text-dim);text-decoration:none;transition:box-shadow 0.2s,transform 0.2s;">🌿 Concept</a>
+      <a href="bizmodel.html" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.5rem 1rem;background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius);font-size:0.82rem;font-weight:600;color:var(--text-dim);text-decoration:none;transition:box-shadow 0.2s,transform 0.2s;">📊 Business Model</a>
+      <a href="branding.html" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.5rem 1rem;background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius);font-size:0.82rem;font-weight:600;color:var(--text-dim);text-decoration:none;transition:box-shadow 0.2s,transform 0.2s;">🎨 Brand Review</a>
+      <a href="charter.html" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.5rem 1rem;background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius);font-size:0.82rem;font-weight:600;color:var(--text-dim);text-decoration:none;transition:box-shadow 0.2s,transform 0.2s;">📋 The Charter</a>
+    </div>
+  </div>
+
+  <footer>
+    <span data-site-version></span>
+  </footer>
+
+  <script type="module">
+    import { initPersonalPage } from '/shared/personal-page-shell.js';
+    initPersonalPage();
+  </script>
+</body>
+</html>
