@@ -1,12 +1,12 @@
 {
-  "version": "v260323.15 1:00p",
-  "release": 15,
-  "sha": "3449197",
-  "fullSha": "3449197cbeed94595077a4aebd705f6670b631ca",
+  "version": "v260325.01 5:39p",
+  "release": 16,
+  "sha": "cd8089d",
+  "fullSha": "cd8089d51a20232853c46e943d66d07ca91ba3d8",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervm46oaq",
-  "pushedAt": "2026-03-23 18:00:45+00",
-  "commits": [{"sha":"3449197","message":"branding: add 5 faithful biotech icon wordmarks (v7)","author":"Rahul"}]
+  "pushedAt": "2026-03-25 22:39:31+00",
+  "commits": [{"sha":"73fd963","message":"fix: make OG tags work reliably across all pages","author":"Rahul"},{"sha":"725f320","message":"merge: resolve conflict with main, keep updated title","author":"Rahul"},{"sha":"cd8089d","message":"Merge pull request #6 from sponicgarden/ecstatic-neumann","author":"Rahul"}]
 }
