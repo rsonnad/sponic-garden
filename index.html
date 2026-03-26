@@ -255,6 +255,7 @@
       box-shadow: var(--shadow);
       margin-bottom: 0.6rem;
       position: relative;
+      overflow: hidden;
       transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
     @media (hover: hover) {
@@ -655,6 +656,14 @@
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border-light);
     }
+    .card > .section-illustration:first-child {
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      margin-top: -1.1rem;
+      margin-left: -1.2rem;
+      margin-right: -1.2rem;
+    }
     .section-illustration img {
       display: block;
       width: 100%;
@@ -739,7 +748,7 @@
 
       <div class="grid-2">
         <div class="card accent-card accent-green">
-          <div class="section-illustration" style="margin:-1.1rem -1.2rem 0.8rem;border-radius:var(--radius) var(--radius) 0 0"><img src="branding/hp-02-hp-gardening-session.jpg" alt="AI-guided gardening session with cultivation dashboard" loading="lazy"></div>
+          <div class="section-illustration" style="margin-bottom:0.8rem"><img src="branding/hp-02-hp-gardening-session.jpg" alt="AI-guided gardening session with cultivation dashboard" loading="lazy"></div>
           <h3>🌱 Gardening & Cultivation</h3>
           <p>Members participate in guided gardening sessions — planting, cultivating, harvesting. The AI manages the <span class="annotation" data-note="Planting plans, task assignments, harvest scheduling, supply ordering — all AI-coordinated with member input.">cultivation plan</span>, enlisting members to decide what to plant, how to care for it, and what to do with the produce.</p>
           <details class="expandable">
@@ -769,7 +778,7 @@
         </div>
 
         <div class="card accent-card accent-emerald">
-          <div class="section-illustration" style="margin:-1.1rem -1.2rem 0.8rem;border-radius:var(--radius) var(--radius) 0 0"><img src="branding/hp-05-hp-yoga-studio.jpg" alt="AI-managed fitness studio" loading="lazy"></div>
+          <div class="section-illustration" style="margin-bottom:0.8rem"><img src="branding/hp-05-hp-yoga-studio.jpg" alt="AI-managed fitness studio" loading="lazy"></div>
           <h3>🏋️ Fitness</h3>
       
           <ul>
@@ -781,7 +790,7 @@
         </div>
 
         <div class="card accent-card accent-sky">
-          <div class="section-illustration" style="margin:-1.1rem -1.2rem 0.8rem;border-radius:var(--radius) var(--radius) 0 0"><img src="branding/hp-06-hp-thermal-circuit.jpg" alt="AI-guided contrast therapy" loading="lazy"></div>
+          <div class="section-illustration" style="margin-bottom:0.8rem"><img src="branding/hp-06-hp-thermal-circuit.jpg" alt="AI-guided contrast therapy" loading="lazy"></div>
           <h3>🧖 Thermal & Spa</h3>
       
           <ul>
@@ -797,7 +806,7 @@
         </div>
 
         <div class="card accent-card accent-plum">
-          <div class="section-illustration" style="margin:-1.1rem -1.2rem 0.8rem;border-radius:var(--radius) var(--radius) 0 0"><img src="branding/hp-07-hp-music-zones.jpg" alt="AI-controlled audio zones" loading="lazy"></div>
+          <div class="section-illustration" style="margin-bottom:0.8rem"><img src="branding/hp-07-hp-music-zones.jpg" alt="AI-controlled audio zones" loading="lazy"></div>
           <h3>🎵 Music & Atmosphere</h3>
       
           <p>Pervasive, high-quality sound systems throughout — curated playlists and live sets for both human enjoyment and plant stimulation. AI-controlled audio zones adapt to activity, time of day, and crowd energy.</p>
