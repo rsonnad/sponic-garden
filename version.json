@@ -1,12 +1,12 @@
 {
-  "version": "v260325.01 5:39p",
-  "release": 16,
-  "sha": "cd8089d",
-  "fullSha": "cd8089d51a20232853c46e943d66d07ca91ba3d8",
+  "version": "v260326.01 2:41a",
+  "release": 17,
+  "sha": "4563a59",
+  "fullSha": "4563a597416bf526bbe19be66217c55dac7f22e2",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervm46oaq",
-  "pushedAt": "2026-03-25 22:39:31+00",
-  "commits": [{"sha":"73fd963","message":"fix: make OG tags work reliably across all pages","author":"Rahul"},{"sha":"725f320","message":"merge: resolve conflict with main, keep updated title","author":"Rahul"},{"sha":"cd8089d","message":"Merge pull request #6 from sponicgarden/ecstatic-neumann","author":"Rahul"}]
+  "pushedAt": "2026-03-26 07:41:21+00",
+  "commits": [{"sha":"4563a59","message":"content: update tagline to \"social bioengineering\"","author":"Rahul"}]
 }
