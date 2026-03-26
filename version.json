@@ -1,12 +1,12 @@
 {
-  "version": "v260326.01 2:41a",
-  "release": 17,
-  "sha": "4563a59",
-  "fullSha": "4563a597416bf526bbe19be66217c55dac7f22e2",
+  "version": "v260326.02 3:21a",
+  "release": 18,
+  "sha": "4ce9558",
+  "fullSha": "4ce9558cc209b58a9e854505126270f9bebe3451",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
-  "machine": "runnervm46oaq",
-  "pushedAt": "2026-03-26 07:41:21+00",
-  "commits": [{"sha":"4563a59","message":"content: update tagline to \"social bioengineering\"","author":"Rahul"}]
+  "machine": "runnervmrg6be",
+  "pushedAt": "2026-03-26 08:21:38+00",
+  "commits": [{"sha":"4ce9558","message":"content: update homepage subtitle copy","author":"Rahul"}]
 }
