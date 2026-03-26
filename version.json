@@ -1,12 +1,12 @@
 {
-  "version": "v260326.02 3:21a",
-  "release": 18,
-  "sha": "4ce9558",
-  "fullSha": "4ce9558cc209b58a9e854505126270f9bebe3451",
+  "version": "v260326.03 5:27p",
+  "release": 19,
+  "sha": "88c4d87",
+  "fullSha": "88c4d87295429a5ba2bd8fe6ebb07f563a0be496",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
-  "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-26 08:21:38+00",
-  "commits": [{"sha":"4ce9558","message":"content: update homepage subtitle copy","author":"Rahul"}]
+  "machine": "runnervm46oaq",
+  "pushedAt": "2026-03-26 22:27:52+00",
+  "commits": [{"sha":"88c4d87","message":"fix: pillar card images now clip inside card borders","author":"Paca"}]
 }
