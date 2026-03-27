@@ -1,12 +1,12 @@
 {
-  "version": "v260327.02 1:30a",
-  "release": 22,
-  "sha": "188462f",
-  "fullSha": "188462f409e6cf54df3166210c1b32797e134dfa",
+  "version": "v260327.03 3:43p",
+  "release": 23,
+  "sha": "9fa4924",
+  "fullSha": "9fa4924f2ca49587f37a3b57e08a2b63d2da8619",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
-  "machine": "runnervm46oaq",
-  "pushedAt": "2026-03-27 06:30:53+00",
-  "commits": [{"sha":"188462f","message":"fix: correct Supabase anon key typo breaking Google OAuth login","author":"Rahul"}]
+  "machine": "runnervmrg6be",
+  "pushedAt": "2026-03-27 20:43:29+00",
+  "commits": [{"sha":"9fa4924","message":"chore: update tagline to \"ai orchestrated IRL social bioengineering\"","author":"Rahul"}]
 }
