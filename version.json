@@ -1,12 +1,12 @@
 {
-  "version": "v260327.01 1:25a",
-  "release": 21,
-  "sha": "1db1bea",
-  "fullSha": "1db1bea271ce685c4a89dbe97d077624194f0c34",
+  "version": "v260327.02 1:30a",
+  "release": 22,
+  "sha": "188462f",
+  "fullSha": "188462f409e6cf54df3166210c1b32797e134dfa",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervm46oaq",
-  "pushedAt": "2026-03-27 06:25:13+00",
-  "commits": [{"sha":"1db1bea","message":"fix: allow rahulioson@gmail.com login, use homepage logo on auth overlay","author":"Rahul"}]
+  "pushedAt": "2026-03-27 06:30:53+00",
+  "commits": [{"sha":"188462f","message":"fix: correct Supabase anon key typo breaking Google OAuth login","author":"Rahul"}]
 }
