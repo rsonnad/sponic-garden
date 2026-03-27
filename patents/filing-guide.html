@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filing Guide — Sonic Vision Provisional Patent | Sponic Garden</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" type="image/svg+xml">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    :root {
+      --bg: #f4f7f1; --surface: #ffffff; --surface2: #eef3ea; --surface3: #e2eadc;
+      --border: #c4d4ba; --border-light: #d8e3cf;
+      --text: #1a2412; --text-soft: #2d3b22; --text-dim: #4a6040; --text-muted: #7a9168;
+      --green: #2d6a1e; --green-soft: rgba(45,106,30,0.07); --green-border: rgba(45,106,30,0.20);
+      --emerald: #047857; --emerald-soft: rgba(4,120,87,0.06); --emerald-border: rgba(4,120,87,0.18);
+      --earth: #92400e; --earth-soft: rgba(146,64,14,0.06); --earth-border: rgba(146,64,14,0.20);
+      --sky: #0369a1; --sky-soft: rgba(3,105,161,0.05); --sky-border: rgba(3,105,161,0.16);
+      --plum: #7e22ce; --plum-soft: rgba(126,34,206,0.05); --plum-border: rgba(126,34,206,0.16);
+      --warm: #b45309; --warm-soft: rgba(180,83,9,0.06); --warm-border: rgba(180,83,9,0.20);
+      --rose: #be123c; --rose-soft: rgba(190,18,60,0.05); --rose-border: rgba(190,18,60,0.16);
+      --vine: #1a4d2e; --circuit: rgba(79,209,197,0.10); --node: #34d399; --glow: rgba(52,211,153,0.20);
+      --radius: 10px; --radius-lg: 14px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.05); --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    .hero {
+      padding: 3.5rem 1.5rem 2.5rem; text-align: center; position: relative; overflow: hidden;
+      background: linear-gradient(180deg, #d0dce8 0%, #d8e2da 35%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg width='60' height='52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 15v22L30 52 0 37V15z' fill='none' stroke='%234fd1c5' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E"); background-size: 60px 52px; opacity: 0.6; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 70% at 50% 20%, rgba(52,211,153,0.08), transparent 70%); }
+    .hero-content { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
+    .hero .breadcrumb { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+    .hero .breadcrumb a { color: var(--emerald); text-decoration: none; }
+    .hero .breadcrumb a:hover { text-decoration: underline; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--green); line-height: 1.15; margin-bottom: 0.5rem; }
+    .hero .subtitle { font-size: 1rem; color: var(--text-dim); max-width: 600px; margin: 0 auto; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+    .section-card {
+      background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg);
+      padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow);
+    }
+    .section-card h2 {
+      font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--vine);
+      margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border-light);
+    }
+    .section-card h3 { font-size: 1rem; font-weight: 600; color: var(--text-soft); margin: 1.4rem 0 0.5rem; }
+    .section-card h3:first-of-type { margin-top: 0.3rem; }
+    .section-card p { color: var(--text-soft); margin-bottom: 0.7rem; font-size: 0.93rem; }
+    .section-card ul, .section-card ol { margin: 0.4rem 0 0.8rem 1.3rem; color: var(--text-soft); font-size: 0.93rem; }
+    .section-card li { margin-bottom: 0.3rem; }
+    .section-card a { color: var(--emerald); }
+
+    .step-grid { display: grid; gap: 1rem; margin: 1rem 0; }
+    .step {
+      background: var(--surface2); border: 1px solid var(--border-light); border-radius: var(--radius);
+      padding: 1.2rem 1.4rem; position: relative; padding-left: 4rem;
+    }
+    .step-num {
+      position: absolute; left: 1.2rem; top: 1.2rem; width: 2rem; height: 2rem;
+      background: var(--green); color: white; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;
+    }
+    .step h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .step p { font-size: 0.88rem; color: var(--text-dim); margin: 0; }
+    .step code { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; background: var(--surface); padding: 0.1rem 0.35rem; border-radius: 3px; }
+    .step a { color: var(--emerald); }
+
+    .doc-card {
+      background: var(--surface2); border: 1px solid var(--border-light); border-radius: var(--radius);
+      padding: 1rem 1.2rem; margin: 0.6rem 0;
+    }
+    .doc-card .doc-header {
+      display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;
+    }
+    .doc-card .doc-badge {
+      display: inline-block; padding: 0.15rem 0.5rem; border-radius: 100px;
+      font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .badge-required { background: var(--green-soft); color: var(--green); border: 1px solid var(--green-border); }
+    .badge-recommended { background: var(--sky-soft); color: var(--sky); border: 1px solid var(--sky-border); }
+    .badge-optional { background: var(--earth-soft); color: var(--earth); border: 1px solid var(--earth-border); }
+    .doc-card .doc-title { font-weight: 600; font-size: 0.93rem; color: var(--text); }
+    .doc-card .doc-desc { font-size: 0.85rem; color: var(--text-dim); margin: 0; }
+    .doc-card ul { margin: 0.4rem 0 0 1.2rem; font-size: 0.85rem; color: var(--text-dim); }
+    .doc-card li { margin-bottom: 0.2rem; }
+
+    .callout {
+      border-radius: var(--radius); padding: 1rem 1.2rem; margin: 0.8rem 0; font-size: 0.88rem;
+    }
+    .callout-green { background: var(--green-soft); border: 1px solid var(--green-border); }
+    .callout-green strong { color: var(--green); }
+    .callout-sky { background: var(--sky-soft); border: 1px solid var(--sky-border); }
+    .callout-sky strong { color: var(--sky); }
+    .callout-warm { background: var(--warm-soft); border: 1px solid var(--warm-border); }
+    .callout-warm strong { color: var(--warm); }
+    .callout-rose { background: var(--rose-soft); border: 1px solid var(--rose-border); }
+    .callout-rose strong { color: var(--rose); }
+
+    .table-wrap { overflow-x: auto; margin: 0.8rem 0; border-radius: var(--radius); border: 1px solid var(--border-light); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead { background: var(--surface2); }
+    th { text-align: left; padding: 0.6rem 0.8rem; font-weight: 600; color: var(--text-dim); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); }
+    td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--border-light); color: var(--text-soft); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    td strong { color: var(--text); }
+
+    .format-spec { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 0.8rem 0; }
+    .format-spec pre { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.5; color: var(--text-dim); white-space: pre; margin: 0; }
+
+    .checklist { list-style: none; margin: 0.8rem 0; padding: 0; }
+    .checklist li { padding: 0.4rem 0 0.4rem 1.6rem; position: relative; color: var(--text-soft); font-size: 0.9rem; }
+    .checklist li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 14px; height: 14px; border: 2px solid var(--border); border-radius: 3px; background: var(--surface); }
+
+    footer { text-align: center; padding: 2rem 1.5rem; color: var(--text-muted); font-size: 0.82rem; border-top: 1px solid var(--border-light); }
+    footer a { color: var(--emerald); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.6rem; }
+      .section-card { padding: 1.3rem; }
+      .step { padding-left: 3.5rem; }
+    }
+  </style>
+  <style>
+    body.auth-locked > *:not(#auth-overlay) { visibility: hidden; }
+    #auth-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(26, 36, 18, 0.65); backdrop-filter: blur(12px);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+    }
+    .auth-card {
+      background: #fff; border-radius: 16px; padding: 2.5rem 2rem; text-align: center;
+      max-width: 380px; width: 90%; box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    }
+    .auth-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .auth-card h2 { font-family: 'DM Serif Display', serif; color: #1a4d2e; font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .auth-subtitle { color: #4a6040; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    #auth-google-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; border: 1px solid #dadce0; border-radius: 8px;
+      padding: 10px 24px; font-size: 0.95rem; font-weight: 500;
+      cursor: pointer; color: #3c4043; transition: box-shadow 0.2s;
+    }
+    #auth-google-btn:hover { box-shadow: 0 1px 6px rgba(0,0,0,0.12); }
+    #auth-google-btn:disabled { opacity: 0.6; cursor: wait; }
+    .auth-error { color: #be123c; font-size: 0.85rem; margin-top: 1rem; }
+    .auth-footer { color: #7a9168; font-size: 0.8rem; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-content">
+      <div class="breadcrumb"><a href="/">Sponic Garden</a> &rarr; <a href="/patents/">Patents</a> &rarr; Filing Guide</div>
+      <h1>Provisional Patent Filing Guide</h1>
+      <p class="subtitle">Complete step-by-step instructions for self-filing Sonic Vision as a micro entity ($65)</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- ═══ BEFORE YOU START ═══ -->
+    <div class="section-card">
+      <h2>Before You Start</h2>
+
+      <h3>Confirm Micro Entity Eligibility</h3>
+      <p>You must meet <strong>all three</strong> criteria under <a href="https://www.law.cornell.edu/cfr/text/37/1.29">37 CFR 1.29</a>:</p>
+      <ul class="checklist">
+        <li>You have not been named as inventor on more than 4 previously filed US patent applications (excluding provisionals that did not result in non-provisionals)</li>
+        <li>Your gross income in the prior calendar year did not exceed $228,954 (this threshold = 3x the median US household income, adjusted annually)</li>
+        <li>You have not assigned, granted, or conveyed (and are not obligated to) any rights in the invention to an entity with gross income exceeding that threshold</li>
+      </ul>
+
+      <div class="callout callout-warm">
+        <strong>If you don't qualify as micro entity</strong>, you can still file as a small entity ($130) or large entity ($320). The process is identical except you skip the micro entity certification form and pay the higher fee.
+      </div>
+    </div>
+
+    <!-- ═══ DOCUMENTS NEEDED ═══ -->
+    <div class="section-card">
+      <h2>Documents You Need to Prepare</h2>
+      <p>Prepare these <strong>before</strong> going to Patent Center. All must be in PDF format for electronic filing.</p>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <span class="doc-badge badge-required">Required</span>
+          <span class="doc-title">1. Specification (Written Description)</span>
+        </div>
+        <p class="doc-desc">This is your main document. The <a href="specification.html"><strong>full specification is ready</strong></a> &mdash; open it and use "Print / Save as PDF" to generate the filing document. It includes all 46 numbered paragraphs, 6 embedded figures, and the abstract. It must describe the invention in enough detail that someone skilled in the art could make and use it (35 U.S.C. &sect;112(a)).</p>
+        <ul>
+          <li><strong>Length:</strong> 15&ndash;30 pages for this invention</li>
+          <li><strong>Format:</strong> PDF, letter size (8.5&rdquo; &times; 11&rdquo;) or A4</li>
+          <li><strong>Margins:</strong> Top &ge; 1&rdquo;, Left &ge; 1&rdquo;, Right &ge; 5/8&rdquo;, Bottom &ge; 3/8&rdquo;</li>
+          <li><strong>Font:</strong> At least 12pt, preferably Times New Roman or Arial</li>
+          <li><strong>Line spacing:</strong> 1.5 or double-spaced recommended</li>
+          <li><strong>Claims:</strong> NOT required for a provisional (but including draft claims strengthens the filing)</li>
+          <li><strong>Oath/Declaration:</strong> NOT required for a provisional</li>
+        </ul>
+        <p class="doc-desc" style="margin-top:0.5rem;"><strong>What to include (in order):</strong></p>
+        <ol style="font-size:0.85rem; color:var(--text-dim);">
+          <li>Title of the Invention</li>
+          <li>Cross-Reference to Related Applications (write "None" if first filing)</li>
+          <li>Field of the Invention</li>
+          <li>Background of the Invention &mdash; what exists today and its limitations</li>
+          <li>Summary of the Invention &mdash; brief overview of your solution</li>
+          <li>Brief Description of the Drawings &mdash; one sentence per figure ("Fig. 1 is a block diagram of...")</li>
+          <li>Detailed Description of Preferred Embodiments &mdash; the bulk of the document. Describe each module, the feedback loop, the QR interface, the voice onboarding, the edge/cloud architecture. Reference your figures throughout ("As shown in Fig. 1...")</li>
+          <li>Abstract &mdash; 150 words max summarizing the invention</li>
+        </ol>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <span class="doc-badge badge-recommended">Recommended</span>
+          <span class="doc-title">2. Drawings / Figures</span>
+        </div>
+        <p class="doc-desc"><strong>All 6 figures are ready</strong> and embedded in the <a href="specification.html">specification</a>. They are also available individually as SVGs below. Drawings are not strictly required for a provisional but are <strong>strongly recommended</strong> by the USPTO.</p>
+        <ul>
+          <li><strong>Format:</strong> Black and white line drawings, PDF. Color only if essential and accompanied by a petition.</li>
+          <li><strong>Paper size:</strong> 8.5&rdquo; &times; 11&rdquo; or A4</li>
+          <li><strong>Margins:</strong> Top &ge; 1&rdquo;, Left &ge; 1&rdquo;, Right &ge; 5/8&rdquo;, Bottom &ge; 3/8&rdquo;</li>
+          <li><strong>Numbering:</strong> Each sheet numbered consecutively (e.g., "1/6", "2/6")</li>
+          <li><strong>Labels:</strong> Each figure labeled "FIG. 1", "FIG. 2", etc.</li>
+          <li><strong>Reference numerals:</strong> Use numbers (e.g., 100, 200, 300) to label components, with a legend in the specification</li>
+        </ul>
+        <p class="doc-desc" style="margin-top:0.5rem;"><strong>Figures to create:</strong></p>
+        <ol style="font-size:0.85rem; color:var(--text-dim);">
+          <li><a href="figures/fig1-system-architecture.svg"><strong>FIG. 1</strong></a> &mdash; System architecture block diagram (6 modules + feedback loop)</li>
+          <li><a href="figures/fig2-feedback-loop.svg"><strong>FIG. 2</strong></a> &mdash; Behavioral feedback loop flowchart (detect &rarr; classify &rarr; adjust &rarr; repeat)</li>
+          <li><a href="figures/fig3-gesture-vocabulary.svg"><strong>FIG. 3</strong></a> &mdash; Gesture vocabulary (5 gestures with actions and conflict resolution)</li>
+          <li><a href="figures/fig4-qr-interface.svg"><strong>FIG. 4</strong></a> &mdash; QR companion interface sequence (scan &rarr; location gate &rarr; UI &rarr; feedback)</li>
+          <li><a href="figures/fig5-processing-topology.svg"><strong>FIG. 5</strong></a> &mdash; Edge/cloud/hybrid processing topology (3 modes with latency/privacy characteristics)</li>
+          <li><a href="figures/fig6-voice-onboarding.svg"><strong>FIG. 6</strong></a> &mdash; AI voice onboarding sequence (arrival detect &rarr; cooldown &rarr; TTS &rarr; announce)</li>
+        </ol>
+        <div class="callout callout-green" style="margin-top:0.6rem;">
+          <strong>Done:</strong> All 6 figures use patent-style reference numerals (100-800) matching the specification. They are embedded in the specification HTML and will appear in the printed PDF.
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <span class="doc-badge badge-required">Required</span>
+          <span class="doc-title">3. Cover Sheet &mdash; Form PTO/SB/16</span>
+        </div>
+        <p class="doc-desc">Download: <a href="https://www.uspto.gov/sites/default/files/documents/sb0016.pdf">PTO/SB/16 (PDF)</a></p>
+        <p class="doc-desc">Fill in the following fields:</p>
+        <ul>
+          <li><strong>Type:</strong> Check "Provisional Application for Patent"</li>
+          <li><strong>Title of Invention:</strong> "Adaptive Ambient Audio System Using Computer Vision for Real-Time Audience Detection, Behavioral Feedback Analysis, and Gesture-Based Control"</li>
+          <li><strong>Inventor(s):</strong> Your full legal name(s) and residential address(es) &mdash; city, state, country, zip</li>
+          <li><strong>Correspondence address:</strong> Your mailing address for USPTO communications</li>
+          <li><strong>Attorney/Agent:</strong> Leave blank (self-filing, no attorney)</li>
+          <li><strong>Government interest:</strong> Check "No" unless a federal agency funded this work</li>
+          <li><strong>Entity status:</strong> Check "Micro Entity"</li>
+        </ul>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <span class="doc-badge badge-required">Required</span>
+          <span class="doc-title">4. Micro Entity Certification &mdash; Form PTO/SB/15A</span>
+        </div>
+        <p class="doc-desc">Download: <a href="https://www.uspto.gov/sites/default/files/documents/sb0015a.pdf">PTO/SB/15A (PDF)</a></p>
+        <p class="doc-desc">This certifies your micro entity status. Fill in:</p>
+        <ul>
+          <li><strong>Applicant name:</strong> Your full legal name</li>
+          <li><strong>Application number:</strong> Leave blank (assigned after filing)</li>
+          <li><strong>Check box 1:</strong> "I qualify as micro entity as defined in 37 CFR 1.29(a)"</li>
+          <li><strong>Check all sub-boxes:</strong> Confirming the 3 qualification criteria (fewer than 4 prior apps, income limit, no assignment to large entity)</li>
+          <li><strong>Sign and date</strong></li>
+        </ul>
+        <div class="callout callout-rose" style="margin-top:0.6rem;">
+          <strong>Warning:</strong> Falsely claiming micro entity status is fraud on the USPTO and can invalidate your patent. Make sure you genuinely qualify.
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <span class="doc-badge badge-recommended">Recommended</span>
+          <span class="doc-title">5. Application Data Sheet (ADS)</span>
+        </div>
+        <p class="doc-desc">The ADS can be filled out online during the Patent Center submission. It captures:</p>
+        <ul>
+          <li>Inventor name(s), address(es), citizenship</li>
+          <li>Applicant information (same as inventor for self-filing)</li>
+          <li>Correspondence address</li>
+          <li>Application type (provisional)</li>
+          <li>Title of invention</li>
+        </ul>
+        <p class="doc-desc">Patent Center generates this form for you during the online filing process, so you don't need to prepare it separately.</p>
+      </div>
+    </div>
+
+    <!-- ═══ SPECIFICATION TEMPLATE ═══ -->
+    <div class="section-card">
+      <h2>Specification Document Template</h2>
+      <p>Use this structure when expanding the .md file into a formal specification PDF:</p>
+
+      <div class="format-spec">
+<pre>
+PROVISIONAL PATENT APPLICATION
+
+Title:  Adaptive Ambient Audio System Using Computer
+        Vision for Real-Time Audience Detection,
+        Behavioral Feedback Analysis, and Gesture-Based Control
+
+Inventor(s): [Your Full Legal Name]
+             [City, State, Country]
+
+──────────────────────────────────────────────────
+
+CROSS-REFERENCE TO RELATED APPLICATIONS
+  None.
+
+FIELD OF THE INVENTION
+  [1-2 paragraphs: ambient audio, computer vision, ML, edge computing]
+
+BACKGROUND OF THE INVENTION
+  [2-3 pages: limitations of static playlists, manual DJ,
+   Muzak-style services, existing emotion-detection patents
+   and their shortcomings]
+
+SUMMARY OF THE INVENTION
+  [2-3 pages: overview of the 6-module system, the feedback
+   loop innovation, and the key advantages]
+
+BRIEF DESCRIPTION OF THE DRAWINGS
+  FIG. 1 is a block diagram of the system architecture.
+  FIG. 2 is a flowchart of the behavioral feedback loop.
+  FIG. 3 illustrates the gesture vocabulary.
+  FIG. 4 is a sequence diagram of the QR companion interface.
+  FIG. 5 shows the edge/cloud/hybrid processing topology.
+  FIG. 6 is a sequence diagram of the AI voice onboarding.
+
+DETAILED DESCRIPTION OF PREFERRED EMBODIMENTS
+
+  1. System Overview (reference FIG. 1)
+     [2-3 pages]
+
+  2. Vision Module
+     [2-3 pages: person detection, demographics, activity
+      recognition, behavioral feedback, gesture recognition]
+
+  3. Audio Intelligence Engine
+     [2-3 pages: music tagging, selection algorithm, RL]
+
+  4. Audio Output System
+     [1-2 pages: zone-aware playback, transitions, volume]
+
+  5. QR-Based Companion Interface (reference FIG. 4)
+     [2-3 pages: QR generation, location gating, web UI]
+
+  6. AI Voice Onboarding (reference FIG. 6)
+     [1-2 pages: synthesis, content, adaptive frequency]
+
+  7. Processing Architecture (reference FIG. 5)
+     [2-3 pages: edge, cloud, hybrid modes]
+
+  8. Behavioral Feedback Loop (reference FIG. 2)
+     [2-3 pages: positive/negative signals, RL rewards]
+
+  9. Gesture Control (reference FIG. 3)
+     [1-2 pages: supported gestures, conflict resolution]
+
+  10. Use Cases
+      [1-2 pages: restaurant, retail, gym, hotel, etc.]
+
+ABSTRACT
+  [150 words max — single paragraph summary]
+</pre>
+      </div>
+    </div>
+
+    <!-- ═══ STEP BY STEP FILING ═══ -->
+    <div class="section-card">
+      <h2>Step-by-Step Filing on Patent Center</h2>
+
+      <div class="step-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Create a USPTO.gov Account</h4>
+          <p>Go to <a href="https://patentcenter.uspto.gov">patentcenter.uspto.gov</a>. Click "Create Account" or sign in with an existing USPTO account. You'll need to verify your email. This is a one-time setup.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Start a New Submission</h4>
+          <p>Once logged in, click <strong>"New Submissions"</strong> in the left sidebar, then select <strong>"Utility &mdash; Provisional"</strong>. This opens the provisional application submission wizard.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Upload Your Specification</h4>
+          <p>Under "Application Documents", click <strong>"Upload"</strong>. Select your specification PDF. Set the document type to <strong>"Specification"</strong>. The system accepts PDF, DOCX, and TIFF formats, but PDF is recommended.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Upload Your Drawings</h4>
+          <p>Click "Upload" again. Select your drawings PDF. Set the document type to <strong>"Drawings"</strong>. All figures should be in a single PDF file, numbered "1/6", "2/6", etc.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <h4>Upload the Cover Sheet (SB/16)</h4>
+          <p>Upload your completed <a href="https://www.uspto.gov/sites/default/files/documents/sb0016.pdf">Form PTO/SB/16</a>. Set the document type to <strong>"Provisional Cover Sheet"</strong>.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">6</div>
+          <h4>Upload Micro Entity Certification (SB/15A)</h4>
+          <p>Upload your completed <a href="https://www.uspto.gov/sites/default/files/documents/sb0015a.pdf">Form PTO/SB/15A</a>. Set the document type to <strong>"Certification of Micro Entity Status"</strong>.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">7</div>
+          <h4>Fill Out the Application Data Sheet</h4>
+          <p>Patent Center has an integrated ADS form. Fill in: inventor name(s), address(es), citizenship, title of invention, correspondence address. For a single-inventor self-filing, this takes about 5 minutes.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">8</div>
+          <h4>Select Entity Status &amp; Calculate Fee</h4>
+          <p>Select <strong>"Micro Entity"</strong> as your entity status. The system will calculate your fee: <strong>$65</strong>. Verify this matches before proceeding.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">9</div>
+          <h4>Review &amp; Submit</h4>
+          <p>Review all uploaded documents and form data. Check that inventor names, title, and documents are correct. <strong>You cannot amend a provisional after filing</strong> (except for regulatory compliance), so double-check everything.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">10</div>
+          <h4>Pay the $65 Fee</h4>
+          <p>Pay via credit card, debit card, EFT, or USPTO deposit account. Payment is processed immediately.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">11</div>
+          <h4>Save Your Filing Receipt</h4>
+          <p>After payment, you'll receive an <strong>electronic filing receipt</strong> with your <strong>application number</strong> and <strong>filing date</strong> (your priority date). Save this PDF securely. You'll also receive an email confirmation.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">12</div>
+          <h4>You're Patent Pending!</h4>
+          <p>You can now legally mark your invention as <strong>"Patent Pending"</strong>. Set a calendar reminder for <strong>10 months from your filing date</strong> to decide whether to convert to a non-provisional application.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ AFTER FILING ═══ -->
+    <div class="section-card">
+      <h2>After Filing</h2>
+
+      <h3>What Happens Next</h3>
+      <ul>
+        <li>The provisional is <strong>not examined</strong> &mdash; no patent examiner will review it</li>
+        <li>It will <strong>not be published</strong> &mdash; it stays confidential</li>
+        <li>It <strong>cannot be amended</strong> after filing (except for regulatory compliance)</li>
+        <li>It <strong>expires in exactly 12 months</strong> if you don't file a non-provisional claiming its benefit</li>
+      </ul>
+
+      <h3>Critical Deadlines</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>When</th><th>What</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Filing date</strong></td><td>Priority date established</td><td>Save receipt securely</td></tr>
+            <tr><td><strong>Month 1&ndash;9</strong></td><td>Build prototype, refine invention</td><td>Document improvements (can file continuation)</td></tr>
+            <tr><td><strong>Month 10</strong></td><td>Decision point</td><td>Decide: convert to non-provisional, file new provisional, or let expire</td></tr>
+            <tr><td><strong>Month 12</strong></td><td>Provisional expires</td><td>Must have filed non-provisional by this date to keep priority</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Your Three Options at Month 10&ndash;12</h3>
+      <ol>
+        <li><strong>Convert to non-provisional</strong> ($6K&ndash;$16K with attorney) &mdash; proceed toward an examined, enforceable patent</li>
+        <li><strong>File a new provisional</strong> ($65) &mdash; if the invention has changed significantly, file a fresh provisional with updated specification. You get a new priority date but lose the old one.</li>
+        <li><strong>Let it expire</strong> ($0) &mdash; if you've decided not to pursue patent protection. The provisional was never published so it doesn't become prior art against you.</li>
+      </ol>
+    </div>
+
+    <!-- ═══ IMPORTANT RULES ═══ -->
+    <div class="section-card">
+      <h2>Important Rules &amp; Pitfalls</h2>
+
+      <div class="callout callout-rose">
+        <strong>Do NOT publicly disclose the invention before filing.</strong> Under US law, you have a 1-year grace period after public disclosure, but international patent rights are lost immediately upon public disclosure. File first, then disclose.
+      </div>
+
+      <div class="callout callout-warm">
+        <strong>The specification must be detailed enough.</strong> A provisional only protects what it describes. If you later add features to the non-provisional that weren't in the provisional, those features don't get the earlier priority date. Be thorough now.
+      </div>
+
+      <div class="callout callout-sky">
+        <strong>Name ALL inventors.</strong> Every person who contributed to the conception of any claim must be named. Omitting an inventor can invalidate the patent. Conversely, naming someone who didn't actually invent is also grounds for invalidation.
+      </div>
+
+      <div class="callout callout-green">
+        <strong>Keep records.</strong> Maintain dated lab notebooks, emails, design documents, and code commits that show the development timeline. These can be critical evidence of invention date if the patent is ever challenged.
+      </div>
+    </div>
+
+    <!-- ═══ FORM LINKS ═══ -->
+    <div class="section-card">
+      <h2>Direct Links to USPTO Forms &amp; Resources</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Resource</th><th>Link</th></tr></thead>
+          <tbody>
+            <tr><td colspan="2" style="font-weight:bold; background:var(--green-soft); color:var(--green);">YOUR FILING DOCUMENTS (ready to print as PDF)</td></tr>
+            <tr><td><strong>Full Specification</strong> &mdash; 46 paragraphs, patent prose + 6 figures</td><td><a href="specification.html">View &amp; Print as PDF</a></td></tr>
+            <tr><td><strong>FIG. 1</strong> &mdash; System architecture block diagram</td><td><a href="figures/fig1-system-architecture.svg">View SVG</a></td></tr>
+            <tr><td><strong>FIG. 2</strong> &mdash; Behavioral feedback loop flowchart</td><td><a href="figures/fig2-feedback-loop.svg">View SVG</a></td></tr>
+            <tr><td><strong>FIG. 3</strong> &mdash; Gesture vocabulary reference</td><td><a href="figures/fig3-gesture-vocabulary.svg">View SVG</a></td></tr>
+            <tr><td><strong>FIG. 4</strong> &mdash; QR companion interface sequence</td><td><a href="figures/fig4-qr-interface.svg">View SVG</a></td></tr>
+            <tr><td><strong>FIG. 5</strong> &mdash; Edge/cloud/hybrid processing topology</td><td><a href="figures/fig5-processing-topology.svg">View SVG</a></td></tr>
+            <tr><td><strong>FIG. 6</strong> &mdash; AI voice onboarding sequence</td><td><a href="figures/fig6-voice-onboarding.svg">View SVG</a></td></tr>
+            <tr><td><strong>Patent overview &amp; claims</strong></td><td><a href="/patents/">View overview</a></td></tr>
+            <tr><td><strong>Raw specification (.md)</strong></td><td><a href="SONIC-VISION-PATENT.md">Download .md</a></td></tr>
+            <tr><td colspan="2" style="font-weight:bold; background:var(--sky-soft); color:var(--sky);">USPTO FORMS &amp; RESOURCES</td></tr>
+            <tr><td><strong>Patent Center</strong> (file here)</td><td><a href="https://patentcenter.uspto.gov">patentcenter.uspto.gov</a></td></tr>
+            <tr><td><strong>Form PTO/SB/16</strong> &mdash; Provisional cover sheet</td><td><a href="https://www.uspto.gov/sites/default/files/documents/sb0016.pdf">Download PDF</a></td></tr>
+            <tr><td><strong>Form PTO/SB/15A</strong> &mdash; Micro entity certification</td><td><a href="https://www.uspto.gov/sites/default/files/documents/sb0015a.pdf">Download PDF</a></td></tr>
+            <tr><td><strong>Fee schedule</strong> (verify current fees)</td><td><a href="https://www.uspto.gov/learning-and-resources/fees-and-payment/uspto-fee-schedule">USPTO fees</a></td></tr>
+            <tr><td><strong>All patent forms</strong></td><td><a href="https://www.uspto.gov/patents/apply/forms">USPTO forms page</a></td></tr>
+            <tr><td><strong>Drawing requirements</strong> (37 CFR &sect;1.84)</td><td><a href="https://www.law.cornell.edu/cfr/text/37/1.84">Full regulation</a></td></tr>
+            <tr><td><strong>Provisional patent overview</strong></td><td><a href="https://www.uspto.gov/patents/basics/apply/provisional-application">USPTO guide</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══ PREFILING CHECKLIST ═══ -->
+    <div class="section-card">
+      <h2>Pre-Filing Checklist</h2>
+      <p>Complete every item before going to Patent Center:</p>
+      <ul class="checklist">
+        <li><a href="specification.html">Specification</a> reviewed, printed to PDF (use browser Print &rarr; Save as PDF)</li>
+        <li>6 figures (<a href="figures/fig1-system-architecture.svg">1</a>, <a href="figures/fig2-feedback-loop.svg">2</a>, <a href="figures/fig3-gesture-vocabulary.svg">3</a>, <a href="figures/fig4-qr-interface.svg">4</a>, <a href="figures/fig5-processing-topology.svg">5</a>, <a href="figures/fig6-voice-onboarding.svg">6</a>) saved as single PDF (figures are embedded in specification)</li>
+        <li><a href="https://www.uspto.gov/sites/default/files/documents/sb0016.pdf">Form PTO/SB/16</a> filled out and signed (cover sheet)</li>
+        <li><a href="https://www.uspto.gov/sites/default/files/documents/sb0015a.pdf">Form PTO/SB/15A</a> filled out and signed (micro entity cert)</li>
+        <li>All inventor names and addresses confirmed</li>
+        <li>Invention title finalized</li>
+        <li>Abstract written (150 words max) &mdash; included in <a href="specification.html">specification</a></li>
+        <li>Credit card ready for $65 payment</li>
+        <li>NOT publicly disclosed the invention yet</li>
+        <li><a href="https://patentcenter.uspto.gov">USPTO.gov account</a> created and verified</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Sonic Vision Filing Guide &mdash; Sponic Garden IP Portfolio &middot; March 2026</p>
+    <p style="margin-top: 0.4rem;"><a href="/patents/">Back to Patent Overview</a> &middot; <a href="/">Sponic Garden</a> &middot; <a href="SONIC-VISION-PATENT.md">Download .md</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="/patents/auth-guard.js"></script>
+</body>
+</html>
