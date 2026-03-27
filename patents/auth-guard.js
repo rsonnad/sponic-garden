@@ -2,7 +2,7 @@
 (function () {
   const SUPABASE_URL = 'https://aphrrfprbixmhissnjfn.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwaHJyZnByYml4bWhpc3NuamZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5MzA0MjUsImV4cCI6MjA4NTUwNjQyNX0.yYkdQIq97GQgxK7yT2OQEPi0Tt-a7gM45aF8xjSD6wk';
-  const ALLOWED_EMAIL = 'wingsiebird@gmail.com';
+  const ALLOWED_EMAILS = ['rahulioson@gmail.com', 'wingsiebird@gmail.com'];
 
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
@@ -11,7 +11,7 @@
   overlay.id = 'auth-overlay';
   overlay.innerHTML = `
     <div class="auth-card">
-      <div class="auth-icon">&#127807;</div>
+      <img src="/branding/94-vines-waveform-orchid-transparent.png" alt="Sponic Gardens" class="auth-logo">
       <h2>Sponic Garden</h2>
       <p class="auth-subtitle">Sign in to view patent documents</p>
       <button id="auth-google-btn" type="button">
@@ -48,7 +48,7 @@
   async function checkAuth() {
     const { data: { session } } = await sb.auth.getSession();
     if (!session) return false;
-    if (session.user.email !== ALLOWED_EMAIL) {
+    if (!ALLOWED_EMAILS.includes(session.user.email)) {
       await sb.auth.signOut();
       errorEl.textContent = 'Access denied. This account is not authorized.';
       errorEl.style.display = 'block';
@@ -68,7 +68,7 @@
   // Listen for auth state changes (handles OAuth redirect callback)
   sb.auth.onAuthStateChange(async (event, session) => {
     if (event === 'SIGNED_IN' && session) {
-      if (session.user.email !== ALLOWED_EMAIL) {
+      if (!ALLOWED_EMAILS.includes(session.user.email)) {
         await sb.auth.signOut();
         errorEl.textContent = 'Access denied. This account is not authorized.';
         errorEl.style.display = 'block';
