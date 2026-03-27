@@ -1,7 +1,7 @@
 /* patents/auth-guard.js — Supabase Google OAuth guard for patent pages */
 (function () {
   const SUPABASE_URL = 'https://aphrrfprbixmhissnjfn.supabase.co';
-  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwaHJyZnByYml4bWhpc3NuamZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5MzA0MjUsImV4cCI6MjA4NTUwNjQyNX0.yYkdQIq97GQgxK7yT2OQEPi0Tt-a7gM45aF8xjSD6wk';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwaHJyZnByYml4bWhpc3NuamZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5MzA0MjUsImV4cCI6MjA4NTUwNjQyNX0.yYkdQIq97GQgxK7yT2OQEPi5Tt-a7gM45aF8xjSD6wk';
   const ALLOWED_EMAILS = ['rahulioson@gmail.com', 'wingsiebird@gmail.com'];
 
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -30,6 +30,16 @@
   const btn = document.getElementById('auth-google-btn');
   const errorEl = document.getElementById('auth-error');
 
+  function unlock() {
+    overlay.style.display = 'none';
+    document.body.classList.remove('auth-locked');
+  }
+
+  function deny(msg) {
+    errorEl.textContent = msg || 'Access denied. This account is not authorized.';
+    errorEl.style.display = 'block';
+  }
+
   btn.addEventListener('click', async function () {
     btn.disabled = true;
     btn.textContent = 'Redirecting\u2026';
@@ -38,46 +48,22 @@
       options: { redirectTo: window.location.origin + window.location.pathname }
     });
     if (error) {
-      errorEl.textContent = error.message;
-      errorEl.style.display = 'block';
+      deny(error.message);
       btn.disabled = false;
       btn.textContent = 'Sign in with Google';
     }
   });
 
-  async function checkAuth() {
-    const { data: { session } } = await sb.auth.getSession();
-    if (!session) return false;
-    if (!ALLOWED_EMAILS.includes(session.user.email)) {
-      await sb.auth.signOut();
-      errorEl.textContent = 'Access denied. This account is not authorized.';
-      errorEl.style.display = 'block';
-      return false;
-    }
-    return true;
-  }
-
-  async function init() {
-    const authed = await checkAuth();
-    if (authed) {
-      overlay.style.display = 'none';
-      document.body.classList.remove('auth-locked');
-    }
-  }
-
-  // Listen for auth state changes (handles OAuth redirect callback)
+  // Single auth handler — works for both existing sessions and OAuth callbacks
   sb.auth.onAuthStateChange(async (event, session) => {
-    if (event === 'SIGNED_IN' && session) {
+    if (event === 'INITIAL_SESSION' || event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+      if (!session) return;            // no session yet — stay on sign-in
       if (!ALLOWED_EMAILS.includes(session.user.email)) {
         await sb.auth.signOut();
-        errorEl.textContent = 'Access denied. This account is not authorized.';
-        errorEl.style.display = 'block';
+        deny();
         return;
       }
-      overlay.style.display = 'none';
-      document.body.classList.remove('auth-locked');
+      unlock();
     }
   });
-
-  init();
 })();
