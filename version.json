@@ -1,12 +1,12 @@
 {
-  "version": "v260326.04 8:05p",
-  "release": 20,
-  "sha": "2050464",
-  "fullSha": "2050464333dd79493954daab35a1db9c3d929866",
+  "version": "v260327.01 1:25a",
+  "release": 21,
+  "sha": "1db1bea",
+  "fullSha": "1db1bea271ce685c4a89dbe97d077624194f0c34",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
-  "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-27 01:05:46+00",
-  "commits": [{"sha":"2050464","message":"feat: add Google OAuth auth guard to patent pages","author":"Rahul"}]
+  "machine": "runnervm46oaq",
+  "pushedAt": "2026-03-27 06:25:13+00",
+  "commits": [{"sha":"1db1bea","message":"fix: allow rahulioson@gmail.com login, use homepage logo on auth overlay","author":"Rahul"}]
 }
