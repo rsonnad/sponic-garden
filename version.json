@@ -1,12 +1,12 @@
 {
-  "version": "v260328.02 3:27a",
-  "release": 25,
-  "sha": "10b10cb",
-  "fullSha": "10b10cbc1ab5538b18bcc18d1a21e17e48c52a9c",
+  "version": "v260328.03 4:42a",
+  "release": 26,
+  "sha": "b4e16c5",
+  "fullSha": "b4e16c50a84e92b4ed463593de6a72041222f4cc",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-28 08:27:30+00",
-  "commits": [{"sha":"10b10cb","message":"add strategic location evaluation page for Warsaw & Krakow prototype sites","author":"Rahul"}]
+  "pushedAt": "2026-03-28 09:42:30+00",
+  "commits": [{"sha":"b4e16c5","message":"fix images/maps, add 6 tier-2 locations, link MOST to Polish site","author":"Rahul"}]
 }
