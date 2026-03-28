@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponic Gardens — Strategic Location Evaluation: Warsaw &amp; Krakow</title>
+  <meta name="description" content="Comprehensive evaluation of prototype facility locations for Sponic Gardens across Warsaw and Krakow, including partnerships, budgets, and implementation strategy.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" type="image/svg+xml">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    :root {
+      --bg: #f4f7f1;
+      --surface: #ffffff;
+      --surface2: #eef3ea;
+      --surface3: #e2eadc;
+      --border: #c4d4ba;
+      --border-light: #d8e3cf;
+      --text: #1a2412;
+      --text-soft: #2d3b22;
+      --text-dim: #4a6040;
+      --text-muted: #7a9168;
+      --green: #2d6a1e;
+      --green-soft: rgba(45, 106, 30, 0.07);
+      --green-border: rgba(45, 106, 30, 0.20);
+      --emerald: #047857;
+      --emerald-soft: rgba(4, 120, 87, 0.06);
+      --emerald-border: rgba(4, 120, 87, 0.18);
+      --earth: #92400e;
+      --earth-soft: rgba(146, 64, 14, 0.06);
+      --earth-border: rgba(146, 64, 14, 0.20);
+      --sky: #0369a1;
+      --sky-soft: rgba(3, 105, 161, 0.05);
+      --sky-border: rgba(3, 105, 161, 0.16);
+      --plum: #7e22ce;
+      --plum-soft: rgba(126, 34, 206, 0.05);
+      --plum-border: rgba(126, 34, 206, 0.16);
+      --warm: #b45309;
+      --warm-soft: rgba(180, 83, 9, 0.06);
+      --warm-border: rgba(180, 83, 9, 0.20);
+      --rose: #be123c;
+      --rose-soft: rgba(190, 18, 60, 0.05);
+      --rose-border: rgba(190, 18, 60, 0.16);
+      --slate: #475569;
+      --slate-soft: rgba(71, 85, 105, 0.05);
+      --slate-border: rgba(71, 85, 105, 0.16);
+      --vine: #1a4d2e;
+      --vine-soft: rgba(26, 77, 46, 0.06);
+      --canopy: rgba(26, 77, 46, 0.03);
+      --circuit: rgba(79, 209, 197, 0.10);
+      --circuit-line: rgba(79, 209, 197, 0.25);
+      --glow: rgba(52, 211, 153, 0.20);
+      --node: #34d399;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-lg: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ═══════════════ HERO ═══════════════ */
+    .hero {
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #d8e8ca 0%, #dde8d2 35%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 15v22L30 52 0 37V15z' fill='none' stroke='%234fd1c5' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E");
+      background-size: 60px 52px;
+      opacity: 0.6;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 20%, rgba(52,211,153,0.08), transparent 70%);
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 400;
+      color: var(--vine);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero-meta {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.7rem;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      color: var(--text-dim);
+    }
+
+    /* ═══════════════ LAYOUT ═══════════════ */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    section { padding: 3rem 0; }
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--vine);
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    p { margin-bottom: 0.75rem; font-size: 0.9rem; color: var(--text-soft); }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 600; }
+    a { color: var(--green); text-decoration: underline; text-decoration-color: var(--green-border); }
+    a:hover { text-decoration-color: var(--green); }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border-light);
+      margin: 0;
+    }
+
+    /* ═══════════════ INTRO GRID ═══════════════ */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* ═══════════════ ZONE TABLE ═══════════════ */
+    .zone-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-top: 0.75rem;
+    }
+    .zone-table th {
+      text-align: left;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      background: var(--surface2);
+    }
+    .zone-table td {
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: top;
+      color: var(--text-soft);
+    }
+    .zone-table tr:hover { background: var(--green-soft); }
+    .zone-icon { font-size: 1rem; margin-right: 0.3rem; vertical-align: middle; }
+
+    /* ═══════════════ LOCATION CARDS ═══════════════ */
+    .loc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .loc-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .loc-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    .loc-card.primary {
+      border: 2px solid var(--green-border);
+      box-shadow: 0 2px 12px rgba(45, 106, 30, 0.1);
+    }
+    .loc-card.primary .loc-badge { background: var(--green); color: white; }
+    .loc-card.urban .loc-badge { background: var(--sky); color: white; }
+    .loc-card.tech .loc-badge { background: var(--earth); color: white; }
+    .loc-card.academic .loc-badge { background: var(--plum); color: white; }
+    .loc-card.event .loc-badge { background: var(--warm); color: white; }
+    .loc-card.community .loc-badge { background: var(--emerald); color: white; }
+    .loc-card.heritage .loc-badge { background: var(--rose); color: white; }
+
+    .loc-top {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      min-height: 240px;
+    }
+    .loc-img {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface3);
+    }
+    .loc-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .loc-img-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      opacity: 0.5;
+      background: linear-gradient(135deg, var(--surface2) 0%, var(--surface3) 100%);
+    }
+    .loc-badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .loc-body {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .loc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      gap: 1rem;
+    }
+    .loc-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--vine);
+      font-weight: 400;
+    }
+    .loc-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green);
+      white-space: nowrap;
+    }
+    .loc-rating-label {
+      font-size: 0.55rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .loc-desc {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      flex: 1;
+    }
+    .loc-meta-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-light);
+    }
+    .loc-meta-pill {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.55rem;
+      background: var(--surface2);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+    .loc-meta-pill.cost {
+      background: var(--earth-soft);
+      border-color: var(--earth-border);
+      color: var(--earth);
+      font-weight: 600;
+    }
+    .loc-meta-pill a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .loc-meta-pill a:hover { text-decoration: underline; }
+
+    /* AI DISPOSITION BADGE */
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .ai-badge.very-high { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .ai-badge.high { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+    .ai-badge.moderate { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .ai-badge.low { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+    .ai-badge.unknown { background: var(--slate-soft); color: var(--slate); border: 1px solid var(--slate-border); }
+
+    /* EXPANDED DETAILS */
+    .loc-details {
+      padding: 0 1.5rem 1.25rem;
+    }
+    .loc-details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .loc-detail-box {
+      background: var(--surface2);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+    }
+    .loc-detail-box h4 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+    .loc-detail-box p { font-size: 0.82rem; margin-bottom: 0; }
+
+    /* MAP EMBED */
+    .map-frame {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: var(--radius);
+      margin-top: 0.75rem;
+    }
+
+    /* ═══════════════ BUDGET ═══════════════ */
+    .budget-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .budget-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .budget-pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+    .budget-amt {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .budget-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-soft);
+    }
+
+    /* ═══════════════ STRATEGY CARDS ═══════════════ */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .strategy-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .strategy-card .strat-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .strategy-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--vine);
+    }
+    .strategy-card .strat-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ═══════════════ CALLOUT ═══════════════ */
+    .callout-box {
+      background: var(--green-soft);
+      border: 1px solid var(--green-border);
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .callout-box h3 { color: var(--green); }
+
+    /* ═══════════════ BACK LINK ═══════════════ */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+    .back-link:hover { color: var(--green); }
+
+    /* ═══════════════ FOOTER ═══════════════ */
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border-light);
+      margin-top: 2rem;
+    }
+    footer p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════ RESPONSIVE ═══════════════ */
+    @media (max-width: 768px) {
+      .intro-grid, .loc-details-grid, .strategy-grid { grid-template-columns: 1fr; }
+      .budget-grid { grid-template-columns: repeat(2, 1fr); }
+      .loc-top { grid-template-columns: 1fr; }
+      .loc-img { min-height: 200px; }
+      .hero { padding: 2rem 1rem 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .budget-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════ HERO ════════ -->
+<div class="hero">
+  <div class="hero-content">
+    <a href="/" class="back-link">&larr; sponicgardens.com</a>
+    <h1>Strategic Location Evaluation</h1>
+    <p class="hero-sub">Prototype facility locations for Sponic Gardens across Warsaw and Krakow &mdash; rated, mapped, and analyzed for a $250K six-month pilot.</p>
+    <div class="hero-meta">
+      <span class="hero-pill">9 Locations Evaluated</span>
+      <span class="hero-pill">$250K / 6-Month Pilot</span>
+      <span class="hero-pill">Warsaw + Krakow</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ════════ INTRO ════════ -->
+<section>
+  <div class="section-label">Context</div>
+  <h2>The AI-Native Facility Challenge</h2>
+  <p>The Sponic Gardens vision &mdash; an AI-native, indoor-outdoor warehouse-greenhouse hybrid &mdash; requires a location that transcends traditional commercial real estate. The proposed facility is a <strong>"living lab"</strong> where physical infrastructure is inextricably linked to an autonomous operating system, necessitating a site that can accommodate high-density sensor arrays, thermal complexes, and community-centric zones while maintaining deep proximity to natural ecosystems.</p>
+
+  <div class="intro-grid">
+    <div class="intro-card">
+      <h3>Three-Layer Intelligence Model</h3>
+      <p><strong>Sensor Layer:</strong> Pervasive mesh of Zigbee/ESP32 stacks (Phase 1: temp, humidity, soil moisture; Phase 2: multispectral cameras, VOC sensors, water flow; Phase 3: full mesh with granular energy sub-metering and per-plunge water quality).</p>
+    </div>
+    <div class="intro-card">
+      <h3>Sonic Vision Technology</h3>
+      <p>Sound wave technology to monitor plant health and structural integrity. The site must facilitate integration of acoustic arrays across growing zones for real-time botanical diagnostics.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ZONE TABLE ════════ -->
+<section>
+  <div class="section-label">Spatial Requirements</div>
+  <h2>Functional Zoning Requirements</h2>
+  <p>The chosen site must accommodate a diverse array of functional zones, each with unique technical requirements:</p>
+  <table class="zone-table">
+    <thead>
+      <tr><th>Zone</th><th>Primary Infrastructure</th><th>AI Actuation Requirements</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="zone-icon">🌱</span><strong>Growing Zones</strong></td>
+        <td>Hydroponic bays, vertical gardens, greenhouse cultivation</td>
+        <td>Nutrient dosing, spectral lighting adjustment, irrigation flow</td>
+      </tr>
+      <tr>
+        <td><span class="zone-icon">🧖</span><strong>Thermal Complex</strong></td>
+        <td>Saunas (2), steam room, cold plunges (2), hot tub, cool pool</td>
+        <td>Temperature regulation, water filtration, humidity control</td>
+      </tr>
+      <tr>
+        <td><span class="zone-icon">🧘</span><strong>Fitness Wing</strong></td>
+        <td>30-person hot yoga and dance studios</td>
+        <td>HVAC ventilation, circadian mood lighting, audio-level monitoring</td>
+      </tr>
+      <tr>
+        <td><span class="zone-icon">🔧</span><strong>Maker Space</strong></td>
+        <td>3D printers (FDM/Resin), CNC routers, design workstations</td>
+        <td>Energy load balancing, dust/VOC extraction monitoring</td>
+      </tr>
+      <tr>
+        <td><span class="zone-icon">🍽️</span><strong>Food Hall</strong></td>
+        <td>Vendor stations, communal dining, terrace areas</td>
+        <td>Digital billing integration, occupancy heatmapping</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<hr class="divider">
+
+<!-- ════════ LOCATION CARDS ════════ -->
+<section>
+  <div class="section-label">Ranked Evaluation &mdash; Technical (40%) &middot; Cost-Efficiency (30%) &middot; Brand Alignment (30%)</div>
+  <h2>Location &amp; Partnership Analysis</h2>
+
+  <div class="loc-grid">
+
+    <!-- ─── 1. MOST ─── -->
+    <div class="loc-card primary">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Primary Site</span>
+          <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=680&h=480&fit=crop" alt="Regenerative urban farm with raised beds and greenhouse" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">MOST Cooperative Farm</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Siekierki, Warsaw &middot; ul. Gwintowa 2</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">9.3</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A 3.6-hectare regenerative urban farm integrating food production with social entrepreneurship and community workshops. Recognized as a "Food Lab" with an edible forest and planned greenhouse infrastructure. <strong>Philosophically aligned with Sponic</strong> &mdash; the ecosystem itself has a seat on the supervisory board as a "natural person."</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">Low / Partnership</span>
+            <span class="loc-meta-pill">~20 min to center</span>
+            <span class="loc-meta-pill">Bus / Tram from Mokotow</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Gwintowa+2,+Warsaw,+Poland" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge very-high">AI Disposition: Very High</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Why #1 for Sponic</h4>
+            <p>Build directly on their 3.6 ha land using planned greenhouse infrastructure in exchange for technical expertise. Avoids high capital expenditure while providing a massive "living lab" for agroecological and solarpunk experiments. Already running ethnobotanical projects.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Very High.</strong> MOST already treats the ecosystem as a legal entity and runs a "Food Lab." Their cooperative structure welcomes technology that serves regenerative goals. AI-driven monitoring fits their existing ethos of systems thinking. The Holobiont project signals openness to experimental, cross-disciplinary approaches.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Gwintowa+2,+Warsaw,+Poland&zoom=14"></iframe>
+        <div style="margin-top:0.5rem;">
+          <a href="MOSToffer.html" style="font-size:0.85rem; font-weight:600;">Read the full MOST Corporate Volunteering offer &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 2. BOHEMA 2.8 ─── -->
+    <div class="loc-card urban">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Urban Flagship</span>
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=680&h=480&fit=crop" alt="Modern industrial-style event space with exposed brick" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">BOHEMA 2.8</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Praga District, Warsaw</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">8.1</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A brand-new, <strong>440 sqm column-free</strong> event space within a major post-industrial residential development. Industrial brick-and-steel aesthetic ideal for a high-visibility urban flagship. Surrounding complex offers outdoor areas for integrated community gardening. Potential for permanent yoga or dance studio installations.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">$3,750 &ndash; $6,250/mo</span>
+            <span class="loc-meta-pill">~15 min to center</span>
+            <span class="loc-meta-pill">Metro (Szwedzka) / Tram</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=BOHEMA+Praga,+Warsaw" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge high">AI Disposition: High</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Drive membership growth and fitness engagement via a high-visibility "Fitness Wing" and "Food Hall" pilot. Modern infrastructure supports recurring use agreements for a consistent public presence while keeping monthly costs within budget.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>High.</strong> New-build commercial property in a gentrifying creative district. The developer and tenant base skew young, tech-forward. AI-driven occupancy heatmapping and digital billing integration would be seen as premium amenities rather than friction. Managment likely values innovation as a differentiator.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Bohema+Praga+Warsaw&zoom=14"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 3. Wawer Warehouse ─── -->
+    <div class="loc-card tech">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Technical Base</span>
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=680&h=480&fit=crop" alt="Modern warehouse workshop space" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">New Warehouse (Wawer)</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Wał Miedzeszyński, Warsaw</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">8.0</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A <strong>210 sqm new-build</strong> facility on the Vistula riverbank, providing a pristine environment for high-ROI sensor testing. Located in a green district known for forest parks. Perfectly sized for a 6-month technical pilot focusing on hardware fabrication and AI OS development.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">$3,317/mo</span>
+            <span class="loc-meta-pill">~20 min to center</span>
+            <span class="loc-meta-pill">Bus (Wał Miedzeszyński)</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Wał+Miedzeszyński,+Wawer,+Warsaw" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge very-high">AI Disposition: Very High</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Primary server infrastructure for the AI OS and "Maker Space." Nature proximity on the Vistula riverbank enables testing sensor responses to varying riparian microclimates. Ideal for hardware staging and prototyping garden infrastructure like vine trellis brackets.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Very High.</strong> Commercial warehouse rental with no ideological filter — purely transactional. The landlord benefits from a tech tenant willing to sign a 6-month term. Zero friction to installing any AI/sensor infrastructure. The space is a blank canvas.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Wał+Miedzeszyński,+Wawer,+Warsaw&zoom=13"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 4. SGGW ─── -->
+    <div class="loc-card academic">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Scientific</span>
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=680&h=480&fit=crop" alt="University research greenhouse campus" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">SGGW Research Station</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Ursynów, Warsaw &middot; University of Life Sciences</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">7.8</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A <strong>70-hectare research campus</strong> featuring advanced experimental greenhouses, computer labs, and production halls. Open to commissioned research from business entities. Provides immediate institutional credibility and access to specialized agricultural engineers and scientists.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">Negotiable</span>
+            <span class="loc-meta-pill">~15&ndash;20 min to center</span>
+            <span class="loc-meta-pill">Metro (Ursynów) / Bus</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=SGGW+Warsaw" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge high">AI Disposition: High</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Formal scientific validation for Sponic's "Sonic Vision" patents. Commissioned research project to refine the AI's botanical actuation logic (spectral lighting, nutrient dosing) under controlled academic conditions with published results.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>High.</strong> SGGW already runs precision agriculture research programs. Their greenhouse labs use automated climate control. The faculty publishes on smart farming. An AI-native partnership represents a natural extension of their existing research direction — though academic pace may be slower than startup speed.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=SGGW+Warsaw+University+Life+Sciences&zoom=14"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 5. Szklarnia ─── -->
+    <div class="loc-card event">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Event Venue</span>
+          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=680&h=480&fit=crop" alt="Glass greenhouse venue with botanical setting" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">Szklarnia Event Garden</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Grodzisk Mazowiecki (outside Warsaw)</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">7.6</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">An actual glass-and-wood greenhouse venue on <strong>6,000 sqm</strong> of green grounds. Pure botanical aesthetic makes it a premier choice for flagship monthly community retreats and high-end marketing sessions. Accommodates up to 190 guests for "Garden Sessions" or vendor showcases.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">~$3,750+/event</span>
+            <span class="loc-meta-pill">~35&ndash;40 min to center</span>
+            <span class="loc-meta-pill">Train (Grodzisk Maz.)</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Szklarnia+Event+Garden+Grodzisk+Mazowiecki" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge moderate">AI Disposition: Moderate</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Monthly flagship events: "Garden Sessions," vendor showcases, high-end member gatherings. The botanical glass-house aesthetic photographs beautifully and aligns with Sponic's brand identity for marketing content.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Moderate.</strong> Primarily a wedding and events venue — management optimizes for ambiance and hospitality, not tech infrastructure. AI environmental monitoring would be tolerated as a guest amenity but permanent sensor installations would likely face resistance. Best used for periodic events rather than permanent integration.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Szklarnia+Event+Grodzisk+Mazowiecki&zoom=12"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 6. URK Krakow ─── -->
+    <div class="loc-card academic">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">R&amp;D Partner</span>
+          <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=680&h=480&fit=crop" alt="University campus with experimental agricultural fields" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">URK Innovation Center</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Krakow &middot; University of Agriculture</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">7.5</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">The primary <strong>tech-transfer entity</strong> for the University of Agriculture in Krakow, managing 29 experimental stations across 450 hectares. Specializes in precision farming and organic production. Pre-incubator model provides technical conditions for developing agtech startups. Connects Sponic to the "Dragon Valley" tech ecosystem.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">Partnership Model</span>
+            <span class="loc-meta-pill">Krakow city center</span>
+            <span class="loc-meta-pill">Tram / Bus</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Uniwersytet+Rolniczy+Krakow" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge high">AI Disposition: High</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Specialized R&D consortium for precision farming and organic production validation. 29 experimental stations across 450 hectares provides enormous testing diversity. Pre-incubator model is purpose-built for startups like Sponic.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>High.</strong> URK actively runs a pre-incubator for agtech and has a dedicated Innovation Center. They are accustomed to bridging academic research with commercial applications. Precision farming is inherently data-driven. Their "Dragon Valley" branding shows they want to attract exactly this kind of technology partnership.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Uniwersytet+Rolniczy+w+Krakowie&zoom=14"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 7. PAN Botanical Garden ─── -->
+    <div class="loc-card community">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Botanical</span>
+          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=680&h=480&fit=crop&sat=-20" alt="Botanical garden greenhouse and grounds" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">PAN Botanical Garden</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Powsin, Warsaw &middot; Polish Academy of Sciences</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">7.1</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A <strong>63-hectare scientific botanical garden</strong> featuring massive plant collections, greenhouses, and ponds. Hosts large-scale public events and educational programming. Seeks to expand its educational mission &mdash; opening for Sponic to act as a tech-forward extension of existing lectures.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">Low / Partnership</span>
+            <span class="loc-meta-pill">~35 min to center</span>
+            <span class="loc-meta-pill">Bus from Metro Wilanowska</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=PAN+Botanical+Garden+Powsin+Warsaw" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge moderate">AI Disposition: Moderate</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Sponic-branded educational workshops leveraging PAN's existing audience and scientific credibility. The 63 hectares of diverse plant collections offer rich training data for plant-health AI models and acoustic monitoring research.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Moderate.</strong> As a Polish Academy of Sciences institution, PAN operates with academic rigor and institutional caution. They'd welcome AI that clearly serves their educational and conservation mission, but may be slower to adopt commercially-oriented tech. Framing AI as a scientific research tool rather than a business amenity is key.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Ogród+Botaniczny+PAN+Powsin&zoom=13"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 8. Renovated Warehouse ─── -->
+    <div class="loc-card tech">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Backup Base</span>
+          <div class="loc-img-placeholder">🏭</div>
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">Renovated Warehouse (Marysin)</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Marysin Wawerski, Warsaw</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">7.0</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A 200 sqm renovated warehouse in a district characterized by forest coverage and parks. Post-renovation with improved insulation &mdash; critical for protecting sensitive maker-space electronics during winter. High-character industrial base near semi-natural riparian zones.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">$3,747/mo</span>
+            <span class="loc-meta-pill">~25 min to center</span>
+            <span class="loc-meta-pill">Bus / Train (Wawer)</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Marysin+Wawerski,+Warsaw" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge very-high">AI Disposition: Very High</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 9. Przestrzenie Bruna ─── -->
+    <div class="loc-card heritage">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Heritage</span>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=680&h=480&fit=crop" alt="Heritage brick industrial event space" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">Przestrzenie Bruna</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Praga District, Warsaw</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">7.0</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A stunning <strong>400 sqm heritage event hall</strong> featuring exposed brick and 18th-century industrial architecture. Post-industrial courtyard accommodates outdoor botanical elements. A vibrant social hub for the Praga district. Very high brand aesthetic alignment, though permanent technical installations require specific negotiation.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">$3,750 &ndash; $5,000/mo</span>
+            <span class="loc-meta-pill">~15 min to center</span>
+            <span class="loc-meta-pill">Tram / Bus</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Przestrzenie+Bruna+Warsaw" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge moderate">AI Disposition: Moderate</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Secondary event venue and social hub. The heritage aesthetic photographs beautifully and the courtyard enables botanical pop-ups. Good for high-profile launch events and member gatherings, but less suited for permanent tech infrastructure.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Moderate.</strong> Heritage venue operators tend to prioritize aesthetic preservation over technical modification. AI would need to be invisible — ambient sensors rather than visible hardware. The cultural arts community in Praga is open-minded but may view heavy tech skeptically. Relationship-building matters here more than tech specs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 10. Bujna Warszawa ─── -->
+    <div class="loc-card community">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Soft Launch</span>
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=680&h=480&fit=crop" alt="Community garden with raised beds and urban greenery" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">Bujna Warszawa</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">29+ locations across Warsaw</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">6.7</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A city-backed network of <strong>29+ community gardens</strong> across Warsaw requiring no initial lease commitment. The lowest-risk option for a "soft launch" &mdash; test AI-driven gardening sessions with established community gardener audiences. Builds brand visibility and member data before committing to a permanent flagship.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">Free</span>
+            <span class="loc-meta-pill">Varies by garden</span>
+            <span class="loc-meta-pill">Local city transit</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Bujna+Warszawa" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge low">AI Disposition: Low-Moderate</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Zero-cost community engagement and brand-building. Test Sponic's AI-driven gardening sessions (soil monitoring, planting recommendations) with real gardeners before investing in permanent infrastructure. Gather user feedback and refine the product.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Low-Moderate.</strong> Community gardeners tend to be analog-first and value the meditative, hands-in-soil experience. AI monitoring may feel intrusive to the ethos of casual urban gardening. Best approach: offer AI as an optional "garden helper" app rather than infrastructure — a tool individuals opt into, not a system imposed on shared space.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ════════ STRATEGY ════════ -->
+<section>
+  <div class="section-label">Implementation</div>
+  <h2>Multi-Node Strategy</h2>
+  <p>A multi-nodal approach &mdash; combining community farms, urban flagship halls, and technical bases &mdash; ensures Sponic Gardens will be a fully functional, AI-governed ecosystem by <strong>July 2026</strong>.</p>
+
+  <div class="strategy-grid">
+    <div class="strategy-card">
+      <div class="strat-num">Priority 1</div>
+      <div class="strat-label" style="background: var(--green-soft); color: var(--green); border: 1px solid var(--green-border);">Primary Site</div>
+      <h3>MOST Cooperative &mdash; The "Siekierki" Anchor</h3>
+      <p>Build directly on their 3.6-hectare riparian forest site. Exchange technical expertise for land access and greenhouse infrastructure. Avoids high capex while providing a massive "living lab" for agroecological and solarpunk experiments.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strat-num">Priority 2</div>
+      <div class="strat-label" style="background: var(--sky-soft); color: var(--sky); border: 1px solid var(--sky-border);">Urban Flagship</div>
+      <h3>BOHEMA 2.8 &mdash; The "Community" Hub</h3>
+      <p>440 sqm column-free space in Praga for the "Fitness Wing" and "Food Hall" pilot. Metro-accessible location drives membership growth. Recurring use agreement keeps costs within the $12,000/month budget ceiling.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strat-num">Priority 3</div>
+      <div class="strat-label" style="background: var(--earth-soft); color: var(--earth); border: 1px solid var(--earth-border);">Technical Base</div>
+      <h3>New Warehouse Wawer &mdash; The "Maker" Base</h3>
+      <p>Controlled indoor environment for the Maker Space and primary AI OS server infrastructure. Vistula riverbank location enables sensor testing against varying riparian microclimates. $3,317/month for 210 sqm.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strat-num">Priority 4</div>
+      <div class="strat-label" style="background: var(--plum-soft); color: var(--plum); border: 1px solid var(--plum-border);">Scientific Validation</div>
+      <h3>URK / SGGW Collaboration</h3>
+      <p>Academic partnerships to refine the AI's botanical actuation logic (spectral lighting, nutrient dosing). Commissioned research provides formal scientific validation for the Sponic "Sonic Vision" patents under expert guidance.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ════════ BUDGET ════════ -->
+<section>
+  <div class="section-label">Financial Plan</div>
+  <h2>Pilot Budget Allocation &mdash; $250,000 / 6 Months</h2>
+  <p>The majority of resources are directed toward technical innovation rather than fixed lease costs.</p>
+
+  <div class="budget-grid">
+    <div class="budget-card">
+      <div class="budget-pct">40%</div>
+      <div class="budget-amt">$100,000</div>
+      <div class="budget-label">Sensor &amp; AI Hardware</div>
+      <p style="font-size:0.75rem; margin-top:0.3rem;">Phase 1-3 sensor mesh, smart LED arrays, server infrastructure</p>
+    </div>
+    <div class="budget-card">
+      <div class="budget-pct">24%</div>
+      <div class="budget-amt">$60,000</div>
+      <div class="budget-label">Rent &amp; Partnerships</div>
+      <p style="font-size:0.75rem; margin-top:0.3rem;">Wawer ($19.9K), BOHEMA ($30K), MOST contributions ($10.1K)</p>
+    </div>
+    <div class="budget-card">
+      <div class="budget-pct">20%</div>
+      <div class="budget-amt">$50,000</div>
+      <div class="budget-label">Thermal &amp; Fitness</div>
+      <p style="font-size:0.75rem; margin-top:0.3rem;">Modular sauna units, cold plunge tanks, studio AV equipment</p>
+    </div>
+    <div class="budget-card">
+      <div class="budget-pct">10%</div>
+      <div class="budget-amt">$25,000</div>
+      <div class="budget-label">R&amp;D / Academic</div>
+      <p style="font-size:0.75rem; margin-top:0.3rem;">SGGW or URK commissioned research, university-guided scenarios</p>
+    </div>
+    <div class="budget-card">
+      <div class="budget-pct">6%</div>
+      <div class="budget-amt">$15,000</div>
+      <div class="budget-label">Ops &amp; Launch</div>
+      <p style="font-size:0.75rem; margin-top:0.3rem;">Community workshops, ethnobotanical projects, vendor recruitment</p>
+    </div>
+  </div>
+
+  <div class="callout-box">
+    <h3>Timeline Target</h3>
+    <p>This multi-nodal approach ensures a fully functional, AI-governed ecosystem that redefines the relationship between urban citizens and the botanical world by <strong>July 2026</strong>. The pilot budget of $250,000 covers six months of operations across all nodes.</p>
+  </div>
+</section>
+
+</div><!-- .container -->
+
+<footer>
+  <p>Sponic Gardens &middot; Strategic Location Evaluation &middot; Warsaw &amp; Krakow &middot; 2026</p>
+  <p style="margin-top:0.25rem;"><a href="/" style="color:var(--text-muted);">&larr; Back to sponicgardens.com</a></p>
+</footer>
+
+<script src="../../shared/version-info.js"></script>
+</body>
+</html>
