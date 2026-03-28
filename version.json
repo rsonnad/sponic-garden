@@ -1,12 +1,12 @@
 {
-  "version": "v260328.04 4:18p",
-  "release": 27,
-  "sha": "b8042e3",
-  "fullSha": "b8042e3b3467f98264cdae2ad37f709b617c52ff",
+  "version": "v260328.05 4:25p",
+  "release": 28,
+  "sha": "713445c",
+  "fullSha": "713445c4d63c71afec55f72a1578399f78731d45",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-28 21:18:44+00",
-  "commits": [{"sha":"52cbd17","message":"fix: replace emoji placeholders with real location photos on spaces page","author":"Rahul"},{"sha":"b8042e3","message":"Merge branch 'festive-ramanujan'","author":"Rahul"}]
+  "pushedAt": "2026-03-28 21:25:08+00",
+  "commits": [{"sha":"88ebd7b","message":"fix: replace broken Marysin warehouse and KPT images with working URLs","author":"Rahul"},{"sha":"713445c","message":"Merge branch 'festive-ramanujan'","author":"Rahul"}]
 }
