@@ -1,12 +1,12 @@
 {
-  "version": "v260328.01 3:20a",
-  "release": 24,
-  "sha": "ba2fc69",
-  "fullSha": "ba2fc69aa757cd6d8d7fab6025184cb426ab2099",
+  "version": "v260328.02 3:27a",
+  "release": 25,
+  "sha": "10b10cb",
+  "fullSha": "10b10cbc1ab5538b18bcc18d1a21e17e48c52a9c",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-28 08:20:56+00",
-  "commits": [{"sha":"ba2fc69","message":"add MOST Cooperative Farm corporate volunteering page (English translation)","author":"Rahul"}]
+  "pushedAt": "2026-03-28 08:27:30+00",
+  "commits": [{"sha":"10b10cb","message":"add strategic location evaluation page for Warsaw & Krakow prototype sites","author":"Rahul"}]
 }
