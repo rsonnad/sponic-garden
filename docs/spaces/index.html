@@ -235,6 +235,7 @@
     .loc-card.event .loc-badge { background: var(--warm); color: white; }
     .loc-card.community .loc-badge { background: var(--emerald); color: white; }
     .loc-card.heritage .loc-badge { background: var(--rose); color: white; }
+    .loc-card.creative .loc-badge { background: #c2410c; color: white; }
 
     .loc-top {
       display: grid;
@@ -260,9 +261,18 @@
       align-items: center;
       justify-content: center;
       font-size: 3rem;
-      opacity: 0.5;
       background: linear-gradient(135deg, var(--surface2) 0%, var(--surface3) 100%);
     }
+    .loc-img-placeholder.farm { background: linear-gradient(135deg, #c6ddb0 0%, #8cb369 100%); }
+    .loc-img-placeholder.urban-bg { background: linear-gradient(135deg, #b8c5d6 0%, #7a95b5 100%); }
+    .loc-img-placeholder.tech-bg { background: linear-gradient(135deg, #e8d5b7 0%, #c4a573 100%); }
+    .loc-img-placeholder.academic-bg { background: linear-gradient(135deg, #d5c6e0 0%, #a68bc2 100%); }
+    .loc-img-placeholder.event-bg { background: linear-gradient(135deg, #f0ddb8 0%, #d4a84b 100%); }
+    .loc-img-placeholder.botanical-bg { background: linear-gradient(135deg, #b8d8b0 0%, #6fa85b 100%); }
+    .loc-img-placeholder.heritage-bg { background: linear-gradient(135deg, #e0c4b8 0%, #c28b73 100%); }
+    .loc-img-placeholder.community-bg { background: linear-gradient(135deg, #b8ddd0 0%, #5baa8f 100%); }
+    .loc-img-placeholder.creative-bg { background: linear-gradient(135deg, #e8c5b0 0%, #c27843 100%); }
+    .loc-img-placeholder.river-bg { background: linear-gradient(135deg, #b0c8e0 0%, #5b8ab8 100%); }
     .loc-badge {
       position: absolute;
       top: 0.75rem;
@@ -387,9 +397,22 @@
     .map-frame {
       width: 100%;
       height: 200px;
-      border: none;
+      border: 1px solid var(--border-light);
       border-radius: var(--radius);
       margin-top: 0.75rem;
+    }
+
+    /* TIER DIVIDER */
+    .tier-label {
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      padding: 0.4rem 0;
+      border-bottom: 2px solid var(--border);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
     }
 
     /* ═══════════════ BUDGET ═══════════════ */
@@ -522,7 +545,7 @@
     <h1>Strategic Location Evaluation</h1>
     <p class="hero-sub">Prototype facility locations for Sponic Gardens across Warsaw and Krakow &mdash; rated, mapped, and analyzed for a $250K six-month pilot.</p>
     <div class="hero-meta">
-      <span class="hero-pill">9 Locations Evaluated</span>
+      <span class="hero-pill">15 Locations Evaluated</span>
       <span class="hero-pill">$250K / 6-Month Pilot</span>
       <span class="hero-pill">Warsaw + Krakow</span>
     </div>
@@ -602,7 +625,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">Primary Site</span>
-          <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=680&h=480&fit=crop" alt="Regenerative urban farm with raised beds and greenhouse" loading="lazy">
+          <div class="loc-img-placeholder farm">🌿🏡</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -636,7 +659,7 @@
             <p><strong>Very High.</strong> MOST already treats the ecosystem as a legal entity and runs a "Food Lab." Their cooperative structure welcomes technology that serves regenerative goals. AI-driven monitoring fits their existing ethos of systems thinking. The Holobiont project signals openness to experimental, cross-disciplinary approaches.</p>
           </div>
         </div>
-        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Gwintowa+2,+Warsaw,+Poland&zoom=14"></iframe>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=21.035%2C52.188%2C21.065%2C52.204&amp;layer=mapnik&amp;marker=52.196%2C21.050"></iframe>
         <div style="margin-top:0.5rem;">
           <a href="MOSToffer.html" style="font-size:0.85rem; font-weight:600;">Read the full MOST Corporate Volunteering offer &rarr;</a>
         </div>
@@ -648,7 +671,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">Urban Flagship</span>
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=680&h=480&fit=crop" alt="Modern industrial-style event space with exposed brick" loading="lazy">
+          <div class="loc-img-placeholder urban-bg">🏗️🧱</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -679,10 +702,10 @@
           </div>
           <div class="loc-detail-box">
             <h4>AI Receptiveness Assessment</h4>
-            <p><strong>High.</strong> New-build commercial property in a gentrifying creative district. The developer and tenant base skew young, tech-forward. AI-driven occupancy heatmapping and digital billing integration would be seen as premium amenities rather than friction. Managment likely values innovation as a differentiator.</p>
+            <p><strong>High.</strong> New-build commercial property in a gentrifying creative district. The developer and tenant base skew young, tech-forward. AI-driven occupancy heatmapping and digital billing integration would be seen as premium amenities rather than friction.</p>
           </div>
         </div>
-        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Bohema+Praga+Warsaw&zoom=14"></iframe>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=21.025%2C52.254%2C21.055%2C52.270&amp;layer=mapnik&amp;marker=52.262%2C21.040"></iframe>
       </div>
     </div>
 
@@ -691,7 +714,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">Technical Base</span>
-          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=680&h=480&fit=crop" alt="Modern warehouse workshop space" loading="lazy">
+          <div class="loc-img-placeholder tech-bg">🏭🔬</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -722,10 +745,10 @@
           </div>
           <div class="loc-detail-box">
             <h4>AI Receptiveness Assessment</h4>
-            <p><strong>Very High.</strong> Commercial warehouse rental with no ideological filter — purely transactional. The landlord benefits from a tech tenant willing to sign a 6-month term. Zero friction to installing any AI/sensor infrastructure. The space is a blank canvas.</p>
+            <p><strong>Very High.</strong> Commercial warehouse rental with no ideological filter &mdash; purely transactional. The landlord benefits from a tech tenant willing to sign a 6-month term. Zero friction to installing any AI/sensor infrastructure. The space is a blank canvas.</p>
           </div>
         </div>
-        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Wał+Miedzeszyński,+Wawer,+Warsaw&zoom=13"></iframe>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=21.100%2C52.210%2C21.140%2C52.230&amp;layer=mapnik&amp;marker=52.220%2C21.120"></iframe>
       </div>
     </div>
 
@@ -734,7 +757,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">Scientific</span>
-          <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=680&h=480&fit=crop" alt="University research greenhouse campus" loading="lazy">
+          <div class="loc-img-placeholder academic-bg">🎓🌱</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -761,14 +784,14 @@
         <div class="loc-details-grid">
           <div class="loc-detail-box">
             <h4>Best Use Case</h4>
-            <p>Formal scientific validation for Sponic's "Sonic Vision" patents. Commissioned research project to refine the AI's botanical actuation logic (spectral lighting, nutrient dosing) under controlled academic conditions with published results.</p>
+            <p>Formal scientific validation for Sponic's "Sonic Vision" patents. Commissioned research to refine the AI's botanical actuation logic (spectral lighting, nutrient dosing) under controlled academic conditions with published results.</p>
           </div>
           <div class="loc-detail-box">
             <h4>AI Receptiveness Assessment</h4>
-            <p><strong>High.</strong> SGGW already runs precision agriculture research programs. Their greenhouse labs use automated climate control. The faculty publishes on smart farming. An AI-native partnership represents a natural extension of their existing research direction — though academic pace may be slower than startup speed.</p>
+            <p><strong>High.</strong> SGGW already runs precision agriculture research programs. Their greenhouse labs use automated climate control. An AI-native partnership represents a natural extension of their existing research direction &mdash; though academic pace may be slower than startup speed.</p>
           </div>
         </div>
-        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=SGGW+Warsaw+University+Life+Sciences&zoom=14"></iframe>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=21.035%2C52.154%2C21.065%2C52.170&amp;layer=mapnik&amp;marker=52.162%2C21.050"></iframe>
       </div>
     </div>
 
@@ -777,7 +800,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">Event Venue</span>
-          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=680&h=480&fit=crop" alt="Glass greenhouse venue with botanical setting" loading="lazy">
+          <div class="loc-img-placeholder event-bg">🏛️🌿</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -795,7 +818,7 @@
             <span class="loc-meta-pill cost">~$3,750+/event</span>
             <span class="loc-meta-pill">~35&ndash;40 min to center</span>
             <span class="loc-meta-pill">Train (Grodzisk Maz.)</span>
-            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Szklarnia+Event+Garden+Grodzisk+Mazowiecki" target="_blank">View on Map &nearr;</a></span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Szklarnia+Event+Grodzisk+Mazowiecki" target="_blank">View on Map &nearr;</a></span>
             <span class="ai-badge moderate">AI Disposition: Moderate</span>
           </div>
         </div>
@@ -808,10 +831,10 @@
           </div>
           <div class="loc-detail-box">
             <h4>AI Receptiveness Assessment</h4>
-            <p><strong>Moderate.</strong> Primarily a wedding and events venue — management optimizes for ambiance and hospitality, not tech infrastructure. AI environmental monitoring would be tolerated as a guest amenity but permanent sensor installations would likely face resistance. Best used for periodic events rather than permanent integration.</p>
+            <p><strong>Moderate.</strong> Primarily a wedding and events venue &mdash; management optimizes for ambiance and hospitality, not tech infrastructure. AI environmental monitoring would be tolerated as a guest amenity but permanent sensor installations would likely face resistance.</p>
           </div>
         </div>
-        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Szklarnia+Event+Grodzisk+Mazowiecki&zoom=12"></iframe>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=20.610%2C52.100%2C20.650%2C52.120&amp;layer=mapnik&amp;marker=52.110%2C20.630"></iframe>
       </div>
     </div>
 
@@ -820,7 +843,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">R&amp;D Partner</span>
-          <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=680&h=480&fit=crop" alt="University campus with experimental agricultural fields" loading="lazy">
+          <div class="loc-img-placeholder academic-bg">🏫🧬</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -847,14 +870,14 @@
         <div class="loc-details-grid">
           <div class="loc-detail-box">
             <h4>Best Use Case</h4>
-            <p>Specialized R&D consortium for precision farming and organic production validation. 29 experimental stations across 450 hectares provides enormous testing diversity. Pre-incubator model is purpose-built for startups like Sponic.</p>
+            <p>Specialized R&amp;D consortium for precision farming and organic production validation. 29 experimental stations across 450 hectares provides enormous testing diversity. Pre-incubator model is purpose-built for startups like Sponic.</p>
           </div>
           <div class="loc-detail-box">
             <h4>AI Receptiveness Assessment</h4>
-            <p><strong>High.</strong> URK actively runs a pre-incubator for agtech and has a dedicated Innovation Center. They are accustomed to bridging academic research with commercial applications. Precision farming is inherently data-driven. Their "Dragon Valley" branding shows they want to attract exactly this kind of technology partnership.</p>
+            <p><strong>High.</strong> URK actively runs a pre-incubator for agtech. They are accustomed to bridging academic research with commercial applications. Their "Dragon Valley" branding shows they want to attract exactly this kind of technology partnership.</p>
           </div>
         </div>
-        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Uniwersytet+Rolniczy+w+Krakowie&zoom=14"></iframe>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=19.935%2C50.067%2C19.965%2C50.083&amp;layer=mapnik&amp;marker=50.075%2C19.950"></iframe>
       </div>
     </div>
 
@@ -863,7 +886,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">Botanical</span>
-          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=680&h=480&fit=crop&sat=-20" alt="Botanical garden greenhouse and grounds" loading="lazy">
+          <div class="loc-img-placeholder botanical-bg">🌳🔬</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -890,14 +913,14 @@
         <div class="loc-details-grid">
           <div class="loc-detail-box">
             <h4>Best Use Case</h4>
-            <p>Sponic-branded educational workshops leveraging PAN's existing audience and scientific credibility. The 63 hectares of diverse plant collections offer rich training data for plant-health AI models and acoustic monitoring research.</p>
+            <p>Sponic-branded educational workshops leveraging PAN's existing audience and scientific credibility. 63 hectares of diverse plant collections offer rich training data for plant-health AI models and acoustic monitoring research.</p>
           </div>
           <div class="loc-detail-box">
             <h4>AI Receptiveness Assessment</h4>
-            <p><strong>Moderate.</strong> As a Polish Academy of Sciences institution, PAN operates with academic rigor and institutional caution. They'd welcome AI that clearly serves their educational and conservation mission, but may be slower to adopt commercially-oriented tech. Framing AI as a scientific research tool rather than a business amenity is key.</p>
+            <p><strong>Moderate.</strong> PAN operates with academic rigor and institutional caution. They'd welcome AI that clearly serves their educational and conservation mission, but may be slower to adopt commercially-oriented tech. Framing AI as a scientific research tool is key.</p>
           </div>
         </div>
-        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Ogród+Botaniczny+PAN+Powsin&zoom=13"></iframe>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=21.080%2C52.100%2C21.120%2C52.120&amp;layer=mapnik&amp;marker=52.110%2C21.100"></iframe>
       </div>
     </div>
 
@@ -906,7 +929,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">Backup Base</span>
-          <div class="loc-img-placeholder">🏭</div>
+          <div class="loc-img-placeholder tech-bg">🏭</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -936,7 +959,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">Heritage</span>
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=680&h=480&fit=crop" alt="Heritage brick industrial event space" loading="lazy">
+          <div class="loc-img-placeholder heritage-bg">🧱🌿</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -963,11 +986,11 @@
         <div class="loc-details-grid">
           <div class="loc-detail-box">
             <h4>Best Use Case</h4>
-            <p>Secondary event venue and social hub. The heritage aesthetic photographs beautifully and the courtyard enables botanical pop-ups. Good for high-profile launch events and member gatherings, but less suited for permanent tech infrastructure.</p>
+            <p>Secondary event venue and social hub. The heritage aesthetic photographs beautifully and the courtyard enables botanical pop-ups. Good for high-profile launch events and member gatherings.</p>
           </div>
           <div class="loc-detail-box">
             <h4>AI Receptiveness Assessment</h4>
-            <p><strong>Moderate.</strong> Heritage venue operators tend to prioritize aesthetic preservation over technical modification. AI would need to be invisible — ambient sensors rather than visible hardware. The cultural arts community in Praga is open-minded but may view heavy tech skeptically. Relationship-building matters here more than tech specs.</p>
+            <p><strong>Moderate.</strong> Heritage venue operators prioritize aesthetic preservation. AI would need to be invisible &mdash; ambient sensors rather than visible hardware. Relationship-building matters here more than tech specs.</p>
           </div>
         </div>
       </div>
@@ -978,7 +1001,7 @@
       <div class="loc-top">
         <div class="loc-img">
           <span class="loc-badge">Soft Launch</span>
-          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=680&h=480&fit=crop" alt="Community garden with raised beds and urban greenery" loading="lazy">
+          <div class="loc-img-placeholder community-bg">🌻🏙️</div>
         </div>
         <div class="loc-body">
           <div class="loc-header">
@@ -1005,13 +1028,274 @@
         <div class="loc-details-grid">
           <div class="loc-detail-box">
             <h4>Best Use Case</h4>
-            <p>Zero-cost community engagement and brand-building. Test Sponic's AI-driven gardening sessions (soil monitoring, planting recommendations) with real gardeners before investing in permanent infrastructure. Gather user feedback and refine the product.</p>
+            <p>Zero-cost community engagement and brand-building. Test Sponic's AI-driven gardening sessions (soil monitoring, planting recommendations) with real gardeners before investing in permanent infrastructure.</p>
           </div>
           <div class="loc-detail-box">
             <h4>AI Receptiveness Assessment</h4>
-            <p><strong>Low-Moderate.</strong> Community gardeners tend to be analog-first and value the meditative, hands-in-soil experience. AI monitoring may feel intrusive to the ethos of casual urban gardening. Best approach: offer AI as an optional "garden helper" app rather than infrastructure — a tool individuals opt into, not a system imposed on shared space.</p>
+            <p><strong>Low-Moderate.</strong> Community gardeners tend to be analog-first. AI monitoring may feel intrusive. Best approach: offer AI as an optional "garden helper" app rather than infrastructure &mdash; a tool individuals opt into, not a system imposed on shared space.</p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- ════════ TIER 2 ════════ -->
+    <div class="tier-label">Tier 2 &mdash; Emerging Opportunities</div>
+
+    <!-- ─── 11. SEGRO Zeran ─── -->
+    <div class="loc-card tech">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Full Build</span>
+          <div class="loc-img-placeholder tech-bg">🏗️📦</div>
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">SEGRO Business Park Zeran</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Bialoleka, Warsaw &middot; Annopol 4</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">6.8</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A modern Class A logistics and light-production park totaling ~60,000 sqm across six buildings. Modular warehouse units from 600 sqm with attached offices. Industrial zoning makes it straightforward to install growing infrastructure, cold plunge systems, and maker equipment without residential noise complaints. Surrounding area is seeing rapid residential development.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">~$12,000&ndash;$15,000/mo</span>
+            <span class="loc-meta-pill">~10 km to center</span>
+            <span class="loc-meta-pill">S8 highway / Tram (Zeran)</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=SEGRO+Business+Park+Warsaw+Żerań+Annopol+4" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge high">AI Disposition: High</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Full-scale prototype facility with maximum spatial freedom &mdash; growing zones, sauna/plunge builds, fitness studio, and maker shop all under one roof with outdoor expansion potential. The only location large enough for the complete Sponic vision in one structure.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>High.</strong> SEGRO is a pan-European REIT with smart building systems already deployed across their portfolio. They actively court tech tenants and are receptive to IoT sensor networks and AI-managed climate systems as a differentiator for their park.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=20.980%2C52.280%2C21.020%2C52.300&amp;layer=mapnik&amp;marker=52.290%2C21.000"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 12. KPT Krakow ─── -->
+    <div class="loc-card academic">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Tech Hub</span>
+          <div class="loc-img-placeholder academic-bg">💻🌱</div>
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">Krakow Technology Park (KPT)</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Czyzyny Campus, Krakow</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">6.5</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">Poland's longest-running tech park (est. 1997), located on the former Krakow-Rakowice-Czyzyny military airfield. Offers <strong>certified Living Lab</strong>, cloud computing lab, and data center. The surrounding airfield grounds provide rare open-air expansion potential within city limits &mdash; perfect for outdoor growing zones and greenhouse prototyping. Industry 4.0 programs and startup incubation at subsidized rates.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">~$8,000&ndash;$10,000/mo</span>
+            <span class="loc-meta-pill">~6 km to Old Town</span>
+            <span class="loc-meta-pill">Tram 4, 10, 52 (Czyzyny)</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Krakowski+Park+Technologiczny+Czyżyny+Kraków" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge very-high">AI Disposition: Very High</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>AI-forward R&amp;D hub with growing tech. Leverage KPT's existing Industry 4.0 programs, living lab certification, and startup ecosystem to pilot AI-managed growing systems and sensor networks. Less suited for the full wellness vision, but ideal for the technology spine.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Very High.</strong> KPT's core mission is technology incubation. They run Industry 4.0 programs (hub4industry consortium), have a cloud computing lab, and a certified Living Lab &mdash; one of only two in Poland. AI integration would be celebrated, not merely tolerated.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=19.990%2C50.070%2C20.020%2C50.086&amp;layer=mapnik&amp;marker=50.078%2C20.005"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 13. Koneser ─── -->
+    <div class="loc-card urban">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Pop-up</span>
+          <div class="loc-img-placeholder urban-bg">🏢🍸</div>
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">Centrum Praskie Koneser</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Praga-Polnoc, Warsaw &middot; ul. Zabkowska</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">6.2</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">A restored 19th-century vodka distillery housing the <strong>Google for Startups Campus</strong> (the only one in Central/Eastern Europe), the Polish Vodka Museum, a Moxy hotel, food hall, fitness club, and residential apartments. Established footfall and cultural programming (slow fairs, concerts, markets). Flex spaces available for pop-up activations.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">$3,000&ndash;$8,000/mo pop-up</span>
+            <span class="loc-meta-pill">~4 km to center</span>
+            <span class="loc-meta-pill">Metro Dworzec Wilenski (M2)</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Centrum+Praskie+Koneser+Ząbkowska+Warsaw" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge high">AI Disposition: High</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Pop-up Sponic experience or satellite wellness lounge. Test market fit with the existing Koneser audience (startup founders, hotel guests, food tourists) before scaling to a full warehouse build. Google Campus co-location creates natural AI/tech community overlap.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>High.</strong> Google for Startups Campus is literally on-site. The developer actively courts tech/innovation tenants. AI-integrated wellness or growing demos would align with the complex's innovation identity.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=21.040%2C52.250%2C21.060%2C52.260&amp;layer=mapnik&amp;marker=52.255%2C21.050"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 14. Soho Factory ─── -->
+    <div class="loc-card creative">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Creative</span>
+          <div class="loc-img-placeholder creative-bg">🎨🏭</div>
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">Soho Factory</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Kamionek (Praga-Poludnie), Warsaw &middot; ul. Minska</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">6.0</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">Poland's first self-described <strong>"artistic sub-district"</strong> on former industrial works. Houses the Neon Museum, art galleries, restaurants, theaters, boutique cinema, and creative studios. Ongoing phased development means new buildings continue to come online. The creative-industries mix closely mirrors Sponic's DNA.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">~$15,000&ndash;$22,000/mo</span>
+            <span class="loc-meta-pill">~5 km to center</span>
+            <span class="loc-meta-pill">Tram (Grochowska) / Bus</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Soho+Factory+Mińska+Warsaw+Praga" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge moderate">AI Disposition: Moderate-High</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Embedded Sponic studio within an existing creative ecosystem. A growing wall installation, wellness micro-facility (sauna + plunge), and maker workshop integrated into Soho's cultural programming. Leverages existing foot traffic without needing to build community from scratch.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Moderate-High.</strong> Tenants skew creative/tech &mdash; design studios and agencies comfortable with digital tools. AI-integrated art installations (generative growing patterns, sensor-responsive environments) would fit well. Pure ag-tech framing would be less natural here.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=21.050%2C52.240%2C21.080%2C52.255&amp;layer=mapnik&amp;marker=52.248%2C21.065"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 15. Forum Przestrzenie ─── -->
+    <div class="loc-card heritage">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Seasonal</span>
+          <div class="loc-img-placeholder river-bg">🏰🌊</div>
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">Forum Przestrzenie</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Podgorze, Krakow &middot; ul. Konopnickiej 28</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">5.8</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">The ground floor and riverside terrace of the brutalist former Hotel Forum (built 1988), repurposed as Krakow's most <strong>iconic alternative cultural venue</strong>. Massive indoor hall with concrete industrial aesthetic, plus an expansive outdoor terrace with direct Vistula views and Wawel Castle sightlines. Hosts DJ events, design fairs, and food festivals.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">~$5,000&ndash;$12,000/mo</span>
+            <span class="loc-meta-pill">~1.5 km to Old Town</span>
+            <span class="loc-meta-pill">Tram (Rondo Grunwaldzkie)</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Forum+Przestrzenie+Konopnickiej+28+Kraków" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge moderate">AI Disposition: Moderate</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Seasonal Sponic activation &mdash; summer outdoor growing installations, cold plunge stations on the riverbank, sauna pop-ups, and food programming integrated with existing festival calendar. The terrace is one of the best outdoor event spaces in Poland.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Moderate.</strong> Operators are culturally progressive and open to experimental installations, but this is an arts/nightlife venue, not a tech hub. AI would need to be framed as art installation or experiential design rather than pure technology. Think "AI-curated growing art" not "smart agriculture dashboard."</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=19.925%2C50.045%2C19.945%2C50.055&amp;layer=mapnik&amp;marker=50.050%2C19.935"></iframe>
+      </div>
+    </div>
+
+    <!-- ─── 16. Zablocie Innovation Cluster ─── -->
+    <div class="loc-card creative">
+      <div class="loc-top">
+        <div class="loc-img">
+          <span class="loc-badge">Adaptive Reuse</span>
+          <div class="loc-img-placeholder creative-bg">🏚️🔧</div>
+        </div>
+        <div class="loc-body">
+          <div class="loc-header">
+            <div>
+              <div class="loc-title">Zablocie Innovation Cluster</div>
+              <p style="font-size:0.78rem; color:var(--text-dim); margin:0.15rem 0 0;">Zablocie, Podgorze, Krakow</p>
+            </div>
+            <div style="text-align:right;">
+              <div class="loc-rating">5.5</div>
+              <div class="loc-rating-label">Fit Rating</div>
+            </div>
+          </div>
+          <p class="loc-desc">Post-industrial warehouse buildings in the heart of Krakow's most successful revitalization district. Adjacent to <strong>MOCAK</strong> (Museum of Contemporary Art in Schindler's Factory), Cluster Zablocie coworking (810 sqm, 112 workstations), and creative studios. Original facades preserved with modern insulation &mdash; a template for how Sponic could retrofit industrial bones with growing and wellness infrastructure.</p>
+          <div class="loc-meta-row">
+            <span class="loc-meta-pill cost">~$10,000&ndash;$18,000/mo</span>
+            <span class="loc-meta-pill">~3 km to Old Town</span>
+            <span class="loc-meta-pill">Tram 3, 19, 24 / Train</span>
+            <span class="loc-meta-pill"><a href="https://maps.google.com/?q=Zabłocie+Innovation+Cluster+Kraków+Podgórze" target="_blank">View on Map &nearr;</a></span>
+            <span class="ai-badge moderate">AI Disposition: Moderate</span>
+          </div>
+        </div>
+      </div>
+      <div class="loc-details">
+        <div class="loc-details-grid">
+          <div class="loc-detail-box">
+            <h4>Best Use Case</h4>
+            <p>Full Sponic prototype in Krakow &mdash; the warehouse format directly supports growing zones, maker space, and wellness builds. The MOCAK/Schindler cultural ecosystem provides foot traffic and brand alignment. Zablocie's revitalization mandate means municipal support for innovative adaptive reuse.</p>
+          </div>
+          <div class="loc-detail-box">
+            <h4>AI Receptiveness Assessment</h4>
+            <p><strong>Moderate.</strong> The innovation cluster has tech tenants and attracts creative-tech workers, but the primary identity is arts/culture. Krakow's strong university ecosystem (Jagiellonian, AGH) means recruiting AI talent is feasible. Municipal revitalization programs may offer grants for smart-building tech.</p>
+          </div>
+        </div>
+        <iframe class="map-frame" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=19.955%2C50.043%2C19.975%2C50.053&amp;layer=mapnik&amp;marker=50.048%2C19.965"></iframe>
       </div>
     </div>
 
@@ -1028,25 +1312,25 @@
 
   <div class="strategy-grid">
     <div class="strategy-card">
-      <div class="strat-num">Priority 1</div>
+      <div class="strat-num">Top Candidate</div>
       <div class="strat-label" style="background: var(--green-soft); color: var(--green); border: 1px solid var(--green-border);">Primary Site</div>
-      <h3>MOST Cooperative &mdash; The "Siekierki" Anchor</h3>
+      <h3><a href="MOSToffer.html" style="color: inherit; text-decoration: none; border-bottom: 2px solid var(--green-border);">MOST Cooperative &mdash; The "Siekierki" Anchor</a></h3>
       <p>Build directly on their 3.6-hectare riparian forest site. Exchange technical expertise for land access and greenhouse infrastructure. Avoids high capex while providing a massive "living lab" for agroecological and solarpunk experiments.</p>
     </div>
     <div class="strategy-card">
-      <div class="strat-num">Priority 2</div>
+      <div class="strat-num">Strong Candidate</div>
       <div class="strat-label" style="background: var(--sky-soft); color: var(--sky); border: 1px solid var(--sky-border);">Urban Flagship</div>
       <h3>BOHEMA 2.8 &mdash; The "Community" Hub</h3>
       <p>440 sqm column-free space in Praga for the "Fitness Wing" and "Food Hall" pilot. Metro-accessible location drives membership growth. Recurring use agreement keeps costs within the $12,000/month budget ceiling.</p>
     </div>
     <div class="strategy-card">
-      <div class="strat-num">Priority 3</div>
+      <div class="strat-num">Strong Candidate</div>
       <div class="strat-label" style="background: var(--earth-soft); color: var(--earth); border: 1px solid var(--earth-border);">Technical Base</div>
       <h3>New Warehouse Wawer &mdash; The "Maker" Base</h3>
       <p>Controlled indoor environment for the Maker Space and primary AI OS server infrastructure. Vistula riverbank location enables sensor testing against varying riparian microclimates. $3,317/month for 210 sqm.</p>
     </div>
     <div class="strategy-card">
-      <div class="strat-num">Priority 4</div>
+      <div class="strat-num">Key Partner</div>
       <div class="strat-label" style="background: var(--plum-soft); color: var(--plum); border: 1px solid var(--plum-border);">Scientific Validation</div>
       <h3>URK / SGGW Collaboration</h3>
       <p>Academic partnerships to refine the AI's botanical actuation logic (spectral lighting, nutrient dosing). Commissioned research provides formal scientific validation for the Sponic "Sonic Vision" patents under expert guidance.</p>
