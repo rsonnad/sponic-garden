@@ -1,12 +1,12 @@
 {
-  "version": "v260328.03 4:42a",
-  "release": 26,
-  "sha": "b4e16c5",
-  "fullSha": "b4e16c50a84e92b4ed463593de6a72041222f4cc",
+  "version": "v260328.04 4:18p",
+  "release": 27,
+  "sha": "b8042e3",
+  "fullSha": "b8042e3b3467f98264cdae2ad37f709b617c52ff",
   "actor": "rsonnad",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-28 09:42:30+00",
-  "commits": [{"sha":"b4e16c5","message":"fix images/maps, add 6 tier-2 locations, link MOST to Polish site","author":"Rahul"}]
+  "pushedAt": "2026-03-28 21:18:44+00",
+  "commits": [{"sha":"52cbd17","message":"fix: replace emoji placeholders with real location photos on spaces page","author":"Rahul"},{"sha":"b8042e3","message":"Merge branch 'festive-ramanujan'","author":"Rahul"}]
 }
